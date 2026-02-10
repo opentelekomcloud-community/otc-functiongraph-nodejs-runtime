@@ -1,0 +1,45 @@
+FROM node:alpine3.22@sha256:8c582bc73db57610b25f2ba4f71bd2d6f17f0b47367310c949acad09ea4dfcb3
+
+ENV HOME=/home/paas_user
+
+ENV GROUP_ID=1003
+ENV GROUP_NAME=paas_user
+
+ENV USER_ID=1003
+ENV USER_NAME=paas_user
+
+# Set timzone to UTC
+ENV TZ=Etc/UTC
+
+RUN apk add --no-cache tzdata && \
+    # add group with specific GID
+    addgroup -g ${GROUP_ID} ${GROUP_NAME} && \
+    # add user with specific UID and GID
+    adduser -u ${USER_ID} -G ${GROUP_NAME} -D ${USER_NAME}
+
+WORKDIR ${HOME}
+
+# Copy package.json and package-lock.json
+COPY package*.json ${HOME}
+
+# Install dependencies
+RUN npm install --production
+
+# Copy source code
+COPY ./src ${HOME}/src
+
+# Copy entrypoint script
+COPY ./entrypoint.sh ${HOME}/entrypoint.sh
+
+# adjust permissions
+RUN chown -R ${USER_ID}:${GROUP_ID} ${HOME} && \ 
+    chmod -R 775 ${HOME}
+
+ENV NODE_ENV=production
+
+EXPOSE 8000
+
+# switch to non root user
+USER ${USER_NAME}
+
+ENTRYPOINT ["sh", "/home/paas_user/entrypoint.sh"]
