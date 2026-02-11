@@ -1,0 +1,10 @@
+{
+  "name": "scratch-event-sync",
+  "version": "1.0.0",
+  "description": "A sample for synchronous event processing with scratch event",
+  "main": "src/index.js",
+  "dependencies": {},
+  "scripts": {
+    "zip": "make zip"
+  }
+}

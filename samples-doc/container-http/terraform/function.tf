@@ -9,7 +9,7 @@ resource "opentelekomcloud_fgs_function_v2" "MyFunction" {
 
   handler   = "-"
   code_type = "Custom-Image-Swr"
-  runtime   = "Custom Image"
+  runtime   = "http"
 
   initializer_handler = "-"
   initializer_timeout = 31

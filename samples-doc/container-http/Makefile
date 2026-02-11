@@ -2,8 +2,7 @@ SHELL:=/bin/bash
 TARGET_PATH=target
 DOCKER_FILE=Dockerfile.node
 
-IMAGE_NAME=custom_container_event_example_nodejs
-
+IMAGE_NAME=custom_container_http_example_nodejs
 
 build: clean
 
@@ -35,11 +34,12 @@ test_local:
   # execute a curl 
 	curl -X POST \
 	-H "X-Cff-Request-Id: $(shell uuidgen)" \
-	-H "X-Cff-Func-Name: 0@default@sample-container-event" \
+	-H "X-Cff-Func-Name: 0@default@sample-container-http" \
 	-H "X-Cff-Func-Version: latest" \
 	-H "X-Cff-Func-Timeout: 30" \
 	-H 'Content-Type: application/json' \
-	-d '{"key":"Hello World of FunctionGraph"}' localhost:8000/invoke
+	-d '{"key":"Hello World of FunctionGraph"}' \
+	localhost:8000/invoke
 	@echo ""
 
 clean:

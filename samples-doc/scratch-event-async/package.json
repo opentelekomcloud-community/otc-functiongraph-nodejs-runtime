@@ -1,0 +1,10 @@
+{
+  "name": "scratch-event-async",
+  "version": "1.0.0",
+  "description": "A sample for asynchronous event processing with scratch event",
+  "main": "src/index.js",
+  "dependencies": {},
+  "scripts": {
+
+  }
+}

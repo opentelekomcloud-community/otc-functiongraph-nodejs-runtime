@@ -144,3 +144,5 @@ dist
 build
 .terraform*
 .env
+
+*.zip

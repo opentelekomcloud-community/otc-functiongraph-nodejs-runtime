@@ -42,7 +42,15 @@ router.post('/init', async (ctx) => {
   ctx.response.status = 200;
 });
 
-router.post('/invoke', async (ctx) => {
+router.get('/index', async (ctx) => {
+  ctx.logger.log("Received GET request with query:", ctx.request.query);
+
+  ctx.response.type = "application/json";
+  ctx.response.body = "Hello World, user!";
+  ctx.response.status = 200;
+});
+
+router.post('/index', async (ctx) => {
 
   body = ctx.request.body; // request body
 

@@ -5,20 +5,16 @@ resource "opentelekomcloud_fgs_function_v2" "MyFunction" {
 
   name   = format("%s_%s", var.prefix, var.function_name)
   app    = "default"
-  agency = opentelekomcloud_identity_agency_v3.agency.name
+  
+  handler   = "bootstrap"
 
-  handler   = "-"
-  code_type = "Custom-Image-Swr"
-  runtime   = "Custom Image"
+  runtime = "http"
 
-  initializer_handler = "-"
-  initializer_timeout = 31
+  code_type = "zip"
+  func_code     = filebase64(format("${path.module}/../%s", var.zip_file_name))
+  code_filename = var.zip_file_name
 
-  custom_image {
-    url = var.image_url
-  }
-
-  description      = "Sample on how use container with nodejs"
+  description      = "Sample http function in nodejs with TF"
   memory_size      = 512
   timeout          = 30
   max_instance_num = 1
