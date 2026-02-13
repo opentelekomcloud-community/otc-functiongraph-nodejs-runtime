@@ -1,0 +1,12 @@
+{
+  "name": "timer-event",
+  "version": "1.0.0",
+  "description": "Timer event class for FunctionGraph timer trigger",
+  "license": "Apache-2.0",
+  "author": "",
+  "type": "commonjs",
+  "main": "timerevent.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

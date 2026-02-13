@@ -1,10 +1,10 @@
-# Terraform variables for scratch-event-sync sample
+# Terraform variables
 
 # prefix of all resources
 prefix        = "nodejs"
 
 # name of the function (will be prefixed)
-function_name = "nodejs-doc-sample-scratch-event-sync"
+function_name = "scratch-event-timer"
 
 # handler function name defined in your code, e.g. "index.handler"
 handler_name = "index.handler"
@@ -16,4 +16,4 @@ initializer_name = "index.initializer"
 zip_file_name = "deploy.zip"
 
 # resources will be tagged with this app_group tag
-tag_app_group = "nodejs-doc-sample-scratch-event-sync"
+tag_app_group = "nodejs-event-timer"

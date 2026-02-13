@@ -5,6 +5,7 @@ resource "opentelekomcloud_fgs_function_v2" "MyFunction" {
 
   name   = format("%s_%s", var.prefix, var.function_name)
   app    = "default"
+  agency = opentelekomcloud_identity_agency_v3.agency.name
   
   handler =  var.handler_name
 
@@ -17,7 +18,7 @@ resource "opentelekomcloud_fgs_function_v2" "MyFunction" {
   func_code     = filebase64(format("${path.module}/../%s", var.zip_file_name))
   code_filename = var.zip_file_name
 
-  description      = "Sample on deploy nodejs event function in Terraform"
+  description      = "Sample for obs"
   memory_size      = 512
   timeout          = 30
   max_instance_num = 1

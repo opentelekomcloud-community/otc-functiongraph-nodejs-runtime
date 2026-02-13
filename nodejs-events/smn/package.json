@@ -1,0 +1,13 @@
+{
+  "name": "smn-event",
+  "version": "1.0.0",
+  "description": "SMN event class for FunctionGraph SMN trigger",
+  "license": "Apache-2.0",
+  "author": "",
+  "type": "commonjs",
+  "main": "",
+  "scripts": {
+    "test": "node tests/smnevent.test.js"
+  }
+  
+}
