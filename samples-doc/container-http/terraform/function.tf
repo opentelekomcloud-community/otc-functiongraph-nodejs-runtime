@@ -18,7 +18,7 @@ resource "opentelekomcloud_fgs_function_v2" "MyFunction" {
     url = var.image_url
   }
 
-  description      = "Sample on how use container with nodejs"
+  description      = var.description
   memory_size      = 512
   timeout          = 30
   max_instance_num = 1

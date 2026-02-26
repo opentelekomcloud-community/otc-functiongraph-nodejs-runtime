@@ -17,14 +17,10 @@ resource "opentelekomcloud_fgs_function_v2" "MyFunction" {
   func_code     = filebase64(format("${path.module}/../%s", var.zip_file_name))
   code_filename = var.zip_file_name
 
-  description      = "Sample on deploy nodejs event function in Terraform"
+  description      = var.description
   memory_size      = 512
   timeout          = 30
   max_instance_num = 1
-
-  # if you need security access key, security secret key and security token
-  # to access other OTC services, set enable_auth_in_header to true
-  enable_auth_in_header = false
 
   log_group_id   = opentelekomcloud_lts_group_v2.MyLogGroup.id
   log_group_name = opentelekomcloud_lts_group_v2.MyLogGroup.group_name

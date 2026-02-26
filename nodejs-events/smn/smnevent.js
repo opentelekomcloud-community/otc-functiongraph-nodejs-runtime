@@ -59,7 +59,7 @@ class SMNRecord {
   }
 
   /**
-   * Get event subscription URN from first record
+   * Get event subscription URN
    * @returns {string} Event subscription URN
    */
   getEventSubscriptionUrn() {

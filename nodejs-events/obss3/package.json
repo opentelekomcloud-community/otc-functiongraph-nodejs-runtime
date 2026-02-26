@@ -1,0 +1,20 @@
+{
+  "name": "obss3-event",
+  "version": "1.0.0",
+  "description": "OBS S3 event class for FunctionGraph OBS S3 trigger",
+  "license": "Apache-2.0",
+  "author": "",
+  "type": "commonjs",
+  "main": "obss3event.js",
+  "scripts": {
+    "test": "node tests/obss3event.test.js",
+    "test:ts": "tsc && node dist/tests/obss3event.test.js",
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.0"
+  }
+  
+}

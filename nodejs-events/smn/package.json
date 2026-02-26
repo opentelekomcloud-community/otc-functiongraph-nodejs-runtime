@@ -7,7 +7,14 @@
   "type": "commonjs",
   "main": "",
   "scripts": {
-    "test": "node tests/smnevent.test.js"
+    "test": "node tests/smnevent.test.js",
+    "test:ts": "tsc && node dist/tests/smnevent.test.js",
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.0"
   }
   
 }

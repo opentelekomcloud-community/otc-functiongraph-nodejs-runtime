@@ -1,14 +1,10 @@
 SHELL := /bin/bash
 
-zip:
-	rm -f deploy.zip
-	# zip all file in src folder
-	cd src && zip -r ../deploy.zip .
+build:
+	npm install --install-links
 
-	# if node_modules folder exists, zip it as well
-	if [ -d "./node_modules" ]; then \
-		zip -r ./deploy.zip ./node_modules; \
-	fi
+zip: build
+	npm pack
 
 test_local:
   # execute a curl 
@@ -22,4 +18,4 @@ test_local:
 	 localhost:8000/index
 	@echo ""
 
-.PHONY: zip test_local
+.PHONY: zip test_local build

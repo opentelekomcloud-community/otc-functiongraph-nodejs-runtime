@@ -6,7 +6,7 @@ class SampleEvent {
   }
 
   getKey() {
-    return this._event.key || "";
+    return this._event.key || this._event.Key || "";
   }
 }
 
@@ -25,47 +25,42 @@ async function listBuckets(obsClient, logger) {
       BucketType: "OBJECT",
     };
     // List buckets.
+
     const result = await obsClient.listBuckets(params);
     if (result.CommonMsg.Status <= 300) {
-
-      logger.info("Buckets:");
-      for (let i = 0; i < result.InterfaceResult.Buckets.length; i++) {
-        const val = result.InterfaceResult.Buckets[i];
-        logger.info(
-          "Bucket[%d]-Name:%s,CreationDate:%s,Location: %s",
-          i,
-          val.BucketName,
-          val.CreationDate,
-          val.Location,
-        );
-      }
-      return;
+      return result.InterfaceResult.Buckets.map((val) => ({
+        BucketName: val.BucketName,
+        CreationDate: val.CreationDate,
+        Location: val.Location,
+      }));
     }
     logger.info(
-      "An ObsError was found, which means your request sent to OBS was rejected with an error response.",
+      "OBS rejected with error response: status %s, code: %s, message: %s",
+      result.CommonMsg.Status,
+      result.CommonMsg.Code,
+      result.CommonMsg.Message,
     );
-    logger.info("Status: %d", result.CommonMsg.Status);
-    logger.info("Code: %s", result.CommonMsg.Code);
-    logger.info("Message: %s", result.CommonMsg.Message);
-    logger.info("RequestId: %s", result.CommonMsg.RequestId);
+
+    const error = new Error(
+      `OBS rejected with error response: status ${result.CommonMsg.Status}, code: ${result.CommonMsg.Code}, message: ${result.CommonMsg.Message}`,
+    );
+
+    throw error;
   } catch (error) {
-    logger.info(
-      "An Exception was found, which means the client encountered an internal problem when attempting to communicate with OBS, for example, the client was unable to access the network.",
-    );
     logger.info(error);
+    throw error;
   }
 }
 
 exports.handler = async function (event, context, callback) {
-  const error = null;
-
   const logger = context.getLogger();
-
-  logger.info("Function name:", context.getFunctionName());
 
   const sampleEvent = new SampleEvent(event);
 
   logger.info("Key value from event:", sampleEvent.getKey());
+
+  const obsEndpoint =
+    context.getUserData("OBS_ENDPOINT") || "https://obs.otc.t-systems.com";
 
   // Create an instance of ObsClient.
   const obsClient = new ObsClient({
@@ -73,18 +68,19 @@ exports.handler = async function (event, context, callback) {
     secret_access_key: context.getSecuritySecretKey(),
     security_token: context.getSecurityToken(),
     // Enter the endpoint corresponding to the region where the bucket is located.
-    server: "https://obs.otc.t-systems.com",
+    server: obsEndpoint,
   });
 
-   await listBuckets(obsClient, logger)
-    .then(() => {})
-    .catch((err) => {
-      logger.info("Error in listBuckets: ", err);
-    })
-    .finally(() => {});
-
-  // Close the ObsClient instance.
-  obsClient.close();
+  let data = [];
+  try {
+    data = await listBuckets(obsClient, logger);
+  } catch (err) {
+    logger.info("Error in listBuckets: ", err);
+    callback(err);
+    return;
+  } finally {
+    obsClient.close();
+  }
 
   const output = {
     statusCode: 200,
@@ -92,7 +88,7 @@ exports.handler = async function (event, context, callback) {
       "Content-Type": "application/json",
     },
     isBase64Encoded: false,
-    body: JSON.stringify(event),
+    body: JSON.stringify(data),
   };
-  callback(error, output);
+  callback(null, output);
 };

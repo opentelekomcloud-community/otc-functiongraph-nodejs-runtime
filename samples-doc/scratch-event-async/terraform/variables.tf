@@ -4,6 +4,12 @@ variable "prefix" {
   default = "set in variables.tfvars"
 }
 
+# description of the function
+variable "description" {
+  type    = string
+  default = "set in variables.tfvars"
+}
+
 # FunctionGraph: Function name
 variable "function_name" {
   type    = string
@@ -11,6 +17,11 @@ variable "function_name" {
 }
 
 variable "handler_name" {
+  type    = string
+  default = "set in variables.tfvars"
+}
+
+variable "initializer_name" {
   type    = string
   default = "set in variables.tfvars"
 }
@@ -28,6 +39,6 @@ variable "tag_app_group" {
 }
 
 variable "API_GATEWAY_INSTANCE_ID" {
-  type = string
+  type    = string
   default = "your_api_gateway_instance_id"
 }

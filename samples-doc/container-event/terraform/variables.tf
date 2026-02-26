@@ -4,6 +4,11 @@ variable "prefix" {
   default = "sample"
 }
 
+variable "description" {
+  type    = string
+  default = "set in variables.tfvars"
+}
+
 # FunctionGraph: Function name
 variable "function_name" {
   type    = string

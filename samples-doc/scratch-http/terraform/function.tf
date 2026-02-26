@@ -14,7 +14,7 @@ resource "opentelekomcloud_fgs_function_v2" "MyFunction" {
   func_code     = filebase64(format("${path.module}/../%s", var.zip_file_name))
   code_filename = var.zip_file_name
 
-  description      = "Sample http function in nodejs with TF"
+  description      = var.description
   memory_size      = 512
   timeout          = 30
   max_instance_num = 1

@@ -3,11 +3,32 @@
   "version": "1.0.0",
   "description": "A sample for synchronous event processing with scratch event",
   "main": "src/index.js",
-  
+  "type": "commonjs",
+  "engines":{
+    "node": "20.15.1"
+  },
+  "cpu": [
+    "x64"
+  ],
+  "os": [
+    "linux"
+  ],
   "scripts": {
-    "zip": "make zip"
+    "test": "node tests/index.test.js",
+    "postpack": "rm -f package.zip && tarball=$(npm list --depth 0 | sed 's/@/-/g; s/ .*/.tgz/g; 1q;'); tar -tf $tarball | sed 's/^package\\///' | zip -@r package; rm $tarball"
+  },
+  "devDependencies": {
+    "nodejs-runtime": "file:../../nodejs-runtime",
+    "nodejs-testutils": "file:../../nodejs-testutils",
+    "global-agent": "3.0.0"
   },
   "dependencies": {
     "esdk-obs-nodejs": "^3.25.6"
-  }
+  },
+  "files": [
+    "src/**/*"
+  ],
+  "bundleDependencies": [
+    "esdk-obs-nodejs"
+  ]
 }

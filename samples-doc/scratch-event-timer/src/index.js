@@ -5,13 +5,11 @@ exports.initializer = function (context, callback) {
 };
 
 exports.handler = function (event, context, callback) {
-  const error = null;
-  
+  const logger = context.getLogger();
+
   console.log(context.getFunctionName());
 
   const timerEvent = new TimerEvent(event);
-
-  const logger = context.getLogger();
 
   logger.info("Timer Event:", timerEvent.getTriggerName());
 
@@ -23,5 +21,5 @@ exports.handler = function (event, context, callback) {
     isBase64Encoded: false,
     body: JSON.stringify(event),
   };
-  callback(error, output);
+  callback(null, output);
 };

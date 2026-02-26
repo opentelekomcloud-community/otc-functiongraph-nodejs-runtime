@@ -3,8 +3,23 @@
   "version": "1.0.0",
   "description": "A sample for asynchronous event processing with scratch event",
   "main": "src/index.js",
-  "dependencies": {},
+  "type": "commonjs",
+  "engines": {
+    "node": "20.15.1"
+  },
+  "cpu": [
+    "x64"
+  ],
+  "os": [
+    "linux"
+  ],
   "scripts": {
-
-  }
+    "postpack": "rm -f package.zip && tarball=$(npm list --depth 0 | sed 's/@/-/g; s/ .*/.tgz/g; 1q;'); tar -tf $tarball | sed 's/^package\\///' | zip -@r package; rm $tarball"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "files": [
+    "src/**/*"
+  ],
+  "bundleDependencies": []
 }
