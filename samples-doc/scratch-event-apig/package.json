@@ -1,7 +1,7 @@
 {
-  "name": "scratch-event-sync",
+  "name": "scratch-event-apig",
   "version": "1.0.0",
-  "description": "A sample for synchronous event processing with scratch event",
+  "description": "A sample for apig event processing with scratch event",
   "main": "src/index.js",
   "type": "commonjs",
   "engines":{
@@ -14,21 +14,16 @@
     "linux"
   ],
   "scripts": {
-    "test": "node tests/index.test.js",
     "postpack": "rm -f package.zip && tarball=$(npm list --depth 0 | sed 's/@/-/g; s/ .*/.tgz/g; 1q;'); tar -tf $tarball | sed 's/^package\\///' | zip -@r package; rm $tarball"
   },
-  "devDependencies": {
-    "nodejs-runtime": "file:../../nodejs-runtime",
-    "nodejs-testutils": "file:../../nodejs-testutils",
-    "global-agent": "3.0.0"
-  },
+  "devDependencies": {},
   "dependencies": {
-    "esdk-obs-nodejs": "^3.25.6"
+    "apig-event": "file:../../nodejs-events/apig"
   },
   "files": [
     "src/**/*"
   ],
   "bundleDependencies": [
-    "esdk-obs-nodejs"
+    "apig-event"
   ]
 }

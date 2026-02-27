@@ -8,6 +8,11 @@ FunctionGraph.
    :maxdepth: 10
    :hidden:
 
+   Building with NodeJS <devguide/_index>
+   Concepts <devguide/concepts/_index>
+   Samples <samples/_index>
+   Best Practices <devguide/bestpractices/_index>
+
 
 
 .. warning:: Work in progress. Subject to change without notice.

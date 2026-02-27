@@ -1,7 +1,7 @@
 {
-  "name": "scratch-event-timer",
+  "name": "event-sdk-obs",
   "version": "1.0.0",
-  "description": "A sample for timer event processing with scratch event",
+  "description": "A sample for synchronous event processing with scratch event",
   "main": "src/index.js",
   "type": "commonjs",
   "engines":{
@@ -14,16 +14,21 @@
     "linux"
   ],
   "scripts": {
+    "test": "node tests/index.test.js",
     "postpack": "rm -f package.zip && tarball=$(npm list --depth 0 | sed 's/@/-/g; s/ .*/.tgz/g; 1q;'); tar -tf $tarball | sed 's/^package\\///' | zip -@r package; rm $tarball"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodejs-runtime": "file:../../nodejs-runtime",
+    "nodejs-testutils": "file:../../nodejs-testutils",
+    "global-agent": "3.0.0"
+  },
   "dependencies": {
-    "timer-event": "file:../../nodejs-events/timer"
+    "esdk-obs-nodejs": "^3.25.6"
   },
   "files": [
     "src/**/*"
   ],
   "bundleDependencies": [
-    "timer-event"
+    "esdk-obs-nodejs"
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "name": "apig-event",
+  "version": "1.0.0",
+  "description": "APIG event class for FunctionGraph APIG trigger",
+  "license": "Apache-2.0",
+  "author": "",
+  "type": "commonjs",
+  "main": "apigevent.js",
+  "scripts": {
+    "test": "node tests/apigevent.test.js"
+  }
+}

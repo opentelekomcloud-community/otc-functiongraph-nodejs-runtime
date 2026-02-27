@@ -3,10 +3,10 @@
 # prefix of all resources
 prefix        = "nodejs"
 
-description = "Sample sdk-obs"
+description = "Sample event-sdk-obs"
 
 # name of the function (will be prefixed)
-function_name = "sdk-obs"
+function_name = "event-sdk-obs"
 
 # handler function name defined in your code, e.g. "index.handler"
 handler_name = "src/index.handler"
@@ -18,4 +18,4 @@ initializer_name = "src/index.initializer"
 zip_file_name = "package.zip"
 
 # resources will be tagged with this app_group tag
-tag_app_group = "sdk-obs"
+tag_app_group = "event-sdk-obs"

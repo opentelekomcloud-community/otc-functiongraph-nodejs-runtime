@@ -1,0 +1,12 @@
+{
+  "name": "cts-event",
+  "version": "1.0.0",
+  "description": "CTS event class for FunctionGraph CTS trigger",
+  "license": "Apache-2.0",
+  "author": "",
+  "type": "commonjs",
+  "main": "ctsevent.js",
+  "scripts": {
+    "test": "node tests/ctsevent.test.js"
+  }
+}
