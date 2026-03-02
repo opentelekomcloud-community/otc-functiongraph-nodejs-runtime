@@ -18,6 +18,12 @@ Context interface
     * - Method
       - Description
 
+    * -  getRequestID()
+      - Obtains a request ID.
+
+    * - getRemainingTimeInMilliSeconds ()
+      - Obtains the remaining time in milliseconds.
+
     * - getAccessKey()
       - Obtains the AK (valid for 24 hours) with an agency.
         If you use this method, you need to configure an **agency** for the function.
@@ -91,3 +97,5 @@ Context interface
 
     * - getAlias()
       - Obtains function alias.
+
+For context.js, see :github_repo_master:`otc-functiongraph-fg-runtime<fg-runtime/context.js>`.

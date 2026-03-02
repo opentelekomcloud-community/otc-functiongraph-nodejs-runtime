@@ -11,9 +11,9 @@ into other systems. For the use of LTS log triggers, please refer to
 Example LTS Event
 -----------------
 
-.. literalinclude:: /../../nodejs-events/lts/resources/lts_event.json
+.. literalinclude:: /../../fg-events/lts/resources/lts_event.json
     :language: json
-    :caption: :github_repo_master:`lts_event.json <nodejs-events/lts/resources/lts_event.json>`
+    :caption: :github_repo_master:`lts_event.json <fg-events/lts/resources/lts_event.json>`
 
 
 Parameter description

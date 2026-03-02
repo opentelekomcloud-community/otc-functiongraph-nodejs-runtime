@@ -18,8 +18,8 @@
     "postpack": "rm -f package.zip && tarball=$(npm list --depth 0 | sed 's/@/-/g; s/ .*/.tgz/g; 1q;'); tar -tf $tarball | sed 's/^package\\///' | zip -@r package; rm $tarball"
   },
   "devDependencies": {
-    "nodejs-runtime": "file:../../nodejs-runtime",
-    "nodejs-testutils": "file:../../nodejs-testutils",
+    "fg-runtime": "file:../../fg-runtime",
+    "fg-testutils": "file:../../fg-testutils",
     "global-agent": "3.0.0"
   },
   "dependencies": {

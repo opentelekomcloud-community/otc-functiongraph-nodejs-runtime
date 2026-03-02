@@ -6,8 +6,8 @@ if (!process.env.GLOBAL_AGENT_HTTP_PROXY) {
 process.env.GLOBAL_AGENT_FORCE_GLOBAL_AGENT = 'true';
 globalAgent.bootstrap();
 
-const { Context } = require("nodejs-runtime/context");
-const { getTempAKSK } = require("nodejs-testutils/iam");
+const { Context } = require("fg-runtime/context");
+const { getTempAKSK } = require("fg-testutils/iam");
 const { handler } = require("../src/index");
 
 

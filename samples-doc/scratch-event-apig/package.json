@@ -18,7 +18,7 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "apig-event": "file:../../nodejs-events/apig"
+    "apig-event": "file:../../fg-events/apig"
   },
   "files": [
     "src/**/*"

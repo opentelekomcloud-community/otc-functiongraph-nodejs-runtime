@@ -13,9 +13,9 @@ For more information about how to use HTTPS calls to trigger functions, see
 Example APIG Event
 ------------------
 
-.. literalinclude:: /../../nodejs-events/apig/resources/apig_base64_event.json
+.. literalinclude:: /../../fg-events/apig/resources/apig_base64_event.json
     :language: json
-    :caption: :github_repo_master:`apig_base64_event.json <nodejs-events/apig/resources/apig_base64_event.json>`
+    :caption: :github_repo_master:`apig_base64_event.json <fg-events/apig/resources/apig_base64_event.json>`
 
 
 

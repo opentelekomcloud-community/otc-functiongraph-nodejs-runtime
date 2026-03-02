@@ -8,9 +8,9 @@ hours, or days or a cron expression. For details, see
 Timer example event
 -------------------
 
-.. literalinclude:: /../../nodejs-events/timer/resources/timer_event.json
+.. literalinclude:: /../../fg-events/timer/resources/timer_event.json
     :language: json
-    :caption: :github_repo_master:`timer_event.json <nodejs-events/timer/resources/timer_event.json>`
+    :caption: :github_repo_master:`timer_event.json <fg-events/timer/resources/timer_event.json>`
 
 Parameter description
 ---------------------

@@ -18,7 +18,7 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "timer-event": "file:../../nodejs-events/timer"
+    "timer-event": "file:../../fg-events/timer"
   },
   "files": [
     "src/**/*"

@@ -10,9 +10,9 @@ the function to perform other operations. For details, see
 Kafka example event
 -------------------
 
-.. literalinclude:: /../../nodejs-events/dms4kafka/resources/dms4kafka_event.json
+.. literalinclude:: /../../fg-events/dms4kafka/resources/dms4kafka_event.json
     :language: json
-    :caption: :github_repo_master:`dms4kafka_event.json <nodejs-events/dms4kafka/resources/dms4kafka_event.json>`
+    :caption: :github_repo_master:`dms4kafka_event.json <fg-events/dms4kafka/resources/dms4kafka_event.json>`
 
 
 Parameter description

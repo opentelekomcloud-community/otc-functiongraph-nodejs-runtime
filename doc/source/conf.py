@@ -32,7 +32,7 @@ extensions = [
 ]
 
 # openstackdocstheme options
-otcdocs_repo_name = "opentelekomcloud-community/otc-functiongraph-nodejs-runtime"
+otcdocs_repo_name = "opentelekomcloud-community/otc-functiongraph-fg-runtime"
 otcdocs_git_type = "github"
 
 # Those variables are required for edit/bug links
@@ -42,7 +42,7 @@ otcdocs_bug_report_enabled = False
 otcdocs_pdf_link = False
 
 # Analytics app name
-otcdocs_analytics_app = "otc-functiongraph-nodejs-runtime"
+otcdocs_analytics_app = "otc-functiongraph-fg-runtime"
 
 # Those variables are needed for indexing into OpenSearch
 otcdocs_doc_environment = "public"
@@ -50,13 +50,13 @@ otcdocs_doc_link = "/"
 otcdocs_doc_title = "Developer Guide: FunctionGraph NodeJS Runtime"
 otcdocs_doc_type = "dev"
 otcdocs_service_category = "example"
-otcdocs_service_title = "otc-functiongraph-nodejs-runtime"
+otcdocs_service_title = "otc-functiongraph-fg-runtime"
 otcdocs_service_type = "sdk"
 otcdocs_search_environment = "hc_de"
 otcdocs_search_url = "https://opensearch.eco.tsi-dev.otc-service.com/"
 
 
-otcdocs_projects = ["otc-functiongraph-nodejs-runtime"]
+otcdocs_projects = ["otc-functiongraph-fg-runtime"]
 
 otcdocs_auto_name = False
 otcdocs_auto_version = False
@@ -87,7 +87,7 @@ master_doc = "index"
 
 # General information about the project.
 current_year = datetime.now().year
-project = "otc-functiongraph-nodejs-runtime"
+project = "otc-functiongraph-fg-runtime"
 copyright = f"{current_year}, OpenTelekomCloud Community"
 author = "OpenTelekomCloud Community"
 
@@ -168,8 +168,8 @@ html_theme_options = {
     "disable_global_nav": "True",
 }
 
-html_title = "otc-functiongraph-nodejs-runtime"
-# html_baseurl = "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime/"
+html_title = "otc-functiongraph-fg-runtime"
+# html_baseurl = "https://opentelekomcloud-community.github.io/otc-functiongraph-fg-runtime/"
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -241,7 +241,7 @@ sphinx_tabs_valid_builders = ["linkcheck"]
 
 
 rst_prolog = """
-.. |github_repo| replace:: "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+.. |github_repo| replace:: "https://github.com/opentelekomcloud-community/otc-functiongraph-fg-runtime.git"
 .. role:: strikethrough
 """
 # version = "1.0.0"
@@ -252,7 +252,7 @@ rst_prolog = """
 # https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html
 extlinks = {
     "github_repo_master": (
-        f"https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/tree/{local_branch}/%s",
+        f"https://github.com/opentelekomcloud-community/otc-functiongraph-fg-runtime/tree/{local_branch}/%s",
         "%s",
     ),
     "otc_fg_umn": ("https://docs.otc.t-systems.com/function-graph/umn/%s", "%s"),

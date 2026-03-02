@@ -19,14 +19,14 @@
     "postpack": "rm -f package.zip; tarball=$(npm list --depth 0 | sed 's/@/-/g; s/ .*/.tgz/g; 1q;'); tar -tf $tarball | sed 's/^package\\///' | zip -@r package; rm $tarball"
   },
   "devDependencies": {
-    "nodejs-runtime": "file:../../nodejs-runtime",
-    "nodejs-testutils": "file:../../nodejs-testutils",
+    "fg-runtime": "file:../../fg-runtime",
+    "fg-testutils": "file:../../fg-testutils",
     "otc-api-sign-sdk-nodejs": "github:opentelekomcloud-community/otc-api-sign-sdk-nodejs#main",
     "global-agent": "3.0.0"
   },
   "dependencies": {
     "esdk-obs-nodejs": "^3.25.6",
-    "obss3-event": "file:../../nodejs-events/obss3",
+    "obss3-event": "file:../../fg-events/obss3",
     "sharp": "^0.32.6"
   },
   "files": [

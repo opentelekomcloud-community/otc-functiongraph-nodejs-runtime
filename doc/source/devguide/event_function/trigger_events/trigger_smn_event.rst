@@ -11,9 +11,9 @@ details, see :docs_otc:`Using an SMN Trigger <function-graph/umn/creating_trigge
 SMN example event
 -----------------
 
-.. literalinclude:: /../../nodejs-events/smn/resources/smn_event.json
+.. literalinclude:: /../../fg-events/smn/resources/smn_event.json
     :language: json
-    :caption: :github_repo_master:`smn_event.json <nodejs-events/smn/resources/smn_event.json>`
+    :caption: :github_repo_master:`smn_event.json <fg-events/smn/resources/smn_event.json>`
 
 
 Parameter description

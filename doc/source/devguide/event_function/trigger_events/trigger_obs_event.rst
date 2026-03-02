@@ -16,9 +16,9 @@ Hints
 OBS example event
 -----------------
 
-.. literalinclude:: /../../nodejs-events/obss3/resources/obss3_event.json
+.. literalinclude:: /../../fg-events/obss3/resources/obss3_event.json
     :language: json
-    :caption: :github_repo_master:`obss3_event.json <nodejs-events/obss3/resources/obss3_event.json>`
+    :caption: :github_repo_master:`obss3_event.json <fg-events/obss3/resources/obss3_event.json>`
 
 
 Parameter description
