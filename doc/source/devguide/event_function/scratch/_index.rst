@@ -10,6 +10,9 @@ using NodeJS from scratch:
    :hidden:
 
    Project <project.rst>
+   Context <context.rst>
+   Initializer <initializer.rst>
+   Bundled Libraries <bundledlibraries.rst>
 
 Introduction
 ------------

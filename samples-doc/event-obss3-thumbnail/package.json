@@ -30,7 +30,8 @@
     "sharp": "^0.32.6"
   },
   "files": [
-    "src/**/*"
+    "src/**/*",
+    "lib/**/*"
   ],
   "bundleDependencies": [
     "obss3-event",

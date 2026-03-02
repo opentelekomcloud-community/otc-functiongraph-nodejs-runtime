@@ -26,7 +26,8 @@
     "esdk-obs-nodejs": "^3.25.6"
   },
   "files": [
-    "src/**/*"
+    "src/**/*",
+    "lib/**/*"
   ],
   "bundleDependencies": [
     "esdk-obs-nodejs"

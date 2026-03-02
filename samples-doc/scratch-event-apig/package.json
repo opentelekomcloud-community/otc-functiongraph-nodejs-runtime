@@ -21,7 +21,8 @@
     "apig-event": "file:../../fg-events/apig"
   },
   "files": [
-    "src/**/*"
+    "src/**/*",
+    "lib/**/*"
   ],
   "bundleDependencies": [
     "apig-event"

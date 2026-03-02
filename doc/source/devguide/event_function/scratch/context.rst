@@ -1,6 +1,6 @@
 .. _context:
 
-Using the FunctionGraph context 
+Using the FunctionGraph context
 ================================
 
 When FunctionGraph runs your function, it passes a context object to the

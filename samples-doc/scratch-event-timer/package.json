@@ -21,7 +21,8 @@
     "timer-event": "file:../../fg-events/timer"
   },
   "files": [
-    "src/**/*"
+    "src/**/*",
+    "lib/**/*"
   ],
   "bundleDependencies": [
     "timer-event"

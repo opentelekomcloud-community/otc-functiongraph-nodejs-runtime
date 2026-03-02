@@ -19,7 +19,8 @@
   "devDependencies": {},
   "dependencies": {},
   "files": [
-    "src/**/*"
+    "src/**/*",
+    "lib/**/*"
   ],
   "bundleDependencies": []
 }

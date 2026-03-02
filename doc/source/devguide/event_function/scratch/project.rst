@@ -1,12 +1,12 @@
 Setting up the NodeJS project
----------------------------------
+=============================
 
 The following examples assumes that you have NodeJS 20.15.1 installed
 you are using npm as the package manager and linux.
 
 
 Creating a NodeJS project
-===========================
+---------------------------------
 
 Project structure
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -146,20 +146,35 @@ project. The following is a sample **package.json** file:
     "devDependencies": {},
     "dependencies": {},
     "files": [
-      "src/**/*"
+      "src/**/*",
+      "lib/**/*"
     ],
     "bundleDependencies": []
   }
 
 
 Deploying to FunctionGraph
-===========================
+---------------------------------
 
 Create Zip
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To upload the function code to FunctionGraph, you need to create package
 of the project.
+
+The directory structure of the zip package should be as follows:
+
+.. code-block:: console
+  :caption: Zip package structure
+
+  /package.zip
+   ├─ lib
+   |  └─ ...                 Service file directory (optional)
+   ├─ node_modules           NPM third-party dependencies (optional)
+   |  └─ ...
+   ├─ src
+   |  └─ index.js            .js handler file (mandatory)
+   └─ package.json           NPM project management file (mandatory)
 
 You can use the following npm command to create the package with the needed
 dependencies:
@@ -217,13 +232,13 @@ Create FunctionGraph function in console
    2. In the **Handler** field, enter the handler **src/index.handler**.
    3. Click **Save**.
 
- 7. Modify the initializer (if needed):
+7. Modify the initializer (if needed):
 
-    1. Click **Configuration** > **Lifecycle**.
-    2. enable **Initialization**
-    3. In the **Function Initializer** field, enter the
-       initializer **src/index.initializer**.
-    4. Click **Save**.
+   1. Click **Configuration** > **Lifecycle**.
+   2. enable **Initialization**
+   3. In the **Function Initializer** field, enter the
+      initializer **src/index.initializer**.
+   4. Click **Save**.
 
 Testing the function
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -245,7 +260,7 @@ Testing the function
     .. image:: ./scratch_event_function_test.png
       :alt: Test Event Function
 
-Function Execution Result Description  
+Function Execution Result Description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The execution result consists of the function output, summary, and log output.

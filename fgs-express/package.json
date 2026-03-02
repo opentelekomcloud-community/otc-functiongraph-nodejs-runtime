@@ -1,0 +1,15 @@
+{
+  "name": "fgs-express",
+  "version": "1.0.1",
+  "description": "Uses the Node.js application framework to run serverless web applications or services and RESTful APIs.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "binary-case": "1.1.4",
+    "type-is": "1.6.18"
+
+  }
+}

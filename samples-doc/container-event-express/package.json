@@ -1,0 +1,26 @@
+{
+  "name": "container-event-express",
+  "version": "1.0.0",
+  "description": "An example of a custom container event function",
+  "main": "src/main.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "25.7.0"
+  },
+  "cpu": [
+    "x64"
+  ],
+  "os": [
+    "linux"
+  ],
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "dev": "NODE_DEBUG=express* node -harmony src/index.js",
+    "start": "node -harmony src/index.js",
+    "test_local": "make test_local"
+  }
+}

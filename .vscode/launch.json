@@ -2,23 +2,34 @@
     "version": "0.2.0",
     "configurations": [
       {
-            "name": "Launch Server - Container Event",
+            "name": "Launch KOA Server - Container Event",
             "type": "node",
             "request": "launch",
             "runtimeExecutable": "npm",
             "runtimeArgs": ["run", "dev"],
-            "cwd": "${workspaceFolder}/samples-doc/container-event",
+            "cwd": "${workspaceFolder}/samples-doc/container-event-koa",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "runtimeVersion": "25.7.0"
         },
         {
-            "name": "Launch Server - Container HTTP",
+            "name": "Launch KOA Server - Container HTTP",
             "type": "node",
             "request": "launch",
             "runtimeExecutable": "npm",
             "runtimeArgs": ["run", "dev"],
-            "cwd": "${workspaceFolder}/samples-doc/container-http",
+            "cwd": "${workspaceFolder}/samples-doc/container-http-koa",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "runtimeVersion": "25.7.0"
+        },
+        {
+            "name": "Launch Express Server - Container Event",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run", "dev"],
+            "cwd": "${workspaceFolder}/samples-doc/container-event-express",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "runtimeVersion": "25.7.0"

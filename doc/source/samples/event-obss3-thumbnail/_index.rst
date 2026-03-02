@@ -16,3 +16,5 @@ Following diagram shows components used in this example:
 .. image:: ./thumbnail.drawio.svg
   :width: 800
   :alt: Components
+
+see :github_repo_master:`otc-functiongraph-fg-runtime<samples-doc/event-obss3-thumbnail>` for details.

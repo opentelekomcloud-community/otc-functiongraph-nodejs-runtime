@@ -1,5 +1,13 @@
 HTTP function deployed as a container
 ===================================================
 
+
+Following samples are provided to demonstrate how to use
+FunctionGraph with NodeJS container HTTP function:
+
 .. toctree::
-   :hidden:
+   :maxdepth: 1
+
+    Container Koa <container-http-koa/_index>
+
+
