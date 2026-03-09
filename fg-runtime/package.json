@@ -1,18 +1,22 @@
 {
-  "name": "faas-nodejs-wrapper",
+  "name": "fg-runtime",
   "version": "1.0.0",
-  "description": "A wrapper for FaaS function in nodejs",
-  "main": "wrapper.js",
+  "description": "FunctionGraph Runtime",
+  "main": "./src/index.js",
+  "type": "commonjs",
   "scripts": {
     "test": "jest --config ./jest.config.js --coverage"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "google-protobuf": "3.13.0",
-    "log4js": "6.7.1"
+    "moment": "^2.30.1"
   },
   "devDependencies": {
-    "jest": "^30.2.0"
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0"
+  },
+  "exports": {
+    ".": "./src/index.js"
   }
 }

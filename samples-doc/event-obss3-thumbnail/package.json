@@ -14,8 +14,8 @@
     "linux"
   ],
   "scripts": {
-    "test": "node tests/s3thumbnail.test.js",
-    "uploadfile": "node tests/upload.js ./terraform INPUT_BUCKET ./resources/otc.jpg",
+    "test": "node test/s3thumbnail.test.js",
+    "uploadfile": "node test/upload.js ./terraform INPUT_BUCKET ./resources/otc.jpg",
     "postpack": "rm -f package.zip; tarball=$(npm list --depth 0 | sed 's/@/-/g; s/ .*/.tgz/g; 1q;'); tar -tf $tarball | sed 's/^package\\///' | zip -@r package; rm $tarball"
   },
   "devDependencies": {

@@ -5,9 +5,9 @@
   "license": "Apache-2.0",
   "author": "",
   "type": "commonjs",
-  "main": "apigevent.js",
+  "main": "./src/apigevent.js",
   "scripts": {
-    "test": "node tests/apigevent.test.js"
+    "test": "node test/apigevent.test.js"
   },
   "exports": {
     ".": "./src/apigevent.js"

@@ -1,6 +1,6 @@
 /**
  * DMS4KafkaEvent Class
- * Represents a DMS4Kafka event from FunctionGraph
+ * Represents a DMS4Kafka event for FunctionGraph
  */
 class DMS4KafkaEvent {
 
@@ -46,18 +46,19 @@ class DMS4KafkaEvent {
 class DMS4KafkaRecord {
   constructor(record) {
     this._record = record || {};
+
+    this._messages = [];
+    for (const message of this._record.messages || []) {
+      this._messages.push(new DMS4KafkaRecordMessage(message));
+    }
   }
 
-  getTopicId() {
+  getTopic() {
     return this._record.topic || "";
   }
 
   getMessages() {
-    const messages = [];
-    for (const message of this._record.messages || []) {
-      messages.push(new DMS4KafkaRecordMessage(message));
-    }
-    return messages;
+    return this._messages;
   }
 
   /**
@@ -75,6 +76,9 @@ class DMS4KafkaRecordMessage {
   }
 
   getMessage() {
+    if (typeof this._record === "string") {
+      return this._record;
+    }
     return this._record.message || "";
   }
 
@@ -85,6 +89,7 @@ class DMS4KafkaRecordMessage {
   toJSON() {
     return this._record;
   }
+
 }
 
 module.exports = { DMS4KafkaEvent, DMS4KafkaRecord, DMS4KafkaRecordMessage };

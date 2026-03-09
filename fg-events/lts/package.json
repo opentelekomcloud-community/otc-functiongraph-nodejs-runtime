@@ -5,9 +5,9 @@
   "license": "Apache-2.0",
   "author": "",
   "type": "commonjs",
-  "main": "ltsevent.js",
+  "main": "./src/ltsevent.js",
   "scripts": {
-    "test": "node tests/ltsevent.test.js"
+    "test": "node test/ltsevent.test.js"
   },
   "exports": {
     ".": "./src/ltsevent.js"

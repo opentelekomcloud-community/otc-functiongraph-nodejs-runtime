@@ -6,9 +6,9 @@ This directory contains TypeScript definitions and JavaScript classes for the OB
 
 - **obss3event.js** - JavaScript class implementation
 - **obss3event.d.ts** - TypeScript type definitions and class declarations
-- **tests/obss3event.test.ts** - TypeScript test suite
-- **tests/obss3event.test.js** - JavaScript test file
-- **tests/obss3_event.json** - Test data
+- **test/obss3event.test.ts** - TypeScript test suite
+- **test/obss3event.test.js** - JavaScript test file
+- **test/obss3_event.json** - Test data
 - **tsconfig.json** - TypeScript configuration
 
 ## Installation
@@ -88,7 +88,7 @@ The `obss3event.d.ts` file provides:
 
 ```typescript
 import { OBSS3Event, OBSS3EventData } from './obss3event';
-import eventData from './tests/obss3_event.json';
+import eventData from '../resources/obss3_event.json';
 
 const event = new OBSS3Event(eventData as OBSS3EventData);
 

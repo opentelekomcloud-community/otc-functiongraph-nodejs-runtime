@@ -1,6 +1,6 @@
 /**
  * LTS Event Class
- * Represents a LTS event from FunctionGraph
+ * Represents a LTS event for FunctionGraph
  */
 class LTSEvent {
   constructor(event) {
@@ -12,14 +12,13 @@ class LTSEvent {
    * @returns {string} Event data
    */
   getRawData() {
-    return this._event.lts.data || "";
+    return this._event.lts?.data || "";
   }
 
   getData() {
     try {
-      let buff = Buffer.from(this.getRawData(), "base64");
-      let text = buff.toString("utf-8");
-      return text;
+      const buff = Buffer.from(this.getRawData(), "base64");
+      return buff.toString("utf-8");
     } catch (e) {
       return "";
     }
@@ -27,12 +26,16 @@ class LTSEvent {
 
   getLogs() {
     try {
-      let data = this.getData();
-      let jsonData = JSON.parse(data);
+      const data = this.getData();
+      const jsonData = JSON.parse(data);
       return jsonData.logs || [];
     } catch (e) {
       return [];
     }
+  }
+
+  toJSON() {
+    return this._event;
   }
 }
 

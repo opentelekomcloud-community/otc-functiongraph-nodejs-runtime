@@ -1,6 +1,6 @@
 /**
  * SMN Event Class
- * Represents a Simple Message Notification event from FunctionGraph
+ * Represents a Simple Message Notification event for FunctionGraph
  */
 class SMNEvent {
   constructor(event) {
@@ -51,6 +51,7 @@ class SMNEvent {
   toJSON() {
     return this._event;
   }
+
 }
 
 class SMNRecord {

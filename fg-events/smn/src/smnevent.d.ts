@@ -1,6 +1,6 @@
 /**
  * TypeScript definitions for SMN Event
- * Simple Message Notification event from FunctionGraph
+ * Simple Message Notification event for FunctionGraph
  */
 
 /**
@@ -80,6 +80,7 @@ export declare class SMNBody {
   
   /** Convert the body back to JSON */
   toJSON(): SMNBodyData;
+
 }
 
 /**

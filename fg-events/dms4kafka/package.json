@@ -5,9 +5,9 @@
   "license": "Apache-2.0",
   "author": "",
   "type": "commonjs",
-  "main": "dms4kafkaevent.js",
+  "main": "./src/dms4kafkaevent.js",
   "scripts": {
-    "test": "node tests/dms4kafkaevent.test.js"
+    "test": "node test/dms4kafkaevent.test.js"
   },
   "exports": {
     ".": "./src/dms4kafkaevent.js"

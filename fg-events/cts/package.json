@@ -5,9 +5,9 @@
   "license": "Apache-2.0",
   "author": "",
   "type": "commonjs",
-  "main": "ctsevent.js",
+  "main": "./src/ctsevent.js",
   "scripts": {
-    "test": "node tests/ctsevent.test.js"
+    "test": "node test/ctsevent.test.js"
   },
   "exports": {
     ".": "./src/ctsevent.js"

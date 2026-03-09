@@ -1,20 +1,32 @@
+/**
+ * APIGEvent Class
+ * Represents an API Gateway event for FunctionGraph
+ */
 class APIGEvent {
   constructor(event) {
     this._event = event || {};
   }
 
   getBody() {
+    const body = this._event.body;
     if (this._event.isBase64Encoded) {
-      let buff = Buffer.from(this._event.body, "base64");
-      let text = buff.toString("utf-8");
-      return text;
-    } else {
-      return this._event.body || {};
+      if (typeof body !== "string" || body.length === 0) {
+        return "";
+      }
+
+      try {
+        const buff = Buffer.from(body, "base64");
+        return buff.toString("utf-8");
+      } catch (e) {
+        return "";
+      }
     }
+
+    return body ?? "";
   }
 
   getRawBody() {
-    return this._event.body || {};
+    return this._event.body ?? "";
   }
 
   getRequestContext() {
@@ -44,6 +56,10 @@ class APIGEvent {
   isBase64Encoded() {
     return this._event.isBase64Encoded;
   }
+
+  toJSON() {
+    return this._event;
+  }
 }
 
 class APIGRequestContext {
@@ -59,6 +75,10 @@ class APIGRequestContext {
   }
   getStage() {
     return this._requestContext.stage || {};
+  }
+
+  toJSON() {
+    return this._requestContext;
   }
 }
 

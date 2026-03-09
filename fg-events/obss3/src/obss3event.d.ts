@@ -1,6 +1,6 @@
 /**
  * TypeScript definitions for OBS S3 Event
- * Object Storage Service (OBS) S3 event from FunctionGraph
+ * Object Storage Service (OBS) S3 event for FunctionGraph
  */
 
 /**
@@ -104,6 +104,7 @@ export declare class OwnerIdentity {
   
   /** Convert to JSON */
   toJSON(): OwnerIdentityData;
+
 }
 
 /**

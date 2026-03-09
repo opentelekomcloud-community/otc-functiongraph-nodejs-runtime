@@ -1,6 +1,6 @@
 /**
- * DDS Event Class
- * Represents a DDS event from FunctionGraph
+ * DDSEvent Class
+ * Represents a DDS event for FunctionGraph
  */
 class DDSEvent {
   
@@ -28,6 +28,7 @@ class DDSEvent {
   toJSON() {
     return this._event;
   }
+
 }
 
 class DDSRecord {

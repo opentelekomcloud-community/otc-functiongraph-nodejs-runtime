@@ -5,10 +5,10 @@
   "license": "Apache-2.0",
   "author": "",
   "type": "commonjs",
-  "main": "",
+  "main": "./src/smnevent.js",
   "scripts": {
-    "test": "node tests/smnevent.test.js",
-    "test:ts": "tsc && node dist/tests/smnevent.test.js",
+    "test": "node test/smnevent.test.js",
+    "test:ts": "tsc && node dist/test/smnevent.test.js",
     "build": "tsc",
     "clean": "rm -rf dist"
   },

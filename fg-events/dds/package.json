@@ -5,9 +5,9 @@
   "license": "Apache-2.0",
   "author": "",
   "type": "commonjs",
-  "main": "ddsevent.js",
+  "main": "./src/ddsevent.js",
   "scripts": {
-    "test": "node tests/ddsevent.test.js"
+    "test": "node test/ddsevent.test.js"
   },
   "exports": {
     ".": "./src/ddsevent.js"

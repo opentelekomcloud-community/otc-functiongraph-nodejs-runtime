@@ -5,8 +5,8 @@ This directory contains TypeScript definitions and tests for the SMN (Simple Mes
 ## Files
 
 - **smnevent.d.ts** - TypeScript type definitions and class declarations
-- **tests/smnevent.test.ts** - TypeScript test suite
-- **tests/smnevent.json** - Test data
+- **test/smnevent.test.ts** - TypeScript test suite
+- **../resources/smnevent.json** - Test data
 - **tsconfig.json** - TypeScript configuration
 
 ## Installation
@@ -73,7 +73,7 @@ The `smnevent.d.ts` file provides:
 
 ```typescript
 import { SMNEvent, SMNEventData } from './smnevent';
-import eventData from './tests/smnevent.json';
+import eventData from '../resources/smnevent.json';
 
 const event = new SMNEvent(eventData as SMNEventData);
 

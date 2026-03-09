@@ -5,11 +5,11 @@
   "license": "Apache-2.0",
   "author": "",
   "type": "commonjs",
-  "main": "dms4rocketmqevent.js",
+  "main": "./src/dms4rocketmq.js",
   "scripts": {
-    "test": "node tests/dms4rocketmqevent.test.js"
+    "test": "node test/dms4kafkaevent.test.js"
   },
   "exports": {
-    ".": "./src/dms4rocketmqevent.js"
+    ".": "./src/dms4rocketmq.js"
   }
 }

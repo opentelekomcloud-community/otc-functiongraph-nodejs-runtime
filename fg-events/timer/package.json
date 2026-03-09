@@ -5,10 +5,18 @@
   "license": "Apache-2.0",
   "author": "",
   "type": "commonjs",
-  "main": "timerevent.js",
+  "main": "./src/timerevent.js",
   "scripts": {
-    "test": "node tests/timerevent.test.js"
-  }, "exports": {
+    "test": "node test/timerevent.test.js",
+    "test:ts": "tsc && node dist/test/timerevent.test.js",
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  },
+  "exports": {
     ".": "./src/timerevent.js"
   }
 }

@@ -1,6 +1,6 @@
 /**
  * DMS4RocketMQEvent Class
- * Represents a DMS4RocketMQ event from FunctionGraph
+ * Represents a DMS4RocketMQ event for FunctionGraph
  */
 class DMS4RocketMQEvent {
   constructor(event) {
@@ -39,23 +39,25 @@ class DMS4RocketMQEvent {
   toJSON() {
     return this._event;
   }
+
 }
 
 class DMS4RocketMQRecord {
   constructor(record) {
     this._record = record || {};
+
+    this._messages = [];
+    for (const message of this._record.messages || []) {
+      this._messages.push(new DMS4RocketMQRecordMessage(message));
+    }
   }
 
-  getTopicId() {
+  getTopic() {
     return this._record.topic || "";
   }
 
   getMessages() {
-    const messages = [];
-    for (const message of this._record.messages || []) {
-      messages.push(new DMS4RocketMQRecordMessage(message));
-    }
-    return messages;
+    return this._messages;
   }
 
   /**
@@ -73,6 +75,9 @@ class DMS4RocketMQRecordMessage {
   }
 
   getMessage() {
+    if (typeof this._record === "string") {
+      return this._record;
+    }
     return this._record.message || "";
   }
 

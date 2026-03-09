@@ -5,10 +5,10 @@
   "license": "Apache-2.0",
   "author": "",
   "type": "commonjs",
-  "main": "obss3event.js",
+  "main": "./src/obss3event.js",
   "scripts": {
-    "test": "node tests/obss3event.test.js",
-    "test:ts": "tsc && node dist/tests/obss3event.test.js",
+    "test": "node test/obss3event.test.js",
+    "test:ts": "tsc && node dist/test/obss3event.test.js",
     "build": "tsc",
     "clean": "rm -rf dist"
   },

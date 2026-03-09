@@ -1,6 +1,6 @@
 /**
  * Timer Event Class
- * Represents a Timer event from FunctionGraph
+ * Represents a Timer event for FunctionGraph
  */
 class TimerEvent {
   constructor(event) {
@@ -58,6 +58,10 @@ class TimerEvent {
     } catch (err) {
       return undefined;
     }
+  }
+
+  toJSON() {
+    return this._event;
   }
 }
 

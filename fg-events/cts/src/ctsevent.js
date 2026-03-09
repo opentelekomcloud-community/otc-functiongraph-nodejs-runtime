@@ -1,135 +1,458 @@
+/**
+ * CTSEvent Class
+ * Represents a CTS event for FunctionGraph
+ */
 class CTSEvent {
   constructor(event) {
-    this._event = event.cts || {};
+    this._event = (event && event.cts) || {};
   }
 
-  getAPIVersion() {
-    return this._event.api_version || "";
+  /**
+   * Timestamp when a trace was generated.
+   * The value is the local standard time, for example, 1660927593570.
+   * This field is transmitted and stored in the form of a timestamp.
+   * It is the total number of milliseconds from 00:00:00, January 1, 1970 to the current time.
+   */
+  getTime() {
+    return this._event.time || 0;
   }
 
-  getCode() {
-    return this._event.code || "";
-  }  
-
-  getDomainId() {
-    return this._event.domain_id || "";
+  /**
+   * Information of the user who performed the operation that triggered the trace.
+   */
+  getUser() {
+    return new CTSUserInfo(this._event.user);
   }
 
-  getMessage() {
-    return this._event.message || "";
-  }
-
-  getOperationId() {  
-    return this._event.operation_id || "";
-  }
-
-  getProjectId() {
-    return this._event.project_id || "";
-  }
-
-  getReadOnly() {
-    return this._event.read_only || false;
-  }
-
-  getRecordTime() {
-    return this._event.record_time || "";
-  }
-
+  /**
+   *
+   * Request of an operation on resources.
+   */
   getRequest() {
     return this._event.request || {};
   }
 
-  getResourceAccountId() {
-    return this._event.resource_account_id || "";  
-  }
-
-  getResourceID() {
-    return this._event.resource_id || "";  
-  }
-
-  getResourceName() {
-    return this._event.resource_name || "";
-  }
-
-  getResourceType() {
-    return this._event.resource_type || "";
-  }
-
+  /**
+   * Response to a user request, that is, the returned information for an operation on resources.
+   */
   getResponse() {
     return this._event.response || {};
   }
 
+  /**
+   * Type of a cloud service whose traces are to be queried.
+   */
   getServiceType() {
     return this._event.service_type || "";
   }
+
+  /**
+   * Trace type.
+   */
+  getEventType() {
+    return this._event.event_type || "";
+  }
+
+  /**
+   * ID of the project to which the trace belongs.
+   */
+  getProjectId() {
+    return this._event.project_id || "";
+  }
+
+  /**
+   * Type of the resource on which the operation was performed.
+   */
+  getResourceType() {
+    return this._event.resource_type || "";
+  }
+
+  /**
+   * ID of the account to which the resource belongs.
+   * This parameter has a value only when resources are operated across tenants.
+   * For example, if tenant A operates resources of tenant B, the value is the
+   * account ID of account B.
+   * Note: In the cross-tenant scenario, CTS copies an audit log so that both tenants
+   * can view the trace on the CTS console.
+   */
+  getResourceAccountId() {
+    return this._event.resource_account_id || "";
+  }
+
+  /**
+   * Whether a user request is read-only.
+   */
+  getReadOnly() {
+    return this._event.read_only || false;
+  }
+
+  /**
+   * Name of the tracker that records the trace.
+   * When trace_type is set to system, the default value system is used.
+   * When trace_type is set to data, the value is the name of the corresponding data tracker.
+   */
+  getTrackerName() {
+    return this._event.tracker_name || "";
+  }
+
+  /**
+   * Operation ID of the trace.
+   */
+  getOperationId() {
+    return this._event.operation_id || "";
+  }
+
+  /**
+   * Name of a resource on which the recorded operation was performed.
+   */
+  getResourceName() {
+    return this._event.resource_name || "";
+  }
+
+  /**
+   * ID of a cloud resource on which the recorded operation was performed.
+   */
+  getResourceId() {
+    return this._event.resource_id || "";
+  }
+
+  /**
+   * IP address of the tenant who performed the operation that triggered the trace.
+   *  The value of this parameter is empty if the operation is triggered by the system.
+   */
   getSourceIP() {
     return this._event.source_ip || "";
   }
 
-  getTime() {
-    return this._event.time || "";
+  /**
+   * ID of the account that triggers the trace.
+   */
+  getDomainId() {
+    return this._event.domain_id || "";
   }
 
-  getTraceId() {
-    return this._event.trace_id || "";
-  }
-
+  /**
+   * Trace name.
+   */
   getTraceName() {
     return this._event.trace_name || "";
-  } 
+  }
 
-  getTraceRating() {
-    return this._event.trace_rating || "";
-  } 
-
+  /**
+   * Trace status. The value can be normal, warning, or incident.
+   * normal: The operation succeeded.
+   * warning: The operation failed.
+   * incident: The operation caused a serious consequence, for example,
+   * a node failure or service interruption.
+   * @deprecated This parameter is deprecated. Use getTraceRating() instead.
+   */
   getTraceStatus() {
     return this._event.trace_status || "";
   }
 
+  /**
+   * Trace status. The value can be normal, warning, or incident.
+   * normal: The operation succeeded.
+   * warning: The operation failed.
+   * incident: The operation caused a serious consequence, for example,
+   * a node failure or service interruption.
+   */
+  getTraceRating() {
+    return this._event.trace_rating || "";
+  }
+
+
+  /**
+   * Trace source. For management traces, the value can be ApiCall, 
+   * ConsoleAction, or SystemAction. For data traces, 
+   * the value can be ObsSDK or ObsAPI.
+   */
   getTraceType() {
     return this._event.trace_type || "";
   }
 
-  getUser() {
-      return new CTSUser(this._event.user);
-    }
+  /**
+   * Version of the API called in a trace.
+   */
+  getAPIVersion() {
+    return this._event.api_version || "";
+  }
+
+  /**
+   * Remarks added by other cloud services to a trace.
+   */
+  getMessage() {
+    return this._event.message || "";
+  }
+
+
+  /**
+   * Timestamp when a trace was recorded by CTS.
+   */
+  getRecordTime() {
+    return this._event.record_time || "";
+  }
+
+
+  /**
+   * Trace ID. The value is the UUID generated by the system.
+   */
+  getTraceId() {
+    return this._event.trace_id || "";
+  }
+
+  /**
+   * HTTP status code returned by the associated API.
+  */
+  getCode() {
+    return this._event.code || "";
+  }
+
+  /**
+   * Request ID.
+   */
+  getRequestId() {
+    return this._event.request_id || "";
+  }
+
+  /**
+   * Additional information required for fault locating after a request error.
+   */
+  getLocationInfo() {
+    return this._event.location_info || {};
+  }
+
+  /**
+   * Endpoint in the detail page URL of the cloud resource on 
+   * which a recorded operation was performed.
+   */
+  getEndpoint(){
+    return this._event.endpoint || "";
+  }
+
+  /**
+   * Detail page URL (excluding the endpoint) of the cloud resource
+   * on which a recorded operation was performed.
+   */
+  getResourceURL() {
+    return this._event.resource_url || "";
+  }
+
+  /**
+   * ID of the enterprise project to which the resource belongs.
+   */
+  getEnterpriseProjectId() {
+    return this._event.enterprise_project_id || "";
+  }
+
+  /**
+   * ID of the request client agent.
+   */
+  getUserAgent() {
+    return this._event.user_agent || "";
+  }
+
+  /**
+   * Length of the request message body.
+   */
+  getContentLength() {
+    return this._event.content_length || 0;
+  }
+
+  /**
+   * Request response time.
+   */
+  getTotalTime() {
+    return this._event.total_time || 0;
+  }
+
+  toJSON() {
+    return this._event;
+  }
 
 }
 
-class CTSUser{
+class CTSUserInfo {
   constructor(user) {
     this._user = user || {};
   }
 
+  /**
+   * Identity type of the operator.
+   */
+  getType() {
+    return this._user.type || "";
+  }
+
+  /**
+   * Identity ID of the operator.
+   * - For an IAM user, the format is <user-id>.
+   * - For an IAM assumed-agency session identity, the format is <agency-id>:<agency-session-name>.
+   * - For an IAM federated identity, the format is <idp_id>:<user-session-name>.
+   */
+  getPrincipalId() {
+    return this._user.principal_id || "";
+  }
+
+  /**
+   * URN of the operator.
+   * - For an IAM user, the format is iam::<account-id>:user:<user-name>.
+   * - For an IAM agency session identity, the format is sts::<account-id>:assumed-agency:<agency-name>/<agency-session-name>.
+   * - For an IAM federated identity, the format is sts::<account-id>:external-user:<idp_id>/<user-session-name>.
+   */
+  getPrincipalURN() {
+    return this._user.principal_urn || "";
+  }
+
+  /**
+   * Account ID. To obtain it, hover over the username in the upper right corner of the console,
+   * select My Credentials from the drop-down menu, and locate the ID on the right of Account ID.
+   */
+  getAccountID() {
+    return this._user.account_id || "";
+  }
+
+  /**
+   * Access key ID.
+   */
+  getAccessKeyID() {
+    return this._user.access_key_id || "";
+  }
+
+  /**
+   * User ID. To obtain it, hover over the username in the upper right corner of the console,
+   * select My Credentials from the drop-down menu, and locate the ID on the right of IAM User ID.
+   */
   getId() {
     return this._user.id || "";
   }
+  /**
+   * Username. To obtain it, hover over the username in the upper right corner of the console,
+   * select My Credentials from the drop-down menu, and locate the name on the right of IAM Username.
+   */
   getName() {
     return this._user.name || "";
   }
 
+  /**
+   * Domain information of the user who performed the operation generating the trace.
+   */
   getDomain() {
-    return new CTSUserDomain(this._user.domain);
+    return new CTSBaseUserDomain(this._user.domain);
   }
 
+  /**
+   * Username.
+   * The meaning of user_name is the same as that of name.
+   */
+  getUserName() {
+    return this._user.user_name || "";
+  }
+
+  /**
+   * Whether the operator is user root.
+   * If the value is true, the operator is user root.
+   * If the value is false, the operator is an IAM user of an assumed-agency session identity,
+   * federated identity, or a non-root user.
+   */
+  getPrincipalIsRootUser() {
+    return this._user.principal_is_root_user || "";
+  }
+
+  /**
+   * Name of the service that sends the request.
+   * The value is ["service.console"] for console operations.
+   */
+  getInvokedBy() {
+    return this._user.invoked_by || [];
+  }
+
+  /**
+   * Temporary security credential attribute.
+   */
+  getSessionContext() {
+    return new CTSSessionContext(this._user.session_context);
+  }
+
+  /**
+   * Information about the original user who initiates the assumed session.
+   */
+  getOriginUser() {
+    return new CTSUserInfo(this._user.OriginUser);
+  }
+
+  toJSON() {
+    return this._user;
+  }
 }
 
-class CTSUserDomain{
+class CTSBaseUserDomain {
   constructor(userDomain) {
     this._userDomain = userDomain || {};
   }
 
+  /**
+   * Account ID. To obtain it, hover over the username in the upper right corner of the console,
+   * select My Credentials from the drop-down menu, and locate the ID on the right of Account ID.
+   */
   getId() {
     return this._userDomain.id || "";
   }
+
+  /**
+   * Account name. To obtain it, hover over the username in the upper right corner of the console,
+   * select My Credentials from the drop-down menu, and locate the name on the right of Account Name.
+   */
   getName() {
     return this._userDomain.name || "";
   }
 
+  toJSON() {
+    return this._userDomain;
+  }
+}
+
+class CTSSessionContext {
+  constructor(sessionContext) {
+    this._sessionContext = sessionContext || {};
+  }
+
+  getAttributes() {
+    return new CTSSessionContextAttributes(this._sessionContext);
+  }
+
+  toJSON() {
+    return this._sessionContext;
+  }
+}
+
+class CTSSessionContextAttributes {
+  constructor(sessionAttributes) {
+    this._sessionAttributes = sessionAttributes || {};
+  }
+
+  /**
+   * Time when the temporary security credential was issued.
+   */
+  getCreatedAt() {
+    return this._sessionAttributes.created_at || "";
+  }
+  /**
+   * Whether MFA identity authentication has been passed.
+   */
+  get MFAAuthenticated() {
+    return this._sessionAttributes.mfa_authenticated || "";
+  }
+
+  toJSON() {
+    return this._sessionAttributes;
+  }
 }
 
 module.exports = {
   CTSEvent,
   CTSUser,
-  CTSUserDomain
+  CTSBaseUserDomain,
+  CTSSessionContext,
+  CTSSessionContextAttributes,
 };

@@ -1,6 +1,6 @@
 /**
  * OBS S3 Event Class
- * Represents an Object Storage Service (OBS) S3 event from FunctionGraph
+ * Represents an Object Storage Service (OBS) S3 event for FunctionGraph
  */
 class OBSS3Event {
   constructor(event) {
@@ -27,6 +27,7 @@ class OBSS3Event {
   toJSON() {
     return this._event;
   }
+
 }
 
 class OBSS3Record {
