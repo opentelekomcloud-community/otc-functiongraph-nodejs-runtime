@@ -4,7 +4,7 @@
   "description": "A sample for timer event processing with scratch event",
   "main": "src/index.js",
   "type": "commonjs",
-  "engines":{
+  "engines": {
     "node": "20.15.1"
   },
   "cpu": [
@@ -14,9 +14,12 @@
     "linux"
   ],
   "scripts": {
+    "test": "node ./test/index.test.js",
     "postpack": "rm -f package.zip && tarball=$(npm list --depth 0 | sed 's/@/-/g; s/ .*/.tgz/g; 1q;'); tar -tf $tarball | sed 's/^package\\///' | zip -@r package; rm $tarball"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "fg-runtime": "file:../../fg-runtime"
+  },
   "dependencies": {
     "timer-event": "file:../../fg-events/timer"
   },
