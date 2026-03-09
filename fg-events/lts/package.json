@@ -1,0 +1,15 @@
+{
+  "name": "lts-event",
+  "version": "1.0.0",
+  "description": "LTS event class for FunctionGraph LTS trigger",
+  "license": "Apache-2.0",
+  "author": "",
+  "type": "commonjs",
+  "main": "ltsevent.js",
+  "scripts": {
+    "test": "node tests/ltsevent.test.js"
+  },
+  "exports": {
+    ".": "./src/ltsevent.js"
+  }
+}

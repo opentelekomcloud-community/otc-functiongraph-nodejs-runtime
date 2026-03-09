@@ -1,4 +1,4 @@
-const { APIGEvent} = require("../src/apigevent");
+const { APIGEvent} = require("apig-event");
 
 const apigEventData = require("../resources/apig_event.json");
 const s = new APIGEvent(apigEventData);

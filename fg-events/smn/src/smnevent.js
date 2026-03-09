@@ -5,6 +5,11 @@
 class SMNEvent {
   constructor(event) {
     this._event = event || {};
+
+    this._records = [];
+    for (const record of this._event.record || []) {
+      this._records.push(new SMNRecord(record));
+    }
   }
 
   /**
@@ -12,12 +17,7 @@ class SMNEvent {
    * @returns {Array} Array of event records
    */
   getRecords() {
-    // return this._event.record || [];
-    const records = [];
-    for (const record of this._event.record || []) {
-      records.push(new SMNRecord(record));
-    }
-    return records;
+    return this._records;
   }
 
   /**
@@ -157,7 +157,7 @@ class SMNBody {
    * @returns {Object} Event as JSON object
    */
   toJSON() {
-    return this.smn;
+    return this._smn;
   }
 }
 

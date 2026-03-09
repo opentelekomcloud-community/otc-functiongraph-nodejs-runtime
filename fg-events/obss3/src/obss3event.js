@@ -5,6 +5,11 @@
 class OBSS3Event {
   constructor(event) {
     this._event = event || {};
+
+    this._records = [];
+    for (const record of this._event.Records || []) {
+      this._records.push(new OBSS3Record(record));
+    }
   }
 
   /**
@@ -12,11 +17,7 @@ class OBSS3Event {
    * @returns {Array} Array of event records
    */
   getRecords() {
-    const records = [];
-    for (const record of this._event.Records || []) {
-      records.push(new OBSS3Record(record));
-    }
-    return records;
+    return this._records;
   }
 
   /**

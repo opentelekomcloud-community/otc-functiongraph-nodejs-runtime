@@ -1,4 +1,4 @@
-const { CTSEvent} = require("../src/ctsevent");
+const { CTSEvent} = require("cts-event");
 
 const ctsEventData = require("../resources/cts_event.json");
 

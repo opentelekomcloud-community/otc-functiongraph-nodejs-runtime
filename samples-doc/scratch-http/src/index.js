@@ -20,11 +20,11 @@ app.use(async (ctx, next) => {
   ctx.logger = {
     log: (...args) => console.log(`${getTimestamp()} [${requestId}]`, ...args),
     info: (...args) =>
-      console.info(`${getTimestamp()} [${requestId}]`, ...args),
+      console.info(`${getTimestamp()} [INFO] [${requestId}]`, ...args),
     warn: (...args) =>
-      console.warn(`${getTimestamp()} [${requestId}]`, ...args),
+      console.warn(`${getTimestamp()} [WARN] [${requestId}]`, ...args),
     error: (...args) =>
-      console.error(`${getTimestamp()} [${requestId}]`, ...args),
+      console.error(`${getTimestamp()} [ERROR] [${requestId}]`, ...args),
   };
 
   ctx.logger.info(`${ctx.method} ${ctx.url} - Request received`);

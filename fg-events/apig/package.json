@@ -8,5 +8,8 @@
   "main": "apigevent.js",
   "scripts": {
     "test": "node tests/apigevent.test.js"
+  },
+  "exports": {
+    ".": "./src/apigevent.js"
   }
 }

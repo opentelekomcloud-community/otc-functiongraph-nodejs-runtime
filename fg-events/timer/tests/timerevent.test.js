@@ -1,4 +1,4 @@
-const { TimerEvent} = require("../timerevent");
+const { TimerEvent} = require("timer-event");
 
 const timerEventData = require("../resources/timer_event.json");
 

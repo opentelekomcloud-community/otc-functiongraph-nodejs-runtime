@@ -1,4 +1,4 @@
-const { OBSS3Event } = require("../obss3event");
+const { OBSS3Event } = require("obss3-event");
 const obss3EventData = require("./obss3_event.json");
 
 console.log("Testing OBS S3 Event Handler");

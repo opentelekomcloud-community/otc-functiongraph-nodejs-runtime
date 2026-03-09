@@ -1,13 +1,15 @@
 const { TimerEvent } = require("timer-event");
 
 exports.initializer = function (context, callback) {
+  const logger = context.getLogger();
+  logger.info("Function initialized");
   callback(null, "");
 };
 
 exports.handler = function (event, context, callback) {
   const logger = context.getLogger();
 
-  console.log(context.getFunctionName());
+  logger.info("Function Name:", context.getFunctionName());
 
   const timerEvent = new TimerEvent(event);
 

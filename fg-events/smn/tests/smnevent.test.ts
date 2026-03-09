@@ -4,7 +4,7 @@
  * Tests the SMN event types and classes with test data
  */
 
-import type { SMNEvent as SMNEventType, SMNEventData, SMNRecordData, SMNBodyData } from '../smnevent';
+import type { SMNEvent as SMNEventType, SMNEventData, SMNRecordData, SMNBodyData } from '../src/smnevent';
 import * as smnEventData from './smnevent.json';
 
 // Import the actual JavaScript module (compiled code will be in dist/tests/, so we need ../../)

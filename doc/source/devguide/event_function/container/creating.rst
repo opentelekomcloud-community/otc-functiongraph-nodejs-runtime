@@ -438,10 +438,3 @@ The execution result contains the following sections:
      This page displays a maximum of 2K logs.
 
 * The **Summary** section displays key information from the **Log**.
-
-
-Deploy the Event Function using Terraform
----------------------------------------------------------------
-
-For details on how to deploy using Terraform,
-see :ref:`deploying_an_event_function_using_a_container_image_built_with_nodejs`.

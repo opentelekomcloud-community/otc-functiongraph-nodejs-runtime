@@ -1,0 +1,15 @@
+{
+  "name": "dms4kafka-event",
+  "version": "1.0.0",
+  "description": "DMS for Kafka event class for FunctionGraph DMS trigger",
+  "license": "Apache-2.0",
+  "author": "",
+  "type": "commonjs",
+  "main": "dms4kafkaevent.js",
+  "scripts": {
+    "test": "node tests/dms4kafkaevent.test.js"
+  },
+  "exports": {
+    ".": "./src/dms4kafkaevent.js"
+  }
+}

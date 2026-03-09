@@ -8,5 +8,8 @@
   "main": "ctsevent.js",
   "scripts": {
     "test": "node tests/ctsevent.test.js"
+  },
+  "exports": {
+    ".": "./src/ctsevent.js"
   }
 }

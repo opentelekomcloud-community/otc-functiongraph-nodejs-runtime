@@ -10,7 +10,7 @@ import type {
   S3DetailsData,
   S3ObjectData,
   S3BucketData
-} from '../obss3event';
+} from '../src/obss3event';
 import * as obss3EventData from './obss3_event.json';
 
 // Import the actual JavaScript module (compiled code will be in dist/tests/, so we need ../../)

@@ -1,0 +1,15 @@
+{
+  "name": "dds-event",
+  "version": "1.0.0",
+  "description": "DDS event class for FunctionGraph DDS trigger",
+  "license": "Apache-2.0",
+  "author": "",
+  "type": "commonjs",
+  "main": "ddsevent.js",
+  "scripts": {
+    "test": "node tests/ddsevent.test.js"
+  },
+  "exports": {
+    ".": "./src/ddsevent.js"
+  }
+}

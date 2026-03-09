@@ -8,5 +8,7 @@
   "main": "timerevent.js",
   "scripts": {
     "test": "node tests/timerevent.test.js"
+  }, "exports": {
+    ".": "./src/timerevent.js"
   }
 }

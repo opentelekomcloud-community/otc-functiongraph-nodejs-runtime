@@ -1,4 +1,4 @@
-const { SMNEvent, SMNRecord, SMNBody } = require("../smnevent");
+const { SMNEvent, SMNRecord, SMNBody } = require("smn-event");
 const smnEventData = require("./smnevent.json");
 
 console.log("Hello World");
