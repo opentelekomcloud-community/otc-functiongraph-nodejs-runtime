@@ -22,8 +22,8 @@ async function runTest() {
   });
 
   const callback = (error, result) => {    
-    const body = JSON.parse(result.body);
-    console.log("Response body:", body);
+
+    console.log("Result:", result);
   };
 
   handler(event, context, callback);

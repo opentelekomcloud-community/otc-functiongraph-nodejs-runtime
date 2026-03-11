@@ -13,7 +13,7 @@
                 "rocketmq message4",
                 "rocketmq message5"
             ],
-            "topic": "topic"
+            "topic_id": "topic"
         }
     ]
 }

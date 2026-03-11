@@ -39,24 +39,27 @@ function sendLog(level, onlyMessage, invokeID, requestID, ...args) {
   const message = util.format(...args);
 
   let lines = splitString(message);
+
+  let spacedInvokeID = invokeID ? ` ${invokeID} ` : " ";
+
   lines.forEach((line) => {
     if (!onlyMessage) {
       console.log(
-        "%s %s %s %s %s",
+        "%s %s%s%s %s",
         getTime(),
         requestID,
-        invokeID,
+        spacedInvokeID,
         level,
         line,
       );
     } else {
-      console.log("%s %s %s %s", requestID, invokeID, level, line);
+      console.log("%s%s%s %s", requestID, spacedInvokeID, level, line);
     }
   });
 }
 
 class Logger {
-  constructor(requestID, invokeID) {
+  constructor(requestID, invokeID = "") {
     this.requestID = requestID;
     this.invokeID = invokeID;
     this.logLevel = "INFO";

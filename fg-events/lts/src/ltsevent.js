@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * LTS Event Class
  * Represents a LTS event for FunctionGraph

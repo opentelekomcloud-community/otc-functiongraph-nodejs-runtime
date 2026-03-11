@@ -1,3 +1,6 @@
+"use strict";
+const { DMS4KafkaRecord } = require("./dms4kafkarecord");
+
 /**
  * DMS4KafkaEvent Class
  * Represents a DMS4Kafka event for FunctionGraph
@@ -43,32 +46,7 @@ class DMS4KafkaEvent {
   }
 }
 
-class DMS4KafkaRecord {
-  constructor(record) {
-    this._record = record || {};
 
-    this._messages = [];
-    for (const message of this._record.messages || []) {
-      this._messages.push(new DMS4KafkaRecordMessage(message));
-    }
-  }
-
-  getTopic() {
-    return this._record.topic || "";
-  }
-
-  getMessages() {
-    return this._messages;
-  }
-
-  /**
-   * Convert the event back to JSON
-   * @returns {Object} Event as JSON object
-   */
-  toJSON() {
-    return this._record;
-  }
-}
 
 class DMS4KafkaRecordMessage {
   constructor(record) {
@@ -92,4 +70,4 @@ class DMS4KafkaRecordMessage {
 
 }
 
-module.exports = { DMS4KafkaEvent, DMS4KafkaRecord, DMS4KafkaRecordMessage };
+module.exports = { DMS4KafkaEvent };

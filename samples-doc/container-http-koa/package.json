@@ -2,8 +2,15 @@
   "name": "container-http-koa",
   "version": "1.0.0",
   "description": "A sample for container HTTP event processing using koa",
-
-  "engines":{
+  "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
+  "bugs": {
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+  },
+  "engines": {
     "node": "25.7.0"
   },
   "cpu": [
@@ -12,7 +19,6 @@
   "os": [
     "linux"
   ],
-
   "dependencies": {
     "@koa/router": "^15.3.0",
     "koa": "^3.1.1",

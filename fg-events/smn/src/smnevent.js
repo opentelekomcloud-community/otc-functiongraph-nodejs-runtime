@@ -1,3 +1,4 @@
+"use strict";
 /**
  * SMN Event Class
  * Represents a Simple Message Notification event for FunctionGraph

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Timer Event Class
  * Represents a Timer event for FunctionGraph

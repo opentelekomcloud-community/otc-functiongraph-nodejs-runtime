@@ -1,5 +1,13 @@
 {
   "name": "fg-runtime",
+  "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
+  "bugs": {
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+  },
   "version": "1.0.0",
   "description": "FunctionGraph Runtime",
   "main": "./src/index.js",
@@ -7,8 +15,8 @@
   "scripts": {
     "test": "jest --config ./jest.config.js --coverage"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "T Cloud Public",
+  "license": "Apache-2.0",
   "dependencies": {
     "moment": "^2.30.1"
   },

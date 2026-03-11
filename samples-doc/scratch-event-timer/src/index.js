@@ -6,7 +6,7 @@ exports.initializer = function (context, callback) {
   callback(null, "");
 };
 
-exports.handler = function (event, context, callback) {
+exports.handler = async function (event, context, callback) {
   const logger = context.getLogger();
 
   logger.info("Function Name:", context.getFunctionName());
@@ -15,13 +15,6 @@ exports.handler = function (event, context, callback) {
 
   logger.info("Timer Event:", timerEvent.getTriggerName());
 
-  const output = {
-    statusCode: 200,
-    headers: {
-      "Content-Type": "application/json",
-    },
-    isBase64Encoded: false,
-    body: JSON.stringify(event),
-  };
+  const output = "ok";
   callback(null, output);
 };

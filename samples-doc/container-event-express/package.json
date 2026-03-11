@@ -1,11 +1,19 @@
 {
   "name": "container-event-express",
+  "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
+  "bugs": {
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+  },
   "version": "1.0.0",
   "description": "An example of a custom container event function",
   "main": "src/main.js",
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "T Cloud Public",
+  "license": "Apache-2.0",
   "engines": {
     "node": "25.7.0"
   },

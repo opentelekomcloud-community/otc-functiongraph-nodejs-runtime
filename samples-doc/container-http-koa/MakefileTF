@@ -53,7 +53,7 @@ test_deployed_post:
 	@curl -X POST \
 	 -H "Content-Type: application/json" \
 	 -H "x-auth-token: $(OTC_X_AUTH_TOKEN)" \
-	 -d @./resources/apig_post_index.json \
+	 -d @./resources/curl_apig_post_index.json \
 	 https://functiongraph.$(OTC_SDK_REGION).otc.t-systems.com/v2/$(OTC_SDK_PROJECTID)/fgs/functions/$(MY_FUNCTION_URN):latest/invocations
 	@echo "" 
 	# finished
@@ -65,7 +65,7 @@ test_deployed_apig_post:
 	# execute a curl request against the deployed function via API Gateway
 	curl -X POST \
 	   -H 'Content-Type: application/json' \
-		 -d @./resources/apig_post_index.json \
+		 -d @./resources/curl_apig_post_index.json \
 		 $(API_GATEWAY_TRIGGER_URL)/index
 
 test_deployed_apig_get:

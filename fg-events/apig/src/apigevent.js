@@ -1,3 +1,6 @@
+"use strict";
+const { APIGRequestContext } = require("./apigrequestcontext");
+
 /**
  * APIGEvent Class
  * Represents an API Gateway event for FunctionGraph
@@ -7,6 +10,10 @@ class APIGEvent {
     this._event = event || {};
   }
 
+  /**
+   * 
+   * @returns content of body unencoded
+   */
   getBody() {
     const body = this._event.body;
     if (this._event.isBase64Encoded) {
@@ -22,11 +29,15 @@ class APIGEvent {
       }
     }
 
-    return body ?? "";
+    return body || "";
   }
 
+  /**
+   * 
+   * @returns content of body as is
+   */
   getRawBody() {
-    return this._event.body ?? "";
+    return this._event.body || "";
   }
 
   getRequestContext() {
@@ -62,27 +73,4 @@ class APIGEvent {
   }
 }
 
-class APIGRequestContext {
-  constructor(requestContext) {
-    this._requestContext = requestContext || {};
-  }
-
-  getAPIId() {
-    return this._requestContext.apiId || "";
-  }
-  getRequestId() {
-    return this._requestContext.requestId || "";
-  }
-  getStage() {
-    return this._requestContext.stage || {};
-  }
-
-  toJSON() {
-    return this._requestContext;
-  }
-}
-
-module.exports = {
-  APIGEvent,
-  APIGRequestContext,
-};
+module.exports = { APIGEvent };

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * OBS S3 Event Class
  * Represents an Object Storage Service (OBS) S3 event for FunctionGraph

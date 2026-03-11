@@ -12,7 +12,7 @@ module.exports = {
   },
   moduleDirectories: ["node_modules"],
   rootDir: process.cwd(),
-  testPathIgnorePatterns: ["/node_modules/"],
+  testPathIgnorePatterns: ["/node_modules/", "/dist"],
   testRegex: "test/.*\\.test\\.js$",
   testEnvironment: "jsdom",
 };

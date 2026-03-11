@@ -12,6 +12,7 @@ FunctionGraph event functions:
    APIG Event <trigger_apig_event>
    CTS Event <trigger_cts_event>
    DMS Kafka Event <trigger_dms4kafka_event>
+   DMS RocketMQ Event <trigger_dms4rocketmq_event>
    LTS Event <trigger_lts_event>
    OBS Event <trigger_obs_event>
    SMN Event <trigger_smn_event>

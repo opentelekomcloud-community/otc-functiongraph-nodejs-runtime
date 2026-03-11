@@ -2,9 +2,17 @@
   "name": "event-sdk-obs",
   "version": "1.0.0",
   "description": "A sample for synchronous event processing with scratch event",
+  "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
+  "bugs": {
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+  },
   "main": "src/index.js",
   "type": "commonjs",
-  "engines":{
+  "engines": {
     "node": "20.15.1"
   },
   "cpu": [
