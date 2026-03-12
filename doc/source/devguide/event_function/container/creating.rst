@@ -424,8 +424,8 @@ Click **Test** and view the execution result on the right.
 
 You should see output similar to the following:
 
-.. image:: ./sampledata_output.png
-   :alt: Execution Result
+.. image:: ./event_container_execution_output.png
+   :alt: Execution Result1
    :align: center
 
 The execution result contains the following sections:
