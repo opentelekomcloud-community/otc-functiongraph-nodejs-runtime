@@ -1,0 +1,34 @@
+{
+  "name": "scratch-event-sync",
+  "version": "1.0.0",
+  "description": "A sample for synchronous event processing with scratch event",
+  "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
+  "bugs": {
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+  },
+  "main": "src/index.js",
+  "type": "commonjs",
+  "engines": {
+    "node": "20.15.1"
+  },
+  "cpu": [
+    "x64"
+  ],
+  "os": [
+    "linux"
+  ],
+  "scripts": {
+    "postpack": "rm -f package.zip && tarball=$(npm list --depth 0 | sed 's/@/-/g; s/ .*/.tgz/g; 1q;'); tar -tf $tarball | sed 's/^package\\///' | zip -@r package; rm $tarball"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "files": [
+    "src/**/*",
+    "lib/**/*"
+  ],
+  "bundleDependencies": []
+}

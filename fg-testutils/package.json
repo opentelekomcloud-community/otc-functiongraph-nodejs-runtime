@@ -1,0 +1,28 @@
+{
+  "name": "fg-testutils",
+  "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
+  "bugs": {
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+  },
+  "version": "1.0.0",
+  "description": "IAM Test Utilities for FunctionGraph",
+  "license": "Apache-2.0",
+  "author": "T Cloud Public",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test/iam.test.js",
+    "postpack": "rm -f package.zip && tarball=$(npm list --depth 0 | sed 's/@/-/g; s/ .*/.tgz/g; 1q;'); tar -tf $tarball | sed 's/^package\\///' | zip -@r package; rm $tarball"
+  },
+  "dependencies": {
+    "otc-api-sign-sdk-nodejs": "github:opentelekomcloud-community/otc-api-sign-sdk-nodejs#main"
+  },
+  "devDependencies": {},
+  "exports": {
+    ".": "./src/index.js"
+  }
+}

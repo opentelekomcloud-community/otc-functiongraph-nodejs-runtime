@@ -1,0 +1,36 @@
+{
+  "name": "smn-event",
+  "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
+  "bugs": {
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+  },
+  "version": "1.0.0",
+  "description": "SMN event class for FunctionGraph SMN trigger",
+  "license": "Apache-2.0",
+  "author": "T Cloud Public",
+  "type": "commonjs",
+  "main": "./src/smnevent.js",
+  "scripts": {
+    "test": "jest --config ./jest.config.js --coverage",
+    "test:ts": "tsc && node dist/test/smnevent.test.js",
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.0",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0"
+  },
+  "exports": {
+    ".": "./src/smnevent.js"
+  },
+  "files": [
+    "src/**/*",
+    "lib/**/*"
+  ]
+}
