@@ -20,7 +20,7 @@ FunctionGraph.
 Source Code
 -----------
 
-For source code, see :github_repo_master:`otc-functiongraph-fg-runtime<>` on Github.
+For source code, see :github_repo_master:`otc-functiongraph-nodejs-runtime<>` on Github.
 
 FunctionGraph User Guide
 ------------------------

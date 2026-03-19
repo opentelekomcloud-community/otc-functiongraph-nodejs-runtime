@@ -6,7 +6,7 @@ instances. If you create a RocketMQ trigger for a function, when a message is se
 to a RocketMQ instance topic, FunctionGraph will retrieve the message and trigger
 the function to perform other operations.
 
-For details, see
+For the use of RocketMQ triggers, please refer to
 :docs_otc:`Using a RocketMQ Trigger <function-graph/umn/creating_triggers/using_a_rocketmq_trigger.html>`.
 
 RocketMQ example event

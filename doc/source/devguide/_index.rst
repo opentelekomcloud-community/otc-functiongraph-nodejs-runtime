@@ -8,6 +8,8 @@ Building with NodeJS
 
    Event Function<event_function/_index>
    HTTP Function<http_function/_index>
+   Invoke FunctionGraph <invoke/_index>
+   Bundled Libraries <bundled_libraries/_index>
 
 FunctionGraph Types
 -------------------
@@ -33,35 +35,73 @@ FunctionGraph provides 2 types of functions:
 Both types of functions can be built either from **scratch** or by
 using **container images**.
 
+
+Building from scratch
+----------------------
+
+
 Supported NodeJS Runtimes for building from scratch
----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 FunctionGraph currently supports the following NodeJS runtimes
 for building functions from scratch:
+
+.. _SupportedNodeJSRuntimes:
 
 .. list-table:: Supported NodeJS runtimes
    :header-rows: 1
 
    * - Runtime
      - Identifier
+     - NodeJS compilation environment (http functions)
+
    * - NodeJS 6.10
      - Node.js6.10
+     - /opt/function/runtime/nodejs6.10/rtsp/nodejs/bin/node
+     
    * - NodeJS 8.10
      - Node.js8.10
+     - /opt/function/runtime/nodejs8.10/rtsp/nodejs/bin/node
+
    * - NodeJS 10.16
      - Node.js10.16
+     - /opt/function/runtime/nodejs10.16/rtsp/nodejs/bin/node
+
    * - NodeJS 12.13
      - Node.js12.13
+     - /opt/function/runtime/nodejs12.13/rtsp/nodejs/bin/node
+
    * - NodeJS 14.18
      - Node.js14.18
+     - /opt/function/runtime/nodejs14.18/rtsp/nodejs/bin/node
+
    * - NodeJS 16.17
      - Node.js16.17
+     - /opt/function/runtime/nodejs16.17/rtsp/nodejs/bin/node
+
    * - NodeJS 18.20
      - Node.js18.20
+     - /opt/function/runtime/nodejs18.20/rtsp/nodejs/bin/node
+
+   * - NodeJS 20.15
+     - Node.js20.15
+     - /opt/function/runtime/nodejs20.15/rtsp/nodejs/bin/node
+
+Bundled third-party components integrated in the Node.js runtime
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For bundled libraries integrated in the Node.js runtime, 
+see :doc:`Bundled Libraries <bundled_libraries/_index>`.
+
+
+
+
+Building using container images
+--------------------------------
 
 
 Supported NodeJS Runtimes for building using container images
---------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For building functions using container images, you can use any
 NodeJS version that meets the requirements of your custom container image.

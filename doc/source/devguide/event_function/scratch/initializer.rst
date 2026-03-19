@@ -12,6 +12,8 @@ requests.
 For a function without an initializer, FunctionGraph only invokes the handler
 to process function requests.
 
+See: :ref:`index_initializer` for usage of the Initializer.
+
 Applicable Scenario
 ---------------------------------------------
 FunctionGraph executes a function in the following steps:

@@ -4,4 +4,4 @@ Scratch Event Function using Timer event
 .. toctree::
    :hidden:
 
-see :github_repo_master:`otc-functiongraph-fg-runtime<samples-doc/scratch-event-timer>` for details.
+See :github_repo_master:`scratch-event-timer <samples-doc/scratch-event-timer>` for details.

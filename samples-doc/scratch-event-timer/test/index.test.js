@@ -21,12 +21,9 @@ async function runTest() {
 
   });
 
-  const callback = (error, result) => {    
+  const result = await handler(event, context);
+  console.log("Result:", result);
 
-    console.log("Result:", result);
-  };
-
-  handler(event, context, callback);
 }
 
 // Run the examples

@@ -1,0 +1,25 @@
+{
+  "name": "dependency-postgres-sample",
+  "version": "1.0.0",
+  "description": "Sample on how to use postgres dependency in FunctionGraph",
+  "keywords": [
+    "FunctionGraph",
+    "Dependencies",
+    "event",
+    "postgres"
+  ],
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "scripts": {
+    "test_index": "node ./test/index.test.js",
+    "test_index_usepool": "node ./test/index_usepool.test.js"
+  },
+  "devDependencies": {
+    "fg-runtime": "file:../../fg-runtime",
+    "fg-testutils": "file:../../fg-testutils",
+    "pg": "^8.20.0"
+  }
+  
+}

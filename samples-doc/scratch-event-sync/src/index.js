@@ -1,3 +1,6 @@
+// filename: index.js
+"use strict";
+
 class SampleEvent {
   constructor(event) {
     this._event = event || {};
@@ -8,6 +11,8 @@ class SampleEvent {
   }
 }
 
+// FunctionGraph initializer (optional)
+// initializer name: index.initializer
 exports.initializer = function (context, callback) {
   const logger = context.getLogger();
   logger.info("initializing :", context.getFunctionName());
@@ -15,6 +20,8 @@ exports.initializer = function (context, callback) {
   callback(null, "");
 };
 
+// FunctionGraph handler
+// handler name:  index.handler
 exports.handler = function (event, context, callback) {
   const logger = context.getLogger();
 

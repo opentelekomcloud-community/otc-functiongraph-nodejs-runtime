@@ -5,4 +5,4 @@ Container event express sample
    :hidden:
 
 
-see :github_repo_master:`otc-functiongraph-fg-runtime<samples-doc/container-event-express>` for details.
+See :github_repo_master:`container-event-express <samples-doc/container-event-express>` for details.

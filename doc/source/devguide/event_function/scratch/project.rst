@@ -1,5 +1,5 @@
-Setting up the NodeJS project
-=============================
+Setting up the NodeJS project for event functions
+==========================================================
 
 The following examples assumes that you have NodeJS 20.15.1 installed
 you are using npm as the package manager and linux.

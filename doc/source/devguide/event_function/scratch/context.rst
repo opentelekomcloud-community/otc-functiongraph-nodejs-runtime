@@ -91,11 +91,11 @@ Context interface
 
         .. code-block:: javascript
 
-          logg = context.getLogger()
+          const logg = context.getLogger();
 
-          logg.info("hello")
+          logg.info("hello");
 
     * - getAlias()
       - Obtains function alias.
 
-For context.js, see :github_repo_master:`otc-functiongraph-fg-runtime<fg-runtime/context.js>`.
+For context.js, see :github_repo_master:`context.js <fg-runtime/src/context.js>`.

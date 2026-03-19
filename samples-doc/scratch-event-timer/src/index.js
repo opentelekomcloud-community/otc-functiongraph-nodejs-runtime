@@ -6,7 +6,7 @@ exports.initializer = function (context, callback) {
   callback(null, "");
 };
 
-exports.handler = async function (event, context, callback) {
+exports.handler = async function (event, context) {
   const logger = context.getLogger();
 
   logger.info("Function Name:", context.getFunctionName());
@@ -15,6 +15,5 @@ exports.handler = async function (event, context, callback) {
 
   logger.info("Timer Event:", timerEvent.getTriggerName());
 
-  const output = "ok";
-  callback(null, output);
+  return "ok";
 };

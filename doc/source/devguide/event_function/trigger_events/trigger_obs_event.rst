@@ -1,17 +1,12 @@
 OBS Event Source
 ================
 
-For details, see :docs_otc:`Using an OBS Trigger <function-graph/umn/creating_triggers/using_an_obs_trigger.html>`.
-
-Hints
------
+For the use of OBS triggers, please refer to
+:docs_otc:`Using an OBS Trigger <function-graph/umn/creating_triggers/using_an_obs_trigger.html>`.
 
 .. note::
-
-   - Triggers on OBS can only be used for FunctionGraphs in the main Project,
-     **not** in Sub-Projects!
    - For each OBS bucket, only one FunctionGraph can be triggered (no multiple
-     FunctionGraphs listening on same bucket)
+     FunctionGraphs listening on same bucket).
 
 OBS example event
 -----------------
@@ -161,3 +156,14 @@ Example
 .. literalinclude:: /../../samples-doc/scratch-event-obs/src/index.js
     :language: javascript
     :caption: :github_repo_master:`index.js <samples-doc/scratch-event-obs/src/index.js>`
+
+
+FunctionGraph 
+
+For working with OBS Buckets, please refer to:
+:docs_otc:`Object Storage Service 3rd Party - Node.js SDK <object-storage-service-3rd-party/nodejs-sdk/>`.
+
+Alternatively, you can also use 
+
+* `esdk-obs-nodejs <https://github.com/huaweicloud/huaweicloud-sdk-nodejs-obs/tree/master>`_
+* 
