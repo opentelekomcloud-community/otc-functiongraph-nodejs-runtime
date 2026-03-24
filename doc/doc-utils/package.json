@@ -15,8 +15,8 @@
   "type": "commonjs",
   "main": "src/index.js",
   "scripts": {
-    "createLibraryDocs": "node src/createLibraryDocs.js"
-    
+    "createLibraryDocs": "node src/createLibraryDocs.js",
+    "getPublicFGDependencies": "node src/getPublicFGDependencies.js"
   },
   "devDependencies": {
     "otc-api-sign-sdk-nodejs": "github:opentelekomcloud-community/otc-api-sign-sdk-nodejs#main"

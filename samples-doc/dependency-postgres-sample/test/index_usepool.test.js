@@ -1,12 +1,10 @@
-const { randomUUID } = require('crypto');
+const { randomUUID } = require("crypto");
 
 const { Context } = require("fg-runtime");
 const { handler, initializer, closePool } = require("../src/index_usepool");
-const { exit } = require('process');
-
+const { exit } = require("process");
 
 async function runTest() {
-
   const context = new Context({
     requestID: randomUUID(),
     funcEnv: {
@@ -25,29 +23,33 @@ async function runTest() {
         PGPASSWORD: "postgres",
       }),
     },
-
   });
 
   // initializer uses a callback — wrap it in a promise so we can await it
   await new Promise((resolve, reject) => {
-    initializer(context, (error, value) => {
-      if (error) reject(error);
-      else resolve(value);
+    initializer(context, async (error, value) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(value);
+      }
     });
   });
 
-  const result = await handler({}, context).then(res => {
-    return res;
-  }
 
-  ).catch(err => {
-    console.error("Error in handler:", err);
-    throw err;
-  });
+  const result = await handler({}, context)
+    .then((res) => {
+      return res;
+    })
+    .catch((err) => {
+      console.error("Error in handler:", err);
+      throw err;
+    });
 
   console.log("Handler result:", result);
-  exit(0);
-  
+
+  await closePool();
+
 }
 
 // Run the examples

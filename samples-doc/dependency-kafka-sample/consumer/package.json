@@ -1,7 +1,7 @@
 {
-  "name": "event-obss3-thumbnail",
+  "name": "dependency-kafka-sample-consumer",
   "version": "1.0.0",
-  "description": "A sample for creating thumbnail for OBS S3 event",
+  "description": "A sample for DMS for Kafka event processing with scratch event",
   "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
   "bugs": {
     "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
   },
-  "main": "src/s3thumbnail.js",
+  "main": "src/index.js",
   "type": "commonjs",
   "engines": {
     "node": "20.15.1"
@@ -22,28 +22,19 @@
     "linux"
   ],
   "scripts": {
-    "test": "node test/s3thumbnail.test.js",
-    "uploadfile": "node test/upload.js ./terraform INPUT_BUCKET ./resources/otc.jpg",
     "postpack": "rm -f ${npm_package_name}.zip && tarball=\"${npm_package_name}-${npm_package_version}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${npm_package_name}.zip; rm $tarball"
   },
   "devDependencies": {
-    "fg-runtime": "file:../../fg-runtime",
-    "fg-testutils": "file:../../fg-testutils",
-    "otc-api-sign-sdk-nodejs": "github:opentelekomcloud-community/otc-api-sign-sdk-nodejs#main",
-    "global-agent": "3.0.0"
+    "fg-runtime": "file:../../../fg-runtime"
   },
   "dependencies": {
-    "esdk-obs-nodejs": "^3.25.6",
-    "obss3-event": "file:../../fg-events/obss3",
-    "sharp": "^0.32.6"
+    "dms4kafka-event": "file:../../../fg-events/dms4kafka"
   },
   "files": [
     "src/**/*",
     "lib/**/*"
   ],
   "bundleDependencies": [
-    "obss3-event",
-    "esdk-obs-nodejs",
-    "sharp"
+    "dms4kafka-event"
   ]
 }

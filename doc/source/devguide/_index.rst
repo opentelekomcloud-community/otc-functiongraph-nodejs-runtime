@@ -94,8 +94,6 @@ For bundled libraries integrated in the Node.js runtime,
 see :doc:`Bundled Libraries <bundled_libraries/_index>`.
 
 
-
-
 Building using container images
 --------------------------------
 

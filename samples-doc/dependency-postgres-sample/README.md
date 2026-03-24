@@ -4,7 +4,11 @@ This sample demonstrates use of FunctionGraph usage of dependencies with postgre
 
 ## Prerequisites
 
-### On T Public Cloud
+### local development
+
+For local development you need a local PostgreSQL database installed.
+
+### On T Cloud Public
 
 - Postgres RDS Instance
   Following variables will be used:

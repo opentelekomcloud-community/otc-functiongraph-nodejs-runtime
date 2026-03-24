@@ -23,7 +23,7 @@
   ],
   "scripts": {
     "test": "jest --config ./jest.config.js --coverage --silent",
-    "postpack": "rm -f package.zip && tarball=$(npm list --depth 0 | sed 's/@/-/g; s/ .*/.tgz/g; 1q;'); tar -tf $tarball | sed 's/^package\\///' | zip -@r package; rm $tarball"
+    "postpack": "rm -f ${npm_package_name}.zip && tarball=\"${npm_package_name}-${npm_package_version}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${npm_package_name}.zip; rm $tarball"
   },
   "devDependencies": {
     "fg-runtime": "file:../../fg-runtime",

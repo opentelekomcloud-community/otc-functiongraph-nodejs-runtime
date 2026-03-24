@@ -1,0 +1,23 @@
+{
+  "name": "kafka-dependency",
+  "version": "2.2.4",
+  "description": "Package for Kafka dependency",
+  "main": "",
+  "scripts": {
+    "prepack": "npm install",
+    "postpack": "export DEPENDENCY_NAME=${npm_package_name}-${npm_package_version} && rm -f ${DEPENDENCY_NAME}.zip  && tar -tf ${DEPENDENCY_NAME}.tgz | sed 's/^package\\///' | zip -@r ${DEPENDENCY_NAME}.zip; rm ${DEPENDENCY_NAME}.tgz",
+    "zip": "zip -r ${npm_package_name}-${npm_package_version}.zip ./node_modules ./package.json ./README.md",
+    "zip:ps1": "powershell -Command Compress-Archive ./node_modules/, ./package.json, ./README.md -Force -DestinationPath %npm_package_name%-%npm_package_version%.zip"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  },
+  "bundleDependencies": [
+    "kafkajs"
+  ],
+  "files": []
+}

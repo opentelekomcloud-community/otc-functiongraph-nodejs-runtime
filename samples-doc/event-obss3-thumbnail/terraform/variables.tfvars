@@ -14,7 +14,7 @@ handler_name = "src/s3thumbnail.handler"
 initializer_name = "src/s3thumbnail.initializer"
 
 # name of zip file to deploy
-zip_file_name = "package.zip"
+zip_file_name = "event-obss3-thumbnail.zip"
 
 # resources will be tagged with this app_group tag
 tag_app_group = "event-obss3-thumbnail"

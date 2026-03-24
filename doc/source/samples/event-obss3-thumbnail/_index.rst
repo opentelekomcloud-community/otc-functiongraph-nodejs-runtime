@@ -1,3 +1,5 @@
+.. _event-obss3-thumbnail:
+
 Scratch Event Function generating Thumbnails
 ============================================
 

@@ -3,7 +3,6 @@ Dependencies for Node.js functions
 
 This section describes how to create dependencies for Node.js functions in FunctionGraph.
 
-
 Example
 --------
 

@@ -1,0 +1,23 @@
+{
+  "name": "dependency-kafka-sample-producer",
+  "version": "1.0.0",
+  "description": "Sample on how to use Kafka dependency in FunctionGraph",
+  "keywords": [
+    "FunctionGraph",
+    "Dependencies",
+    "event",
+    "kafka"
+  ],
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "scripts": {
+    "postpack": "rm -f ${npm_package_name}.zip && tarball=$(npm list --depth 0 | sed 's/@/-/g; s/ .*/.tgz/g; 1q;'); tar -tf $tarball | sed 's/^package\\///' | zip -@r ${npm_package_name}.zip; rm $tarball"
+  },
+  "devDependencies": {
+    "fg-runtime": "file:../../../fg-runtime",
+    "kafkajs": "^2.2.4"
+  }
+  
+}

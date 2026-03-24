@@ -1,3 +1,5 @@
+.. _event-sdk-obs:
+
 Scratch Event Function using OBS SDK
 ============================================
 

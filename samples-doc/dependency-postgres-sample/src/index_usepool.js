@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Sample on how to use connection pool of node-postgres in FunctionGraph.
  *
@@ -33,6 +34,8 @@ const { Pool } = require("pg");
 
 let pool;
 
+// The initializer function is called once when the function is initialized,
+// and is used to set up any necessary resources, such as a database connection pool.
 exports.initializer = function (context, callback) {
   const logger = context.getLogger();
 
@@ -47,6 +50,7 @@ exports.initializer = function (context, callback) {
   callback(null, "");
 };
 
+// The handler function is the main entry point for the FunctionGraph function.
 exports.handler = async (event, context) => {
   const logger = context.getLogger();
 
@@ -55,7 +59,7 @@ exports.handler = async (event, context) => {
   let result = [];
 
   try {
-    const client = await pool.connect();
+    client = await pool.connect();
 
     const res = await client.query(
       "SELECT * FROM public.netflix_shows limit 2",
@@ -74,3 +78,13 @@ exports.handler = async (event, context) => {
   return JSON.stringify(result);
 };
 
+// ONLY FOR TESTING PURPOSES.
+// This function is used to close the connection pool when the function is terminated.
+// In a real production environment, you typically would not need to manually close the pool,
+// as it is designed to be reused across multiple invocations of the function.
+// However, in a testing environment, you may want to close the pool to clean up resources after tests are completed.
+exports.closePool = async function () {
+  if (pool) {
+    await pool.end();
+  }
+};

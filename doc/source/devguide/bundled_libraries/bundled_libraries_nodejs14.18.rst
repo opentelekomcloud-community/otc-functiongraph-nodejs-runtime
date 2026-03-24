@@ -249,7 +249,7 @@ Following list shows the bundled third-party components integrated in the Node.j
       - 1.0.5
       - MIT
 
-    * - esdk-obs-nodejs
+    * - `esdk-obs-nodejs <https://github.com/huaweicloud/huaweicloud-sdk-nodejs-obs/tree/v3.24.3>`_
       - 3.24.3
       - Apache-2.0
 

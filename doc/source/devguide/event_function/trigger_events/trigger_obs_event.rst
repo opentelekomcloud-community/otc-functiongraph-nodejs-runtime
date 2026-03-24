@@ -65,22 +65,25 @@ Possible values for eventName
      - Description
    * - | ObjectCreated:Put
        | ObjectCreated:Post
-       | ObjectCreated:Copy
-     - Operations such as PUT, POST, and COPY can create an object. With these
+       | ObjectCreated:Copy       
+     - Operations such as **PUT**, **POST**, and **COPY** can create an object. With these
        event types, you can enable notifications when an object is created
        using a specific API operation.
+
    * - ObjectCreated:CompleteMultipartUpload
-     - ObjectCreated:CompleteMultipartUpload includes objects that are created
+     - **ObjectCreated:CompleteMultipartUpload** includes objects that are created
        using UploadPartCopy for Copy operations.
+
    * - | ObjectRemoved:Delete
        | ObjectRemoved:DeleteMarkerCreated
-     - By using the ObjectRemoved event types, you can enable notification when
+     - By using the **ObjectRemoved** event types, you can enable notification when
        an object or a batch of objects is removed from a bucket. You can
        request notification when an object is deleted or a versioned object is
-       permanently deleted by using the s3:ObjectRemoved:Delete event type.
+       permanently deleted by using the **ObjectRemoved:Delete** event type.
+
        Alternatively, you can request notification when a delete marker is
        created for a versioned object using
-       s3:ObjectRemoved:DeleteMarkerCreated. These event notifications don't
+       **ObjectRemoved:DeleteMarkerCreated**. These event notifications don't
        alert you for automatic deletes from lifecycle configurations or from
        failed operations.
 
@@ -158,12 +161,19 @@ Example
     :caption: :github_repo_master:`index.js <samples-doc/scratch-event-obs/src/index.js>`
 
 
-FunctionGraph 
+Further reading
+----------------
 
 For working with OBS Buckets, please refer to:
 :docs_otc:`Object Storage Service 3rd Party - Node.js SDK <object-storage-service-3rd-party/nodejs-sdk/>`.
 
-Alternatively, you can also use 
+FunctionGraph NodeJS Runtime contains a bundled version of OBS SDK,
+which is available in the runtime environment.
 
-* `esdk-obs-nodejs <https://github.com/huaweicloud/huaweicloud-sdk-nodejs-obs/tree/master>`_
-* 
+See :ref:`Bundled Libraries <bundled_libraries>`for the specific NodeJS version documentation for more details.
+
+
+For samples, see:
+
+* :ref:`Scratch Event Function generating Thumbnails <event-obss3-thumbnail>`.
+* :ref:`Scratch Event Function using OBS SDK <event-sdk-obs>`.
