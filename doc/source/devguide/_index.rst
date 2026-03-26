@@ -1,6 +1,6 @@
 .. _building_with_nodejs:
 
-Building with NodeJS
+Building with Node.js
 ========================
 .. toctree::
    :hidden:
@@ -40,20 +40,20 @@ Building from scratch
 ----------------------
 
 
-Supported NodeJS Runtimes for building from scratch
+Supported Node.js Runtimes for building from scratch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-FunctionGraph currently supports the following NodeJS runtimes
+FunctionGraph currently supports the following Node.js runtimes
 for building functions from scratch:
 
 .. _SupportedNodeJSRuntimes:
 
-.. list-table:: Supported NodeJS runtimes
+.. list-table:: Supported Node.js runtimes
    :header-rows: 1
 
    * - Runtime
      - Identifier
-     - NodeJS compilation environment (http functions)
+     - Node.js compilation environment (http functions)
 
    * - NodeJS 6.10
      - Node.js6.10
@@ -98,17 +98,17 @@ Building using container images
 --------------------------------
 
 
-Supported NodeJS Runtimes for building using container images
+Supported Node.js Runtimes for building using container images
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For building functions using container images, you can use any
-NodeJS version that meets the requirements of your custom container image.
+Node.js version that meets the requirements of your custom container image.
 
 
 Set up development environment
 ---------------------------------
-To build and run the NodeJS runtime for FunctionGraph, you need to set up your
-development environment by installing the NodeJS programming language.
+To build and run the Node.js runtime for FunctionGraph, you need to set up your
+development environment by installing the Node.js programming language.
 
 
 Operating system
@@ -121,21 +121,21 @@ This guide assumes that you are using a Unix-like operating system such as
 - Linux,
 - macOS.
 
-Install NodeJS
+Install Node.js
 ^^^^^^^^^^^^^^^^^^^^
-1. Download the NodeJS installation package for your operating system
-   from the official `NodeJS website <https://nodejs.org/en/download/>`_.
+1. Download the Node.js installation package for your operating system
+   from the official `Node.js website <https://nodejs.org/en/download/>`_.
 2. Follow the installation instructions provided on the website to
-   install NodeJS on your system.
+   install Node.js on your system.
 
 .. note::
-  This guide assumes that you have installed NodeJS and npm (Node Package Manager)
-  using nvm (Node Version Manager) to manage your NodeJS versions.
+  This guide assumes that you have installed Node.js and npm (Node Package Manager)
+  using nvm (Node Version Manager) to manage your Node.js versions.
 
 
 Install an IDE
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-You can use any text editor or IDE to write NodeJS code.
+You can use any text editor or IDE to write Node.js code.
 
 .. note::
    Examples in this documentation were created using:

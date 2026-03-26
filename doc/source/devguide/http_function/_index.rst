@@ -19,7 +19,7 @@ You can build FunctionGraph HTTP functions the following ways:
 * :ref:`Using Container Image  <devguide_http_function_container_index>`
 
 .. note::
-  The option "Select template" is not supported for NodeJS HTTP functions.
+  The option "Select template" is not supported for Node.js HTTP functions.
 
 .. _general_constraints_http:
 

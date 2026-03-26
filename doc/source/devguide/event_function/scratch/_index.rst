@@ -1,10 +1,10 @@
 .. _devguide_event_function_scratch_index:
 
-Building FunctionGraph Event Functions with NodeJS from scratch
+Building FunctionGraph Event Functions with Node.js from scratch
 ==========================================================================
 
 Following chapter describes how to build FunctionGraph event functions
-using NodeJS from scratch:
+using Node.js from scratch:
 
 .. toctree::
    :hidden:
@@ -24,7 +24,7 @@ in the user manual.
 Function Development Overview
 ------------------------------
 
-NodeJS 6.10
+Node.js 6.10
 ^^^^^^^^^^^^
 
 .. code-block:: javascript
@@ -60,7 +60,10 @@ NodeJS 6.10
   the value of **data**.
 
 
-NodeJS 8.10 and later
+Node.js 8.10 and later
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Node.js 8.10 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Node.js 8.10 and later are compatible with the APIs of Node.js 6.10,

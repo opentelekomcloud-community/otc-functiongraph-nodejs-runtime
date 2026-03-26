@@ -141,7 +141,7 @@ async function writeIndexFile(runtimes) {
     );
 
     stream.write(
-      "\nFor runtimes bundled with a NodeJS runtime version see following pages:\n",
+      "\nFor runtimes bundled with a Node.js runtime version see following pages:\n",
     );
 
     stream.write("\n.. toctree::\n");

@@ -1,6 +1,4 @@
-const https = require("https");
 const { Signer, HttpRequest } = require("otc-api-sign-sdk-nodejs");
-const path = require("path");
 
 const region = process.env.OTC_SDK_REGION || "eu-de";
 
@@ -26,6 +24,8 @@ async function main() {
     key: "Hello T-Cloud Public World - ASYNC ",
   };
 
+  const bodyText = JSON.stringify(body);
+
   // set request method
   const method = "POST";
 
@@ -37,12 +37,7 @@ async function main() {
   };
 
   // create HttpRequest instance
-  const request = new HttpRequest(
-    method,
-    invokeURI,
-    headers,
-    JSON.stringify(body),
-  );
+  const request = new HttpRequest(method, invokeURI, headers, bodyText);
 
   // create Signer instance and set AK/SK
   const signer = new Signer();
@@ -52,27 +47,26 @@ async function main() {
   // sign the request
   const signedRequest = signer.Sign(request);
 
-  // send the signed request
-  const req = https.request(signedRequest, function (res) {
-    res.setEncoding("utf8");
-
-    let data = "";
-    res.on("data", function (chunk) {
-      data += chunk.toString();
+  // send signed request with Node.js fetch
+  try {
+    const response = await fetch(invokeURI, {
+      method: signedRequest.method,
+      headers: signedRequest.headers,
+      body: bodyText,
     });
 
-    res.on("end", function () {
-      // output response
-      console.log("Response: ", data);
-    });
-  });
+    const data = await response.text();
 
-  req.on("error", function (e) {
-    console.error("Error: ", e);
-  });
+    if (!response.ok) {
+      console.error("Error: ", data);
+      return;
+    }
 
-  req.write(JSON.stringify(body));
-  req.end();
+    // output response
+    console.log("Response: ", data);
+  } catch (error) {
+    console.error("Error: ", error);
+  }
 }
 
 main();

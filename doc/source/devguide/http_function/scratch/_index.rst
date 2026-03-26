@@ -1,6 +1,6 @@
 .. _devguide_http_function_scratch_index:
 
-Building FunctionGraph HTTP Functions with NodeJS from scratch
+Building FunctionGraph HTTP Functions with Node.js from scratch
 ==========================================================================
 
 .. toctree::
@@ -10,7 +10,7 @@ Building FunctionGraph HTTP Functions with NodeJS from scratch
 
 
 Following chapter describes in short how to build FunctionGraph HTTP functions
-using NodeJS from scratch.
+using Node.js from scratch.
 
 Introduction
 ------------
@@ -41,9 +41,9 @@ Step 2: Write code for the function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For HTTP functions, the code is expected to listen for HTTP requests and send responses.
-You can use any NodeJS web framework or library to implement the function code.
+You can use any Node.js web framework or library to implement the function code.
 
-The following is a sample code using NodeJS built-in HTTP module.
+The following is a sample code using Node.js built-in HTTP module.
 
 In the code editor, replace the default code for file `index.js` with the following
 code, and click **Deploy** to save the code.
@@ -73,8 +73,8 @@ Step 3: Configure the bootstrap file
 
 A file named `bootstrap` is used to start the function runtime and execute the function code.
 
-The following is the code to be added in the `bootstrap` file for NodeJS runtime.
-It starts the NodeJS runtime and executes the `index.js` file.
+The following is the code to be added in the `bootstrap` file for Node.js runtime.
+It starts the Node.js runtime and executes the `index.js` file.
 
 
 .. code-block:: bash
@@ -84,7 +84,7 @@ It starts the NodeJS runtime and executes the `index.js` file.
 
 where
 
-* **[NODEJS_RUNTIME]** is the NodeJS runtime to use (see :ref:`Supported NodeJS Runtimes <SupportedNodeJSRuntimes>`).
+* **[NODEJS_RUNTIME]** is the Node.js runtime to use (see :ref:`Supported Node.js Runtimes <SupportedNodeJSRuntimes>`).
 * **$RUNTIME_CODE_ROOT** is the environment variable that points to the root directory of your function code
   (/opt/function/code).
 * **[FUNCTION_FILENAME]** is the name of the file that contains your function code (e.g., `index.js`).

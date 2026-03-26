@@ -1,8 +1,8 @@
-NodeJS FunctionGraph samples
+Node.js FunctionGraph samples
 ============================
 
 Following samples are provided to demonstrate how to use
-FunctionGraph with NodeJS:
+FunctionGraph with Node.js:
 
 .. toctree::
    :maxdepth: 2
@@ -18,9 +18,11 @@ FunctionGraph with NodeJS:
    Scratch-http <scratch-http/_index>
 
 
-
-Event Functions from scratch
+Event Functions
 ------------------------------
+
+Created from scratch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :header-rows: 1
@@ -29,25 +31,22 @@ Event Functions from scratch
      - Description
 
    * - :doc:`scratch-event-async<scratch-event-async/_index>`
-     - A sample event function that demonstrates how to use async/await in NodeJS functions.
+     - A sample event function that demonstrates how to use async/await in Node.js functions.
 
    * - :doc:`scratch-event-sync<scratch-event-sync/_index>`
-     - A sample event function that demonstrates how to write synchronous code in NodeJS functions.
+     - A sample event function that demonstrates how to write synchronous code in Node.js functions.
 
    * - :doc:`scratch-event-timer<scratch-event-timer/_index>`
-     - A sample event function that demonstrates how to use timer trigger in NodeJS functions.
-
-   * - :doc:`scratch-http<scratch-http/_index>`
-     - A sample HTTP function that demonstrates how to use Koa framework in NodeJS functions.
+     - A sample event function that demonstrates how to use timer trigger in Node.js functions.
 
    * - :doc:`event-obss3-thumbnail<event-obss3-thumbnail/_index>`
      - A sample event function that listens for OBS S3 events and generates thumbnail images for the uploaded objects.
 
    * - :doc:`event-sdk-obs<event-sdk-obs/_index>`
-     - A sample event function that demonstrates how to use FunctionGraph SDK for OBS in NodeJS functions.
+     - A sample event function that demonstrates how to use FunctionGraph SDK for OBS in Node.js functions.
 
-Event Functions using container image
--------------------------------------
+Using container image
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :header-rows: 1
@@ -56,14 +55,17 @@ Event Functions using container image
      - Description
 
    * - :doc:`container-event-express<container-event/container-event-express/_index>`
-     - A sample event function that uses NodeJS and express framework deployed as container image.
+     - A sample event function that uses Node.js and express framework deployed as container image.
      
    * - :doc:`container-event-koa<container-event/container-event-koa/_index>`
-     - - A sample event function that uses NodeJS and Koa framework deployed as container image.
+     - - A sample event function that uses Node.js and Koa framework deployed as container image.
 
 
-HTTP Functions from scratch
---------------------------------
+HTTP Functions
+--------------
+
+Created from scratch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :header-rows: 1
@@ -72,10 +74,10 @@ HTTP Functions from scratch
      - Description
 
    * - :doc:`scratch-http<scratch-http/_index>`
-     - A sample HTTP function using Koa framework in NodeJS functions deployed from scratch.
+     - A sample HTTP function using Koa framework in Node.js functions deployed from scratch.
 
-HTTP Functions using container image
--------------------------------------
+Using container image
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :header-rows: 1
@@ -84,5 +86,5 @@ HTTP Functions using container image
      - Description
 
    * - :doc:`container-http-koa<container-http/container-http-koa/_index>`
-     - A sample HTTP function using Koa framework in NodeJS functions deployed as container image.
+     - A sample HTTP function using Koa framework in Node.js functions deployed as container image.
 

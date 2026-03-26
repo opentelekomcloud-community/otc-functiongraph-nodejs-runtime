@@ -1,17 +1,17 @@
-Setting up the NodeJS project for event functions
+Setting up the Node.js project for event functions
 ==========================================================
 
-The following examples assumes that you have NodeJS 20.15.1 installed
+The following examples assumes that you have Node.js 20.15.1 installed
 you are using npm as the package manager and linux.
 
 
-Creating a NodeJS project
+Creating a Node.js project
 ---------------------------------
 
 Project structure
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-A minimal NodeJS FunctionGraph project is typically structured as follows:
+A minimal Node.js FunctionGraph project is typically structured as follows:
 
 .. code-block:: console
   :caption: Project structure
@@ -126,7 +126,7 @@ Sample code
 Package.json
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-The **package.json** file is used to manage the dependencies of a NodeJS
+The **package.json** file is used to manage the dependencies of a Node.js
 project. The following is a sample **package.json** file:
 
 .. code-block:: json
@@ -216,7 +216,7 @@ Create FunctionGraph function in console
    "Region": select the region where you want to create the function.
    "Function Name**: enter a **Sample** as name for the function.
    "Enterprise Project**: select **default**.
-   "Runtime**: select the NodeJS runtime version **Node.js 20.15**.
+   "Runtime**: select the Node.js runtime version **Node.js 20.15**.
    "Agency": select **Use no agency**
 4. Click **Create Function**.
 5. Upload the created **${npm_package_name}.zip** file to the function by

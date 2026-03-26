@@ -167,10 +167,10 @@ Further reading
 For working with OBS Buckets, please refer to:
 :docs_otc:`Object Storage Service 3rd Party - Node.js SDK <object-storage-service-3rd-party/nodejs-sdk/>`.
 
-FunctionGraph NodeJS Runtime contains a bundled version of OBS SDK,
+FunctionGraph Node.js Runtime contains a bundled version of OBS SDK,
 which is available in the runtime environment.
 
-See :ref:`Bundled Libraries <bundled_libraries>`for the specific NodeJS version documentation for more details.
+See :ref:`Bundled Libraries <bundled_libraries>` for the specific Node.js version documentation for more details.
 
 
 For samples, see:

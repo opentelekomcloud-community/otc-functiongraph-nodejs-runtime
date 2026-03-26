@@ -8,7 +8,7 @@ Bundled Libraries
 
 Bundled libraries can be used for **event** and **http** functions **build from scratch**.
 
-For runtimes bundled with a NodeJS runtime version see following pages:
+For runtimes bundled with a Node.js runtime version see following pages:
 
 .. toctree::
    :maxdepth: 1

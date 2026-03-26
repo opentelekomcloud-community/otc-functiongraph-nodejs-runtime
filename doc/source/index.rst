@@ -1,14 +1,14 @@
-FunctionGraph NodeJS documentation
+FunctionGraph Node.js documentation
 ===============================================
 
-This is the **FunctionGraph NodeJS Development Guide** for running
+This is the **FunctionGraph Node.js Development Guide** for running
 FunctionGraph.
 
 .. toctree::
    :maxdepth: 10
    :hidden:
 
-   Building with NodeJS <devguide/_index>
+   Building with Node.js <devguide/_index>
    Concepts <devguide/concepts/_index>
    Samples <samples/_index>
    Best Practices <devguide/bestpractices/_index>

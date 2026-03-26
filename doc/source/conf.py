@@ -37,7 +37,7 @@ otcdocs_git_type = "github"
 
 # Those variables are required for edit/bug links
 otcdocs_edit_enabled = False
-otcdocs_bug_report_enabled = False
+otcdocs_bug_report_enabled = True
 
 otcdocs_pdf_link = False
 

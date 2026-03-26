@@ -1,13 +1,13 @@
 .. _creating_an_event_function_using_a_container_image_built:
 
-Creating an Event Function Using a Container Image Built with NodeJS
+Creating an Event Function Using a Container Image Built with Node.js
 ====================================================================
 
 For general details about how to use a container image
 to create and execute an event function,
 see :otc_fg_umn:`Creating an Event Function Using a Container Image and executing the Function <getting_started/creating_an_event_function_using_a_container_image_and_executing_the_function.html>`.
 
-This chapter introduces how to create an image using NodeJS
+This chapter introduces how to create an image using Node.js
 and perform local verification for event functions.
 
 .. note::
@@ -52,7 +52,7 @@ Then, install the express framework:
 
 You can then modify the generated ``package.json`` file to specify
 
-* the NodeJS version,
+* the Node.js version,
 * CPU architecture,
 * and OS platform required by the function,
 * as well as the function execution entry file and

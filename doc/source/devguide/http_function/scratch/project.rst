@@ -1,16 +1,16 @@
-Setting up the NodeJS project for HTTP functions
+Setting up the Node.js project for HTTP functions
 ==========================================================
 
 .. toctree::
    :hidden:
 
-The following examples assumes that you have NodeJS 20.15.1 installed
+The following examples assumes that you have Node.js 20.15.1 installed
 you are using npm as the package manager and linux.
 
 Project structure
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-A minimal NodeJS FunctionGraph project is typically structured as follows:
+A minimal Node.js FunctionGraph project is typically structured as follows:
 
 .. code-block:: bash
   :caption: Project structure
@@ -23,7 +23,7 @@ A minimal NodeJS FunctionGraph project is typically structured as follows:
 Step 1: Initialize the project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This project will use Koa, a popular NodeJS web framework, 
+This project will use Koa, a popular Node.js web framework, 
 to implement the HTTP function.
 
 1. Run the following command to create a project folder.

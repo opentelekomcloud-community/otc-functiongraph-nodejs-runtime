@@ -23,7 +23,9 @@
   ],
   "scripts": {
     "invokeSyncAKSK": "node src/invokeSync_AKSK.js",
-    "invokeASyncAKSK": "node src/invokeASync_AKSK.js"
+    "invokeSyncFetchAKSK": "node src/invokeSyncFetch_AKSK.js",
+    "invokeASyncAKSK": "node src/invokeASync_AKSK.js",
+    "invokeASyncFetchAKSK": "node src/invokeASyncFetch_AKSK.js",
 
   },
   "dependencies": {

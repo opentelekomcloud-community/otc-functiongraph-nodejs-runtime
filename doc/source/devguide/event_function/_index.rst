@@ -16,7 +16,7 @@ distributed messaging service RabbitMQ version, cloud log service LTS, etc.).
 Types of Event Functions
 ------------------------------------
 
-You can build FunctionGraph event functions in NodeJS in the following ways:
+You can build FunctionGraph event functions in Node.js in the following ways:
 
 * :ref:`From Scratch  <devguide_event_function_scratch_index>`
 * :ref:`Using Container Image  <devguide_event_function_container_index>`

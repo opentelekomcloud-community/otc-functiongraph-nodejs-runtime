@@ -1,6 +1,6 @@
 .. _devguide_event_function_container_index:
 
-Building FunctionGraph Event Functions with NodeJS from container image
+Building FunctionGraph Event Functions with Node.js from container image
 ==========================================================================
 
 Set up development environment
@@ -15,7 +15,7 @@ on how to install Docker on your system.
 Create Image
 -----------------
 
-On how to create a FunctionGraph Event function using NodeJS
+On how to create a FunctionGraph Event function using Node.js
 with container image, see:
 
 .. toctree::

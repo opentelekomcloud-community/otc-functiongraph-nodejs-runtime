@@ -1,0 +1,31 @@
+{
+  "name": "sample-rocketmq-producer",
+  "version": "1.0.0",
+  "description": "Sample on how to use RocketMQ dependency in FunctionGraph",
+  "keywords": [
+    "FunctionGraph",
+    "Dependencies",
+    "event",
+    "rocketmq"
+  ],
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "scripts": {
+    "postpack": "rm -f ${npm_package_name}.zip && tarball=$(npm list --depth 0 | sed 's/@/-/g; s/ .*/.tgz/g; 1q;'); tar -tf $tarball | sed 's/^package\\///' | zip -@r ${npm_package_name}.zip; rm $tarball"
+  },
+  "dependencies": {
+    "rocketmq-client-nodejs": "^1.0.3"
+  },
+  "devDependencies": {
+    "fg-runtime": "file:../../../fg-runtime"
+  },
+  "files": [
+    "src/**/*",
+    "lib/**/*"
+  ],
+  "bundleDependencies": [
+    "rocketmq-client-nodejs"
+  ]
+}

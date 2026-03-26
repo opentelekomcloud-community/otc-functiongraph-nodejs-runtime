@@ -146,3 +146,10 @@ build
 .env
 
 *.zip
+.bashhistory
+*.tar.gz
+*.7z
+*.rar
+*.bak
+*.backup
+*.tmp

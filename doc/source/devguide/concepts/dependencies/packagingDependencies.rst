@@ -89,35 +89,34 @@ Native module dependencies
 
     Update will follow.
 
-If your Node.js function depends on native modules that require .dll or .so files,
+If your Node.js function depends on native modules that require **.dll** or **.so** files,
 you can include these files in your dependency package.
 
-You are advised to create function dependencies in EulerOS.
+You are advised to create function dependencies in **EulerOS**.
 If other OSs are used, an error may occur due to underlying dependent libraries.
 For example, the dynamic link library cannot be found.
 
 Ensure that the native modules are compatible with the runtime environment of your function.
 
-When packaging your dependencies, make sure to include the .dll or .so files in the
+When packaging your dependencies, make sure to include the **.dll** or **.so** files in the
 appropriate directory structure within your zip file.
 
 Setting Up the EulerOS Environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-EulerOS is an enterprise-grade Linux OS based on open-source technology.
+**EulerOS** is an enterprise-grade Linux OS based on open-source technology.
 It features high security, scalability, and performance, meeting customers' requirements
 for IT infrastructure and cloud computing services.
 
-1. Buy a EulerOS ECS on `T Cloud Public` by referring to
+1. Buy a **EulerOS** ECS on `T Cloud Public` by referring to
    `Creating and Logging In to a Linux ECS <https://docs.otc.t-systems.com/elastic-cloud-server/umn/getting_started/index.html>`_.
    On the Configure Basic Settings page, select `Public Image`, 
-   and select `EulerOS` and an `image version`.
+   and select **EulerOS** and an `image version`.
 
-2. Download the EulerOS image, and use virtualization software to set up the EulerOS VM on a local PC.
+2. Download the **EulerOS** image, and use virtualization software to set up the **EulerOS** VM on a local PC.
    `EulerOS images <https://otc-image-files.obs-website.eu-de.otc.t-systems.com/?os=euleros>`_
 
-3. Use openEuler Docker images to set up a Docker environment on your local PC or the EulerOS VM.
-   `openEuler Docker Images <https://de-repo.openeuler.org/openEuler-24.03-LTS-SP3/docker_img/x86_64/>`_
+3. Use **openEuler** Docker images to set up a Docker environment on your local PC.
 
 
 
