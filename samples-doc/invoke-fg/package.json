@@ -1,0 +1,36 @@
+{
+  "name": "invoke-fg",
+  "version": "1.0.0",
+  "description": "A sample for calling FunctionGraph function",
+  "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
+  "bugs": {
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+  },
+  "main": "src/invoke-fg.js",
+  "type": "commonjs",
+  "engines": {
+    "node": "20.15.1"
+  },
+  "cpu": [
+    "x64"
+  ],
+  "os": [
+    "linux"
+  ],
+  "scripts": {
+    "invokeSyncAKSK": "node src/invokeSync_AKSK.js",
+    "invokeSyncFetchAKSK": "node src/invokeSyncFetch_AKSK.js",
+    "invokeASyncAKSK": "node src/invokeASync_AKSK.js",
+    "invokeASyncFetchAKSK": "node src/invokeASyncFetch_AKSK.js",
+
+  },
+  "dependencies": {
+    "fg-testutils": "file:../../fg-testutils",
+    "otc-api-sign-sdk-nodejs": "github:opentelekomcloud-community/otc-api-sign-sdk-nodejs#main"
+  }
+
+}

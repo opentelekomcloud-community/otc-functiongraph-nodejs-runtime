@@ -8,7 +8,7 @@ description = "Sample scratch-http"
 function_name = "scratch-http"
 
 # name of zip file to deploy
-zip_file_name = "package.zip"
+zip_file_name = "scratch-http.zip"
 
 # resources will be tagged with this app_group tag
 tag_app_group = "scratch-http"

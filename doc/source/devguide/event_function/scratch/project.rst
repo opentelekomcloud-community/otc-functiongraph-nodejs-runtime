@@ -1,17 +1,17 @@
-Setting up the NodeJS project
-=============================
+Setting up the Node.js project for event functions
+==========================================================
 
-The following examples assumes that you have NodeJS 20.15.1 installed
+The following examples assumes that you have Node.js 20.15.1 installed
 you are using npm as the package manager and linux.
 
 
-Creating a NodeJS project
+Creating a Node.js project
 ---------------------------------
 
 Project structure
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-A minimal NodeJS FunctionGraph project is typically structured as follows:
+A minimal Node.js FunctionGraph project is typically structured as follows:
 
 .. code-block:: console
   :caption: Project structure
@@ -126,7 +126,7 @@ Sample code
 Package.json
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-The **package.json** file is used to manage the dependencies of a NodeJS
+The **package.json** file is used to manage the dependencies of a Node.js
 project. The following is a sample **package.json** file:
 
 .. code-block:: json
@@ -141,7 +141,7 @@ project. The following is a sample **package.json** file:
     "cpu": ["x64"],
     "os": ["linux"],
     "scripts": {
-      "postpack": "rm -f package.zip && tarball=$(npm list --depth 0 | sed 's/@/-/g; s/ .*/.tgz/g; 1q;'); tar -tf $tarball | sed 's/^package\\///' | zip -@r package; rm $tarball"
+      "postpack": "rm -f ${npm_package_name}.zip && tarball=\"${npm_package_name}-${npm_package_version}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${npm_package_name}.zip; rm $tarball"
     },
     "devDependencies": {},
     "dependencies": {},
@@ -167,7 +167,7 @@ The directory structure of the zip package should be as follows:
 .. code-block:: console
   :caption: Zip package structure
 
-  /package.zip
+  /sample-event-function.zip
    ├─ lib
    |  └─ ...                 Service file directory (optional)
    ├─ node_modules           NPM third-party dependencies (optional)
@@ -189,20 +189,20 @@ As functiongraph requires a zip package, the tarball file need to be converted
 to a zip package.
 This is done using "postpack" script in package.json, which is executed after
 the tarball file is created.
-The script creates a zip package named **package.zip** from the generated
+The script creates a zip package named **${npm_package_name}.zip** from the generated
 tarball in the current directory and removes the tarball file.
 
 Following are the commands executed in the "postpack" script explained:
 
 .. code-block:: console
 
-    # remove the existing package.zip file if exists
-    rm -f package.zip
+    # remove the existing ${npm_package_name}.zip file if exists
+    rm -f ${npm_package_name}.zip
     # get the generated tarball file name using npm list command
-    tarball=$(npm list --depth 0 | sed 's/@/-/g; s/ .*/.tgz/g; 1q;');
-    # create package.zip from the generated tarball file
+    tarball="${npm_package_name}-${npm_package_version}.tgz"
+    # create ${npm_package_name}.zip from the generated tarball file
     # (and remove the leading "package/" in the file path)
-    tar -tf $tarball | sed 's/^package\\///' | zip -@r package;
+    tar -tf $tarball | sed 's/^package\\///' | zip -@r ${npm_package_name}.zip;
     # remove the tarball file
     rm $tarball
 
@@ -216,10 +216,10 @@ Create FunctionGraph function in console
    "Region": select the region where you want to create the function.
    "Function Name**: enter a **Sample** as name for the function.
    "Enterprise Project**: select **default**.
-   "Runtime**: select the NodeJS runtime version **Node.js 20.15**.
+   "Runtime**: select the Node.js runtime version **Node.js 20.15**.
    "Agency": select **Use no agency**
 4. Click **Create Function**.
-5. Upload the created **package.zip** file to the function by
+5. Upload the created **${npm_package_name}.zip** file to the function by
    clicking **Upload** > **Local ZIP**.
 
    The uploaded code will be automatically deployed on the

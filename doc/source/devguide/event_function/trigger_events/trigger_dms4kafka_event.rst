@@ -1,10 +1,12 @@
-DMS for Kafka (OPENSOURCE) Event Source
+DMS for Kafka Event Source
 =======================================
 
 DMS for Kafka is a message queuing service that provides Kafka premium
 instances. If you create a Kafka trigger for a function, when a message is sent
 to a Kafka instance topic, FunctionGraph will retrieve the message and trigger
-the function to perform other operations. For details, see
+the function to perform other operations.
+
+For the use of Kafka triggers, please refer to
 :docs_otc:`Using a Kafka Trigger <function-graph/umn/creating_triggers/using_a_kafka_trigger.html>`.
 
 Kafka example event

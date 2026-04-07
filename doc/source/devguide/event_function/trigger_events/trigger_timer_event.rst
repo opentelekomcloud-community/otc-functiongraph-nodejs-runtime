@@ -2,7 +2,9 @@ Timer Event Source
 ==================
 
 You can schedule a timer to invoke your code based on a fixed rate of minutes,
-hours, or days or a cron expression. For details, see
+hours, or days or a cron expression. 
+
+For the use of Timer triggers, please refer to
 :docs_otc:`Using a Timer Trigger <function-graph/umn/creating_triggers/using_a_timer_trigger.html>`.
 
 Timer example event

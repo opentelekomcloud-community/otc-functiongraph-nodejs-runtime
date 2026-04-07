@@ -1,0 +1,41 @@
+{
+  "name": "scratch-event-smn",
+  "version": "1.0.0",
+  "description": "A sample for SMN event processing with scratch event",
+  "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
+  "bugs": {
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+  },
+  "main": "src/index.js",
+  "type": "commonjs",
+  "engines": {
+    "node": "20.15.1"
+  },
+  "cpu": [
+    "x64"
+  ],
+  "os": [
+    "linux"
+  ],
+  "scripts": {
+    "test": "node ./test/index.test.js",
+    "postpack": "rm -f ${npm_package_name}.zip && tarball=\"${npm_package_name}-${npm_package_version}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${npm_package_name}.zip; rm $tarball"
+  },
+  "devDependencies": {
+    "fg-runtime": "file:../../fg-runtime"
+  },
+  "dependencies": {
+    "smn-event": "file:../../fg-events/smn"
+  },
+  "files": [
+    "src/**/*",
+    "lib/**/*"
+  ],
+  "bundleDependencies": [
+    "smn-event"
+  ]
+}

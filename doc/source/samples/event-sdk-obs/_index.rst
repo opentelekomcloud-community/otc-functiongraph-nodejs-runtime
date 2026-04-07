@@ -1,3 +1,5 @@
+.. _event-sdk-obs:
+
 Scratch Event Function using OBS SDK
 ============================================
 
@@ -5,4 +7,4 @@ Scratch Event Function using OBS SDK
    :hidden:
 
 
-see :github_repo_master:`otc-functiongraph-fg-runtime<samples-doc/event-sdk-obs>` for details.
+See :github_repo_master:`event-sdk-obs <samples-doc/event-sdk-obs>` for details.

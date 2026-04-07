@@ -1,0 +1,25 @@
+{
+  "name": "bundled-libraries",
+  "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
+  "bugs": {
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+  },
+  "version": "1.0.0",
+  "description": "Bundled Libraries for FunctionGraph",
+  "license": "Apache-2.0",
+  "author": "T Cloud Public",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "scripts": {
+    "createLibraryDocs": "node src/createLibraryDocs.js",
+    "getPublicFGDependencies": "node src/getPublicFGDependencies.js"
+  },
+  "devDependencies": {
+    "otc-api-sign-sdk-nodejs": "github:opentelekomcloud-community/otc-api-sign-sdk-nodejs#main"
+  }
+  
+}

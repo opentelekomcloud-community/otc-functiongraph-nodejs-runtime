@@ -5,8 +5,10 @@ Simple Message Notification (SMN) sends messages to email addresses, mobile
 phones, or HTTP/HTTPS URLs. If you create a function with an SMN trigger,
 messages published to a specified topic will be passed as a parameter to invoke
 the function. Then, the function processes the event, for example, publishing
-messages to other SMN topics or sending them to other cloud services. For
-details, see :docs_otc:`Using an SMN Trigger <function-graph/umn/creating_triggers/using_an_smn_trigger.html>`.
+messages to other SMN topics or sending them to other cloud services. 
+
+For the use of SMN triggers, please refer to
+:docs_otc:`Using an SMN Trigger <function-graph/umn/creating_triggers/using_an_smn_trigger.html>`.
 
 SMN example event
 -----------------

@@ -16,7 +16,7 @@ handler_name = "src/index.handler"
 initializer_name = "src/index.initializer"
 
 # name of zip file to deploy
-zip_file_name = "package.zip"
+zip_file_name = "scratch-event-async.zip"
 
 # resources will be tagged with this app_group tag
 tag_app_group = "scratch-event-async"

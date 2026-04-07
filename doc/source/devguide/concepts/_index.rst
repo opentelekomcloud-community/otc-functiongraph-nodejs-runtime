@@ -6,4 +6,5 @@ Concepts
 .. toctree::
 
    Credentials <credentials/transferringKeys>
+   Dependencies <dependencies/_index>
 

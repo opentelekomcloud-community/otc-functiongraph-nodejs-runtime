@@ -3,7 +3,7 @@ HTTP function deployed as a container
 
 
 Following samples are provided to demonstrate how to use
-FunctionGraph with NodeJS container HTTP function:
+FunctionGraph with Node.js container HTTP function:
 
 .. toctree::
    :maxdepth: 1

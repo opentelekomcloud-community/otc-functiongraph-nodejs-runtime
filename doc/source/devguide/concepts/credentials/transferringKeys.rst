@@ -44,7 +44,7 @@ perform the following steps:
 
 On details how to use the Security-Access-Key, Security-Secret-Key,
 and Security-Token to call other T Cloud Public services using API request,
-see :github_nodejs_sign_sdk:`Developer guide for request signing for NodeJS<>`
+see :github_nodejs_sign_sdk:`Developer guide for request signing for Node.js<>`
 
 
 .. hint::

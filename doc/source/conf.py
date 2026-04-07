@@ -37,7 +37,7 @@ otcdocs_git_type = "github"
 
 # Those variables are required for edit/bug links
 otcdocs_edit_enabled = False
-otcdocs_bug_report_enabled = False
+otcdocs_bug_report_enabled = True
 
 otcdocs_pdf_link = False
 
@@ -168,8 +168,8 @@ html_theme_options = {
     "disable_global_nav": "True",
 }
 
-html_title = "otc-functiongraph-fg-runtime"
-# html_baseurl = "https://opentelekomcloud-community.github.io/otc-functiongraph-fg-runtime/"
+html_title = "otc-functiongraph-nodejs-runtime"
+# html_baseurl = "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime/"
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -241,7 +241,7 @@ sphinx_tabs_valid_builders = ["linkcheck"]
 
 
 rst_prolog = """
-.. |github_repo| replace:: "https://github.com/opentelekomcloud-community/otc-functiongraph-fg-runtime.git"
+.. |github_repo| replace:: "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
 .. role:: strikethrough
 """
 # version = "1.0.0"
@@ -252,7 +252,7 @@ rst_prolog = """
 # https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html
 extlinks = {
     "github_repo_master": (
-        f"https://github.com/opentelekomcloud-community/otc-functiongraph-fg-runtime/tree/{local_branch}/%s",
+        f"https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/tree/{local_branch}/%s",
         "%s",
     ),
     "otc_fg_umn": ("https://docs.otc.t-systems.com/function-graph/umn/%s", "%s"),

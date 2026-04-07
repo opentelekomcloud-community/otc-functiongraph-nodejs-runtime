@@ -2,7 +2,7 @@ Event function deployed as a container
 ===================================================
 
 Following samples are provided to demonstrate how to use
-FunctionGraph with NodeJS container event function:
+FunctionGraph with Node.js container event function:
 
 .. toctree::
    :maxdepth: 1

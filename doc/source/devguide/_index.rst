@@ -1,6 +1,6 @@
 .. _building_with_nodejs:
 
-Building with NodeJS
+Building with Node.js
 ========================
 .. toctree::
    :hidden:
@@ -8,6 +8,8 @@ Building with NodeJS
 
    Event Function<event_function/_index>
    HTTP Function<http_function/_index>
+   Invoke FunctionGraph <invoke/_index>
+   Bundled Libraries <bundled_libraries/_index>
 
 FunctionGraph Types
 -------------------
@@ -33,44 +35,80 @@ FunctionGraph provides 2 types of functions:
 Both types of functions can be built either from **scratch** or by
 using **container images**.
 
-Supported NodeJS Runtimes for building from scratch
----------------------------------------------------
 
-FunctionGraph currently supports the following NodeJS runtimes
+Building from scratch
+----------------------
+
+
+Supported Node.js Runtimes for building from scratch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+FunctionGraph currently supports the following Node.js runtimes
 for building functions from scratch:
 
-.. list-table:: Supported NodeJS runtimes
+.. _SupportedNodeJSRuntimes:
+
+.. list-table:: Supported Node.js runtimes
    :header-rows: 1
 
    * - Runtime
      - Identifier
+     - Node.js compilation environment (http functions)
+
    * - NodeJS 6.10
      - Node.js6.10
+     - /opt/function/runtime/nodejs6.10/rtsp/nodejs/bin/node
+     
    * - NodeJS 8.10
      - Node.js8.10
+     - /opt/function/runtime/nodejs8.10/rtsp/nodejs/bin/node
+
    * - NodeJS 10.16
      - Node.js10.16
+     - /opt/function/runtime/nodejs10.16/rtsp/nodejs/bin/node
+
    * - NodeJS 12.13
      - Node.js12.13
+     - /opt/function/runtime/nodejs12.13/rtsp/nodejs/bin/node
+
    * - NodeJS 14.18
      - Node.js14.18
+     - /opt/function/runtime/nodejs14.18/rtsp/nodejs/bin/node
+
    * - NodeJS 16.17
      - Node.js16.17
+     - /opt/function/runtime/nodejs16.17/rtsp/nodejs/bin/node
+
    * - NodeJS 18.20
      - Node.js18.20
+     - /opt/function/runtime/nodejs18.20/rtsp/nodejs/bin/node
+
+   * - NodeJS 20.15
+     - Node.js20.15
+     - /opt/function/runtime/nodejs20.15/rtsp/nodejs/bin/node
+
+Bundled third-party components integrated in the Node.js runtime
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For bundled libraries integrated in the Node.js runtime, 
+see :doc:`Bundled Libraries <bundled_libraries/_index>`.
 
 
-Supported NodeJS Runtimes for building using container images
---------------------------------------------------------------
+Building using container images
+--------------------------------
+
+
+Supported Node.js Runtimes for building using container images
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For building functions using container images, you can use any
-NodeJS version that meets the requirements of your custom container image.
+Node.js version that meets the requirements of your custom container image.
 
 
 Set up development environment
 ---------------------------------
-To build and run the NodeJS runtime for FunctionGraph, you need to set up your
-development environment by installing the NodeJS programming language.
+To build and run the Node.js runtime for FunctionGraph, you need to set up your
+development environment by installing the Node.js programming language.
 
 
 Operating system
@@ -83,21 +121,21 @@ This guide assumes that you are using a Unix-like operating system such as
 - Linux,
 - macOS.
 
-Install NodeJS
+Install Node.js
 ^^^^^^^^^^^^^^^^^^^^
-1. Download the NodeJS installation package for your operating system
-   from the official `NodeJS website <https://nodejs.org/en/download/>`_.
+1. Download the Node.js installation package for your operating system
+   from the official `Node.js website <https://nodejs.org/en/download/>`_.
 2. Follow the installation instructions provided on the website to
-   install NodeJS on your system.
+   install Node.js on your system.
 
 .. note::
-  This guide assumes that you have installed NodeJS and npm (Node Package Manager)
-  using nvm (Node Version Manager) to manage your NodeJS versions.
+  This guide assumes that you have installed Node.js and npm (Node Package Manager)
+  using nvm (Node Version Manager) to manage your Node.js versions.
 
 
 Install an IDE
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-You can use any text editor or IDE to write NodeJS code.
+You can use any text editor or IDE to write Node.js code.
 
 .. note::
    Examples in this documentation were created using:

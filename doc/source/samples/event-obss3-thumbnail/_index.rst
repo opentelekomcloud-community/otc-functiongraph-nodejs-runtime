@@ -1,3 +1,5 @@
+.. _event-obss3-thumbnail:
+
 Scratch Event Function generating Thumbnails
 ============================================
 
@@ -17,4 +19,4 @@ Following diagram shows components used in this example:
   :width: 800
   :alt: Components
 
-see :github_repo_master:`otc-functiongraph-fg-runtime<samples-doc/event-obss3-thumbnail>` for details.
+See :github_repo_master:`event-obss3-thumbnail <samples-doc/event-obss3-thumbnail>` for details.

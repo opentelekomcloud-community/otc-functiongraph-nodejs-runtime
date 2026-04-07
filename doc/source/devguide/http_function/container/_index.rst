@@ -15,7 +15,7 @@ on how to install Docker on your system.
 Create Image
 -----------------
 
-On how to create a FunctionGraph HTTP function using NodeJS
+On how to create a FunctionGraph HTTP function using Node.js
 with container image, see:
 
 .. toctree::
