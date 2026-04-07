@@ -15,7 +15,7 @@ Node.js libraries for FunctionGraph on OpenTelekomCloud.
 
 ## Documentation
 
-For documentation see: [otc-functiongraph-fg-runtime](https://opentelekomcloud-community.github.io/otc-functiongraph-fg-runtime/)
+For documentation see: [otc-functiongraph-nodejs-runtime](https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime/)
 
 >[!NOTE] 
 > To run documentation locally:  
