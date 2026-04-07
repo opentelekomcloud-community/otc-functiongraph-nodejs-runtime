@@ -1,7 +1,7 @@
 {
-  "name": "fg-events",
+  "name": "otc-functiongraph-nodejs-runtime",
   "version": "1.0.0",
-  "description": "FunctionGraph trigger events",
+  "description": "Node.js runtime for T Cloud Public FunctionGraph",
   "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
   "bugs": {
     "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
@@ -25,26 +25,15 @@
     "postpack": "rm -f ${npm_package_name}.zip && tarball=\"${npm_package_name}-${npm_package_version}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${npm_package_name}.zip; rm $tarball"
   },
   "dependencies": {
-    "apig-event": "file:./apig",
-    "cts-event": "file:./cts",
-    "dds-event": "file:./dds",
-    "dms4kafka-event": "file:./dms4kafka",
-    "dms4rocketmq-event": "file:./dms4rocketmq",
-    "lts-event": "file:./lts",
-    "obss3-event": "file:./obss3",
-    "smn-event": "file:./smn",
-    "timer-event": "file:./timer"
+    "fg-events": "file:./fg-events",
+    "fg-runtime": "file:./fg-runtime",
+    "fg-testutils": "file:./fg-testutils"
   },
-  "bundleDependencies": [
-    "apig-event",
-    "cts-event",
-    "dds-event",
-    "dms4kafka-event",
-    "dms4rocketmq-event",
-    "lts-event",
-    "obss3-event",
-    "smn-event",
-    "timer-event"
+  "bundledDependencies": [
+    "fg-events",
+    "fg-runtime",
+    "fg-testutils"
   ],
   "type": "commonjs"
+
 }
