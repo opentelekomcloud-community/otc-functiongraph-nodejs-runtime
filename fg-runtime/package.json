@@ -4,6 +4,9 @@
   "bugs": {
     "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
