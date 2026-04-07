@@ -1,5 +1,5 @@
 Node.js FunctionGraph samples
-============================
+==============================
 
 Following samples are provided to demonstrate how to use
 FunctionGraph with Node.js:

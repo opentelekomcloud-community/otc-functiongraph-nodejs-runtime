@@ -1,7 +1,7 @@
 .. _creating_an_event_function_using_a_container_image_built:
 
 Creating an Event Function Using a Container Image Built with Node.js
-====================================================================
+======================================================================
 
 For general details about how to use a container image
 to create and execute an event function,
