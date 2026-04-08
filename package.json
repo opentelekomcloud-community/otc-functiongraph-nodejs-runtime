@@ -16,6 +16,7 @@
   "author": "T Cloud Public",
   "license": "Apache-2.0",
   "workspaces": [
+    "fg-events/*",
     "fg-events",
     "fg-runtime",
     "fg-testutils"
