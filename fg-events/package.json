@@ -26,6 +26,18 @@
     "postpack": "name=$(bash -c 'echo \"${npm_package_name////-}-${npm_package_version}\" | sed \"s/@/ /g\"') && rm -f ${name}.zip && tarball=\"${name}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${name}.zip",
     "publish:github": "npm pack && npm publish --registry https://npm.pkg.github.com"
   },
+  "workspaces": [
+    "fg-apig-event",
+    "fg-cts-event",
+    "fg-dds-event",
+    "fg-dms4kafka-event",
+    "fg-dms4rocketmq-event",
+    "fg-kafkaopensource-event",
+    "fg-lts-event",
+    "fg-obss3-event",
+    "fg-smn-event",
+    "fg-timer-event"
+  ],
   "dependencies": {
     "fg-apig-event": "file:./apig",
     "fg-cts-event": "file:./cts",
