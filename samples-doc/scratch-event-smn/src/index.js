@@ -1,4 +1,4 @@
-const { SMNEvent } = require("smn-event");
+const { SMNEvent } = require("fg-smn-event");
 
 exports.initializer = function (context, callback) {
   const logger = context.getLogger();

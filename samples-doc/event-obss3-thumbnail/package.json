@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "esdk-obs-nodejs": "^3.25.6",
-    "obss3-event": "file:../../fg-events/obss3",
+    "fg-obss3-event": "file:../../fg-events/obss3",
     "sharp": "^0.32.6"
   },
   "files": [
@@ -42,7 +42,7 @@
     "lib/**/*"
   ],
   "bundleDependencies": [
-    "obss3-event",
+    "fg-obss3-event",
     "esdk-obs-nodejs",
     "sharp"
   ]

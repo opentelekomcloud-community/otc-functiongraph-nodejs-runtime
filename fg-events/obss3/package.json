@@ -1,5 +1,6 @@
 {
-  "name": "obss3-event",
+  "name": "@opentelekomcloud-community/fg-obss3-event",
+  "description": "OBS S3 event class for FunctionGraph OBS S3 trigger",
   "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
   "bugs": {
     "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
@@ -9,19 +10,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git",
+    "directory": "fg-events/obss3"
   },
-  "version": "1.0.0",
-  "description": "OBS S3 event class for FunctionGraph OBS S3 trigger",
+  "version": "1.0.0",  
   "license": "Apache-2.0",
   "author": "T Cloud Public",
   "type": "commonjs",
   "main": "./src/index.js",
   "scripts": {
-    "test": "jest --config ./jest.config.js --coverage",
+    "test": "jest --config ./jest.config.js --coverage --silent",
     "test:ts": "tsc && node dist/test/obss3event.test.js",
     "build": "tsc",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "postpack": "name=$(bash -c 'echo \"${npm_package_name////-}-${npm_package_version}\" | sed \"s/@/ /g\"') && rm -f ${name}.zip && tarball=\"${name}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${name}.zip"
   },
   "devDependencies": {
     "typescript": "^5.3.3",

@@ -1,4 +1,4 @@
-const { DMS4RocketMQEvent } = require("dms4rocketmq-event");
+const { DMS4RocketMQEvent } = require("fg-dms4rocketmq-event");
 
 exports.handler = async (event, context) => {
   let log = context.getLogger();

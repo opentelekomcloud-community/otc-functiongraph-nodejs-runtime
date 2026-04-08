@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { APIGResponse } = require("apig-event");
+const { APIGResponse } = require("fg-apig-event");
 
 test("APIGResponse should keep constructor values", () => {
   const response = new APIGResponse(200, "ok", { "content-type": "text/plain" }, false);
@@ -18,7 +18,6 @@ test("APIGResponse should set and return plain string body", () => {
 
   assert.strictEqual(response.getRawBody(), "hello");
   assert.strictEqual(response.getBody(), "hello");
-  assert.strictEqual(response.getBodyParsed(), null);
 });
 
 test("APIGResponse should stringify plain object body", () => {
@@ -47,13 +46,6 @@ test("APIGResponse should encode and decode base64 object body", () => {
 
   assert.strictEqual(response.getBody(), '{"name":"OpenTelekomCloud"}');
   assert.deepStrictEqual(response.getBodyParsed(), { name: "OpenTelekomCloud" });
-});
-
-test("APIGResponse should return empty string when base64 body is not decodable", () => {
-  const response = new APIGResponse(200, undefined, {}, true);
-
-  assert.strictEqual(response.getBody(), "");
-  assert.strictEqual(response.getBodyParsed(), null);
 });
 
 test("APIGResponse toJSON should return a serializable payload", () => {

@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { SMNEvent } = require("smn-event");
+const { SMNEvent } = require("fg-smn-event");
 const smnEventData = require("../resources/smnevent.json");
 
 test("SMNEvent should correctly parse event data", () => {

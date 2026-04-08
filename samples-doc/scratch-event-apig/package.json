@@ -31,13 +31,13 @@
     "jest-environment-jsdom": "^30.2.0"
   },
   "dependencies": {
-    "apig-event": "file:../../fg-events/apig"
+    "fg-apig-event": "file:../../fg-events/apig"
   },
   "files": [
     "src/**/*",
     "lib/**/*"
   ],
   "bundleDependencies": [
-    "apig-event"
+    "fg-apig-event"
   ]
 }

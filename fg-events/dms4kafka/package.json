@@ -1,5 +1,6 @@
 {
-  "name": "dms4kafka-event",
+  "name": "@opentelekomcloud-community/fg-dms4kafka-event",
+  "description": "DMS for Kafka event class for FunctionGraph DMS trigger",
   "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
   "bugs": {
     "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
@@ -9,16 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git",
+    "directory": "fg-events/dms4kafka"
   },
-  "version": "1.0.0",
-  "description": "DMS for Kafka event class for FunctionGraph DMS trigger",
+  "version": "1.0.0",  
   "license": "Apache-2.0",
   "author": "T Cloud Public",
   "type": "commonjs",
   "main": "./src/index.js",
   "scripts": {
-    "test": "jest --config ./jest.config.js --coverage"
+    "test": "jest --config ./jest.config.js --coverage --silent",
+    "postpack": "name=$(bash -c 'echo \"${npm_package_name////-}-${npm_package_version}\" | sed \"s/@/ /g\"') && rm -f ${name}.zip && tarball=\"${name}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${name}.zip"
   },
   "devDependencies": {
     "jest": "^30.2.0",

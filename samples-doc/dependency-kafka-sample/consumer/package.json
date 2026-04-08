@@ -28,13 +28,13 @@
     "fg-runtime": "file:../../../fg-runtime"
   },
   "dependencies": {
-    "dms4kafka-event": "file:../../../fg-events/dms4kafka"
+    "fg-dms4kafka-event": "file:../../../fg-events/dms4kafka"
   },
   "files": [
     "src/**/*",
     "lib/**/*"
   ],
   "bundleDependencies": [
-    "dms4kafka-event"
+    "fg-dms4kafka-event"
   ]
 }

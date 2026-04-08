@@ -1,4 +1,4 @@
-const { OBSS3Event } = require("obss3-event");
+const { OBSS3Event } = require("fg-obss3-event");
 
 exports.initializer = function (context, callback) {
   const logger = context.getLogger();

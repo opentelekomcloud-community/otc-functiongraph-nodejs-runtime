@@ -1,5 +1,6 @@
 {
-  "name": "timer-event",
+  "name": "@opentelekomcloud-community/timer-event",
+  "description": "Timer event class for FunctionGraph timer trigger",
   "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
   "bugs": {
     "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
@@ -9,19 +10,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git",
+    "directory": "fg-events/timer"
   },
-  "version": "1.0.0",
-  "description": "Timer event class for FunctionGraph timer trigger",
+  "version": "1.0.0",  
   "license": "Apache-2.0",
   "author": "T Cloud Public",
   "type": "commonjs",
   "main": "./src/index.js",
   "scripts": {
-    "test": "jest --config ./jest.config.js --coverage",
+    "test": "jest --config ./jest.config.js --coverage --silent",
     "test:ts": "tsc && node dist/test/timerevent.test.js",
     "build": "tsc",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "postpack": "name=$(bash -c 'echo \"${npm_package_name////-}-${npm_package_version}\" | sed \"s/@/ /g\"') && rm -f ${name}.zip && tarball=\"${name}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${name}.zip"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",

@@ -29,13 +29,13 @@
     "fg-runtime": "file:../../fg-runtime"
   },
   "dependencies": {
-    "dms4rocketmq-event": "file:../../fg-events/dms4rocketmq"
+    "fg-dms4rocketmq-event": "file:../../fg-events/dms4rocketmq"
   },
   "files": [
     "src/**/*",
     "lib/**/*"
   ],
   "bundleDependencies": [
-    "dms4rocketmq-event"
+    "fg-dms4rocketmq-event"
   ]
 }

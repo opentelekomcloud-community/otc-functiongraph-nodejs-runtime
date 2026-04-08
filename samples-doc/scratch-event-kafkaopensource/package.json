@@ -29,13 +29,13 @@
     "fg-runtime": "file:../../fg-runtime"
   },
   "dependencies": {
-    "kafkaopensource-event": "file:../../fg-events/kafkaopensource"
+    "fg-kafkaopensource-event": "file:../../fg-events/kafkaopensource"
   },
   "files": [
     "src/**/*",
     "lib/**/*"
   ],
   "bundleDependencies": [
-    "kafkaopensource-event"
+    "fg-kafkaopensource-event"
   ]
 }

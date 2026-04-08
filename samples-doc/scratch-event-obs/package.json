@@ -29,13 +29,13 @@
     "fg-runtime": "file:../../fg-runtime"
   },
   "dependencies": {
-    "obss3-event": "file:../../fg-events/obss3"
+    "fg-obss3-event": "file:../../fg-events/obss3"
   },
   "files": [
     "src/**/*",
     "lib/**/*"
   ],
   "bundleDependencies": [
-    "obss3-event"
+    "fg-obss3-event"
   ]
 }

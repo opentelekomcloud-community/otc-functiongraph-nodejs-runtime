@@ -29,13 +29,13 @@
     "fg-runtime": "file:../../fg-runtime"
   },
   "dependencies": {
-    "cts-event": "file:../../fg-events/cts"
+    "fg-cts-event": "file:../../fg-events/cts"
   },
   "files": [
     "src/**/*",
     "lib/**/*"
   ],
   "bundleDependencies": [
-    "cts-event"
+    "fg-cts-event"
   ]
 }

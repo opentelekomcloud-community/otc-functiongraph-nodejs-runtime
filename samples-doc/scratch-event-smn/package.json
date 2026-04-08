@@ -29,13 +29,13 @@
     "fg-runtime": "file:../../fg-runtime"
   },
   "dependencies": {
-    "smn-event": "file:../../fg-events/smn"
+    "fg-smn-event": "file:../../fg-events/smn"
   },
   "files": [
     "src/**/*",
     "lib/**/*"
   ],
   "bundleDependencies": [
-    "smn-event"
+    "fg-smn-event"
   ]
 }

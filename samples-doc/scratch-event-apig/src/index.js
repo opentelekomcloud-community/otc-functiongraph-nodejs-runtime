@@ -1,4 +1,4 @@
-const { APIGEvent, APIGResponse } = require("apig-event");
+const { APIGEvent, APIGResponse } = require("fg-apig-event");
 
 exports.initializer = function (context, callback) {
   const logger = context.getLogger();

@@ -59,6 +59,9 @@ class APIGResponse {
   }
 
   getBodyParsed() {
+    if (this.body === undefined || this.body === null) {
+      return this.body;
+    }
     return JSON.parse(this.getBody());
   }
 

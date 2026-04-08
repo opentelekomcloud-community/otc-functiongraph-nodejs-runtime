@@ -29,13 +29,13 @@
     "fg-runtime": "file:../../fg-runtime"
   },
   "dependencies": {
-    "timer-event": "file:../../fg-events/timer"
+    "fg-timer-event": "file:../../fg-events/timer"
   },
   "files": [
     "src/**/*",
     "lib/**/*"
   ],
   "bundleDependencies": [
-    "timer-event"
+    "fg-timer-event"
   ]
 }

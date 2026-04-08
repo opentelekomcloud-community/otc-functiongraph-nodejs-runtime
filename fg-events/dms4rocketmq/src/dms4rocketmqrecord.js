@@ -1,5 +1,4 @@
 "use strict";
-
 const { DMS4RocketMQRecordMessage } = require("./dms4rocketmqrecordmessage")
 
 class DMS4RocketMQRecord {

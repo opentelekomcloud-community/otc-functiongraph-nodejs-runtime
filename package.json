@@ -1,0 +1,27 @@
+{
+  "name": "@opentelekomcloud-community/otc-functiongraph-nodejs-runtime",
+  "description": "FunctionGraph Development in Node.JS",
+  "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
+  "bugs": {
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+  },
+  "version": "1.0.0",
+  "author": "T Cloud Public",
+  "license": "Apache-2.0",
+  "workspaces": [
+    "fg-events",
+    "fg-runtime",
+    "fg-testutils"
+  ],
+  "scripts": {
+    "version": "npm version $npm_package_version --no-git-tag-version --workspaces",
+    "version1": "npm version $npm_package_version --no-git-tag-version --workspaces && git add  **/package*.json"
+  }
+}
