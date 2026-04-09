@@ -26,16 +26,16 @@
     "postpack": "rm -f ${npm_package_name}.zip && tarball=\"${npm_package_name}-${npm_package_version}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${npm_package_name}.zip; rm $tarball"
   },
   "devDependencies": {
-    "fg-runtime": "file:../../fg-runtime"
+    "@opentelekomcloud-community/fg-runtime": "file:../../fg-runtime"
   },
   "dependencies": {
-    "kafkaopensource-event": "file:../../fg-events/kafkaopensource"
+    "@opentelekomcloud-community/fg-kafkaopensource-event": "file:../../fg-events/kafkaopensource"
   },
   "files": [
     "src/**/*",
     "lib/**/*"
   ],
   "bundleDependencies": [
-    "kafkaopensource-event"
+    "@opentelekomcloud-community/fg-kafkaopensource-event"
   ]
 }

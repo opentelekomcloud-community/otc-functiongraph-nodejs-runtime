@@ -1,6 +1,6 @@
 const { randomUUID } = require('crypto');
 
-const { Context } = require("fg-runtime");
+const { Context } = require("@opentelekomcloud-community/fg-runtime");
 const { handler } = require("../src/index");
 
 const event = require("../resources/dms4kafka_event.json");

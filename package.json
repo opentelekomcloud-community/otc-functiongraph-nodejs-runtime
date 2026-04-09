@@ -1,0 +1,45 @@
+{
+  "name": "@opentelekomcloud-community/otc-functiongraph-nodejs-runtime",
+  "description": "FunctionGraph Development in Node.JS",
+  "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
+  "bugs": {
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+  },
+  "version": "1.0.0",
+  "author": "T Cloud Public",
+  "license": "Apache-2.0",
+  "workspaces": [
+    "fg-events/*",
+    "fg-events",
+    "fg-runtime",
+    "fg-testutils"
+  ],
+  "scripts": {
+    "version": "npm version $npm_package_version --no-git-tag-version --workspaces",
+    "version1": "npm version $npm_package_version --no-git-tag-version --workspaces && git add  **/package*.json",
+    "test": "",
+    "pack:fg-events": "cd fg-events && npm pack",
+    "pack:fg-events:apig": "cd fg-events/apig && npm pack",
+    "pack:fg-events:cts": "cd fg-events/cts && npm pack",
+    "pack:fg-events:dds": "cd fg-events/dds && npm pack",
+    "pack:fg-events:dms4kafka": "cd fg-events/dms4kafka && npm pack",
+    "pack:fg-events:dms4rocketmq": "cd fg-events/dms4rocketmq && npm pack",
+    "pack:fg-events:kafkaopensource": "cd fg-events/kafkaopensource && npm pack",
+    "pack:fg-events:lts": "cd fg-events/lts && npm pack",
+    "pack:fg-events:timer": "cd fg-events/timer && npm pack",
+    "pack:fg-runtime": "cd fg-runtime && npm pack",
+    "pack:fg-testutils": "cd fg-testutils && npm pack",
+    "pack:all": "npm-run-all --parallel pack:fg-events pack:fg-events:* pack:fg-runtime pack:fg-testutils",
+    "publish:all": "npm run pack:all && npm publish --registry https://npm.pkg.github.com --workspaces true --include-workspace-root false"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

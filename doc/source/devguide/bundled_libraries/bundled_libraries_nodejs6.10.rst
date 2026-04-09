@@ -4,9 +4,9 @@
 Bundled third-party components in the Node.js 6.10
 =================================================================
 
-Following list shows the bundled third-party components integrated in the Node.js runtime for FunctionGraph. 
+Following list shows the bundled third-party components integrated with Node.js 6.10 runtime for FunctionGraph.
 
-.. list-table:: Bundled Libraries in Node.js Runtime nodejs6.10
+.. list-table:: Bundled libraries with **Node.js 6.10**
     :header-rows: 1
 
     * - Name

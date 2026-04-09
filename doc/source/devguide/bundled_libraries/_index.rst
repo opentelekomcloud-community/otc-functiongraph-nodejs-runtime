@@ -8,7 +8,9 @@ Bundled Libraries
 
 Bundled libraries can be used for **event** and **http** functions **build from scratch**.
 
-For runtimes bundled with a Node.js runtime version see following pages:
+If you want to use a different version of a runtime-included library,you can do this by bundling it with your function in your deployment package or by adding it as a dependency.
+
+For libraries bundled with a Node.js runtime version see following pages:
 
 .. toctree::
    :maxdepth: 1

@@ -1,6 +1,15 @@
 "use strict";
 
+/**
+ * @typedef {Object} CTSBaseUserDomainJSON
+ * @property {string} [id]
+ * @property {string} [name]
+ */
+
 class CTSBaseUserDomain {
+  /**
+   * @param {CTSBaseUserDomainJSON} userDomain
+   */
   constructor(userDomain) {
     this._userDomain = userDomain || {};
   }
@@ -21,6 +30,9 @@ class CTSBaseUserDomain {
     return this._userDomain.name || "";
   }
 
+  /**
+   * @returns {CTSBaseUserDomainJSON}
+   */
   toJSON() {
     return this._userDomain;
   }

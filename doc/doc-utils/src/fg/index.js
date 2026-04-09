@@ -1,13 +1,13 @@
 "use strict";
 
-/***************************************************************
- * Deployed as a function in FunctionGraph,
+/*************************************************************************
+ * Deploy as a function in FunctionGraph with following configuration:,
  *  - Function type: event-function from scratch
  *  - Name: getNodeJSRuntimeInfo
  *  - Runtime: nodejs20.15
  *  - Project: OTC_SDK_PROJECT_ID
  *  - Region: OTC_SDK_REGION
- ***************************************************************/
+ *************************************************************************/
 const fs = require("fs");
 const path = require("path");
 
@@ -83,8 +83,6 @@ function getRuntimes() {
 exports.handler = async (event, context) => {
   const runtime = event.runtime;
 
-  // "/home/snuser/runtime/node_modules"
-
   let ret = [];
 
   if (!runtime) {
@@ -92,9 +90,15 @@ exports.handler = async (event, context) => {
     ret = getRuntimes();
   } else {
     // get library information for the specified runtime
-    ret = extractNodeModulesPackageMetadata(
-      `/opt/function/runtime/${runtime}/rtsp/nodejs/node_modules`,
-    );
+   if (runtime === "nodejs8.10") {
+       ret = extractNodeModulesPackageMetadata(
+        `/opt/function/runtime/${runtime}/rtsp/nnodejs/node_modules`,
+        );
+    } else {
+        ret = extractNodeModulesPackageMetadata(
+        `/opt/function/runtime/${runtime}/rtsp/nodejs/node_modules`,
+        );
+    }
   }
 
   return JSON.stringify(ret);

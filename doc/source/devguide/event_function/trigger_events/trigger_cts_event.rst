@@ -1,14 +1,5 @@
-Cloud Trace Service Trigger CTS
+CTS Event Source
 ===============================
-
-You can write a FunctionGraph function. According to the CTS cloud audit
-service type and the event notification required for the operation subscription,
-when the CTS cloud audit service obtains the subscribed operation record, the
-collected operation record is passed as a parameter (CTS sample event) through
-the CTS trigger to call the FunctionGraph function. Through the function, the
-key information in the log is analyzed and processed, and the system, network
-and other business modules are automatically repaired, or alarms are generated
-through SMS, email, etc. to notify business personnel to handle.
 
 For the use of CTS triggers, please refer to
 :docs_otc:`Using a CTS Trigger <function-graph/umn/creating_triggers/using_a_cts_trigger.html>`.

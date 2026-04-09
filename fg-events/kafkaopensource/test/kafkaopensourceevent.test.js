@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { KafkaOpenSourceEvent } = require("kafkaopensource-event");
+const { KafkaOpenSourceEvent } = require("../src/index");
 
 test("KafkaOpenSourceEvent should correctly parse event data", () => {
   const eventData = require("../resources/kafkaopensource_event.json");

@@ -1,9 +1,39 @@
 "use strict";
+
+/**
+ * @typedef {Object} SMNBodyJSON
+ * @property {string} [topic_urn]
+ * @property {string} [timestamp]
+ * @property {Object | null} [message_attributes]
+ * @property {string} [message]
+ * @property {string} [type]
+ * @property {string} [message_id]
+ * @property {string} [subject]
+ */
+
+/**
+ * @typedef {Object} SMNRecordJSON
+ * @property {string} [event_subscription_urn]
+ * @property {string} [event_source]
+ * @property {SMNBodyJSON} [smn]
+ */
+
+/**
+ * @typedef {Object} SMNEventJSON
+ * @property {SMNRecordJSON[]} [record]
+ * @property {string} [functionname]
+ * @property {string} [requestId]
+ * @property {string} [timestamp]
+ */
+
 /**
  * SMN Event Class
  * Represents a Simple Message Notification event for FunctionGraph
  */
 class SMNEvent {
+  /**
+   * @param {SMNEventJSON} event
+   */
   constructor(event) {
     this._event = event || {};
 
@@ -14,15 +44,15 @@ class SMNEvent {
   }
 
   /**
-   * Get the record array
-   * @returns {Array} Array of event records
+   * Returns the event records.
+   * @returns {SMNRecord[]} Array of event records
    */
   getRecords() {
     return this._records;
   }
 
   /**
-   * Get the function name
+   * Returns the function name.
    * @returns {string} Function name
    */
   getFunctionName() {
@@ -30,7 +60,7 @@ class SMNEvent {
   }
 
   /**
-   * Get the request ID
+   * Returns the request ID.
    * @returns {string} Request ID
    */
   getRequestId() {
@@ -38,7 +68,7 @@ class SMNEvent {
   }
 
   /**
-   * Get the timestamp
+   * Returns the timestamp.
    * @returns {string} Event timestamp
    */
   getTimestamp() {
@@ -46,8 +76,8 @@ class SMNEvent {
   }
 
   /**
-   * Convert the event back to JSON
-   * @returns {Object} Event as JSON object
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {SMNEventJSON} Payload as JSON object
    */
   toJSON() {
     return this._event;
@@ -56,12 +86,15 @@ class SMNEvent {
 }
 
 class SMNRecord {
+  /**
+   * @param {SMNRecordJSON} record
+   */
   constructor(record) {
     this._record = record || {};
   }
 
   /**
-   * Get event subscription URN
+   * Returns the event subscription URN.
    * @returns {string} Event subscription URN
    */
   getEventSubscriptionUrn() {
@@ -69,7 +102,7 @@ class SMNRecord {
   }
 
   /**
-   * Get event source
+   * Returns the event source.
    * @returns {string} Event source
    */
   getEventSource() {
@@ -77,16 +110,16 @@ class SMNRecord {
   }
 
   /**
-   * Get SMN details from record
-   * @returns {Object} SMN details object
+   * Returns the SMN details from the record.
+   * @returns {SMNBody} SMN details object
    */
   getSMNBody() {
     return new SMNBody(this._record.smn);
   }
 
   /**
-   * Convert the event back to JSON
-   * @returns {Object} Event as JSON object
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {SMNRecordJSON} Payload as JSON object
    */
   toJSON() {
     return this._record;
@@ -94,12 +127,15 @@ class SMNRecord {
 }
 
 class SMNBody {
+  /**
+   * @param {SMNBodyJSON} smn
+   */
   constructor(smn) {
     this._smn = smn || {};
   }
 
   /**
-   * Get SMN topic URN
+   * Returns the SMN topic URN.
    * @returns {string} Topic URN
    */
   getTopicUrn() {
@@ -107,7 +143,7 @@ class SMNBody {
   }
 
   /**
-   * Get SMN timestamp
+   * Returns the SMN timestamp.
    * @returns {string} SMN timestamp
    */
   getTimestamp() {
@@ -115,7 +151,7 @@ class SMNBody {
   }
 
   /**
-   * Get SMN message attributes
+   * Returns the SMN message attributes.
    * @returns {Object|null} Message attributes
    */
   getMessageAttributes() {
@@ -123,7 +159,7 @@ class SMNBody {
   }
 
   /**
-   * Get SMN message content
+   * Returns the SMN message content.
    * @returns {string} Message content
    */
   getMessage() {
@@ -131,7 +167,7 @@ class SMNBody {
   }
 
   /**
-   * Get SMN type
+   * Returns the SMN type.
    * @returns {string} SMN type
    */
   getType() {
@@ -139,7 +175,7 @@ class SMNBody {
   }
 
   /**
-   * Get SMN message ID
+   * Returns the SMN message ID.
    * @returns {string} Message ID
    */
   getMessageId() {
@@ -147,7 +183,7 @@ class SMNBody {
   }
 
   /**
-   * Get SMN message subject
+   * Returns the SMN message subject.
    * @returns {string} Message subject
    */
   getSubject() {
@@ -155,8 +191,8 @@ class SMNBody {
   }
 
   /**
-   * Convert the event back to JSON
-   * @returns {Object} Event as JSON object
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {SMNBodyJSON} Payload as JSON object
    */
   toJSON() {
     return this._smn;

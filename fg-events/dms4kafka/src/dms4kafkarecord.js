@@ -2,7 +2,25 @@
 
 const { DMS4KafkaRecordMessage } = require("./dms4kafkarecordmessage");
 
+/**
+ * @typedef {Object} DMS4KafkaRecordMessageObject
+ * @property {string} [message] Raw message payload
+ */
+
+/**
+ * @typedef {string | DMS4KafkaRecordMessageObject} DMS4KafkaRecordMessageJSON
+ */
+
+/**
+ * @typedef {Object} DMS4KafkaRecordJSON
+ * @property {string} [topic_id] Topic identifier
+ * @property {DMS4KafkaRecordMessageJSON[]} [messages] Messages received for the topic
+ */
+
 class DMS4KafkaRecord {
+  /**
+   * @param {DMS4KafkaRecordJSON} record
+   */
   constructor(record) {
     this._record = record || {};
 
@@ -12,17 +30,23 @@ class DMS4KafkaRecord {
     }
   }
 
+  /**
+   * @returns {string}
+   */
   getTopicId() {
     return this._record.topic_id || "";
   }
 
+  /**
+   * @returns {DMS4KafkaRecordMessage[]}
+   */
   getMessages() {
     return this._messages;
   }
 
   /**
-   * Convert the event back to JSON
-   * @returns {Object} Event as JSON object
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {DMS4KafkaRecordJSON} Payload as JSON object
    */
   toJSON() {
     return this._record;

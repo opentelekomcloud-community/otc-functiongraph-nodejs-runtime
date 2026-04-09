@@ -1,5 +1,5 @@
 {
-  "name": "apig-event",
+  "name": "@opentelekomcloud-community/fg-apig-event",
   "description": "APIG event class for FunctionGraph APIG trigger",
   "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
   "bugs": {
@@ -10,7 +10,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
+    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git",
+    "directory": "fg-events/apig"
   },
   "version": "1.0.0",
   "license": "Apache-2.0",
@@ -19,8 +20,10 @@
   "main": "./src/index.js",
   "scripts": {
     "test": "jest --config ./jest.config.js --coverage --silent",
-    "postpack": "rm -f ${npm_package_name}.zip && tarball=\"${npm_package_name}-${npm_package_version}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${npm_package_name}.zip; rm $tarball"
+    "postpack": "name=$(bash -c 'echo \"${npm_package_name////-}-${npm_package_version}\" | sed \"s/@/ /g\"') && rm -f ${name}.zip && tarball=\"${name}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${name}.zip",
+    "publish:github": "npm pack && npm publish --registry https://npm.pkg.github.com"
   },
+  "dependencies": {},
   "devDependencies": {
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^30.2.0"

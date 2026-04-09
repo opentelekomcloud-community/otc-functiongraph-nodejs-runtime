@@ -1,6 +1,6 @@
 const { randomUUID } = require("crypto");
 
-const { Context } = require("fg-runtime");
+const { Context } = require("@opentelekomcloud-community/fg-runtime");
 const { handler, initializer, closePool } = require("../src/index_usepool");
 const { exit } = require("process");
 

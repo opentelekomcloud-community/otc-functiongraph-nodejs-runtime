@@ -88,3 +88,37 @@ Using container image
    * - :doc:`container-http-koa<container-http/container-http-koa/_index>`
      - A sample HTTP function using Koa framework in Node.js functions deployed as container image.
 
+
+.. note::
+   All samples are provided for demonstration purposes only.
+   They may not cover all edge cases or best practices for production use.
+   You can use these samples as a starting point and modify them according to your specific requirements and use cases.
+
+   The dependencies and dev dependencies used in the samples are file dependencies and are working if the
+   complete repository is cloned.
+
+   To use the samples separately, you need to install the required dependencies and dev dependencies manually by running
+   ``npm install`` in the sample directory.
+
+   For example, to install the dependencies for the scratch-event-apig sample, change
+   
+   .. code-block:: json
+      :caption: package.json
+
+      "dependencies": {
+        "@opentelekomcloud-community/fg-apig-event": "file:../../fg-events/apig"
+      },
+
+  to 
+  
+   .. code-block:: json
+      :caption: package.json
+
+      "devDependencies": {
+          "@opentelekomcloud-community/fg-context": "^1.0.0"
+      },
+
+      
+
+
+

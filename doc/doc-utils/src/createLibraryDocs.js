@@ -14,11 +14,11 @@
  ********************************************************************
  *
  * Filename: createLibraryDocs.js
- * 
+ *
  * Description: This script retrieves the list of bundled libraries
  * for each Node.js runtime supported by FunctionGraph and
  * generates corresponding documentation files in reStructuredText format.
- * 
+ *
  * Following environment variables are required for this script:
  * - OTC_SDK_REGION: The region where your FunctionGraph service is hosted (default is "eu-de").
  * - OTC_SDK_PROJECT_ID: Your 'T Cloud Public' project ID.
@@ -44,7 +44,10 @@ const functionName = "getNodeJSRuntimeInfo";
 const functionVersion = "latest";
 const functionApp = "default";
 
-const OUTPUT_FOLDER = path.join(__dirname, "../../../doc/source/devguide/bundled_libraries/");
+const OUTPUT_FOLDER = path.join(
+  __dirname,
+  "../../../doc/source/devguide/bundled_libraries/",
+);
 
 async function getLibs(runtime) {
   const functionURN = `urn:fss:${region}:${projectId}:function:${functionApp}:${functionName}:${functionVersion}`;
@@ -141,7 +144,13 @@ async function writeIndexFile(runtimes) {
     );
 
     stream.write(
-      "\nFor runtimes bundled with a Node.js runtime version see following pages:\n",
+      "\nIf you want to use a different version of a runtime-included library," +
+        "you can do this by bundling it with your function in your deployment package " +
+        "or by adding it as a dependency.\n",
+    );
+
+    stream.write(
+      "\nFor libraries bundled with a Node.js runtime version see following pages:\n",
     );
 
     stream.write("\n.. toctree::\n");
@@ -180,12 +189,11 @@ async function writeFile(runtime, libs) {
 
     if (Array.isArray(libs)) {
       stream.write(
-        "Following list shows the bundled third-party components integrated in the Node.js runtime for FunctionGraph. \n",
+        `Following list shows the bundled third-party components integrated with Node.js ${runtime.replace("nodejs", "")} runtime for FunctionGraph.\n`,
       );
-      stream.write("\n");
-
+      
       stream.write(
-        `.. list-table:: Bundled Libraries in Node.js Runtime ${runtime}\n`,
+        `\n.. list-table:: Bundled libraries with **Node.js ${runtime.replace("nodejs", "")}**\n`,
       );
       stream.write("    :header-rows: 1\n");
       stream.write("\n");
@@ -199,7 +207,7 @@ async function writeFile(runtime, libs) {
           stream.write(`    * - \`${pkg.name} <${pkg.homepage}>\`_\n`);
         } else {
           if (pkg.name != "esdk-obs-nodejs") {
-          stream.write(`    * - ${pkg.name}\n`);
+            stream.write(`    * - ${pkg.name}\n`);
           } else {
             stream.write(
               `    * - \`esdk-obs-nodejs <https://github.com/huaweicloud/huaweicloud-sdk-nodejs-obs/tree/v${pkg.version}>\`_\n`,

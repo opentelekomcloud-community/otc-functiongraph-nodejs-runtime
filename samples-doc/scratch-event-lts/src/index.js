@@ -1,4 +1,4 @@
-const { LTSEvent } = require("lts-event");
+const { LTSEvent } = require("@opentelekomcloud-community/fg-lts-event");
 
 exports.initializer = function (context, callback) {
   const logger = context.getLogger();

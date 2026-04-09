@@ -1,12 +1,11 @@
 "use strict";
-
-const { APIGResponse } = require("apig-event");
-
-const { randomUUID } = require("crypto");
-
-const { Context } = require("fg-runtime");
-const { handler } = require("../src/index");
 const { assert } = require("console");
+const { randomUUID } = require("crypto");
+const { APIGResponse } = require("@opentelekomcloud-community/fg-apig-event");
+const { Context } = require("@opentelekomcloud-community/fg-runtime");
+
+const { handler } = require("../src/index");
+
 const { hasUncaughtExceptionCaptureCallback } = require("process");
 
 function getContext() {
@@ -35,7 +34,7 @@ test("Test APIG event handler: apig_event_html.json", async () => {
   const body = r.getBody();
 
   assert(
-    body === "<html><h1>Welcome to use FunctionGraph</h1></html>`",
+    body === "<html><h1>Welcome to use FunctionGraph</h1></html>",
     "Expected body to be '<html><h1>Welcome to use FunctionGraph</h1></html>'",
   );
 });

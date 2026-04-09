@@ -27,14 +27,14 @@
     "postpack": "rm -f ${npm_package_name}.zip && tarball=\"${npm_package_name}-${npm_package_version}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${npm_package_name}.zip; rm $tarball"
   },
   "devDependencies": {
-    "fg-runtime": "file:../../fg-runtime",
-    "fg-testutils": "file:../../fg-testutils",
+    "@opentelekomcloud-community/fg-runtime": "file:../../fg-runtime",
+    "@opentelekomcloud-community/fg-testutils": "file:../../fg-testutils",
     "otc-api-sign-sdk-nodejs": "github:opentelekomcloud-community/otc-api-sign-sdk-nodejs#main",
     "global-agent": "3.0.0"
   },
   "dependencies": {
     "esdk-obs-nodejs": "^3.25.6",
-    "obss3-event": "file:../../fg-events/obss3",
+    "@opentelekomcloud-community/fg-obss3-event": "file:../../fg-events/obss3",
     "sharp": "^0.32.6"
   },
   "files": [
@@ -42,7 +42,7 @@
     "lib/**/*"
   ],
   "bundleDependencies": [
-    "obss3-event",
+    "@opentelekomcloud-community/fg-obss3-event",
     "esdk-obs-nodejs",
     "sharp"
   ]

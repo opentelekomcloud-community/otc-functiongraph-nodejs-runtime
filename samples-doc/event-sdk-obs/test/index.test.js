@@ -7,8 +7,8 @@ process.env.GLOBAL_AGENT_FORCE_GLOBAL_AGENT = 'true';
 globalAgent.bootstrap();
 
 const { randomUUID } = require('crypto');
-const { Context } = require("fg-runtime");
-const { getTempAKSK } = require("fg-testutils");
+const { Context } = require("@opentelekomcloud-community/fg-runtime");
+const { getTempAKSK } = require("@opentelekomcloud-community/fg-testutils");
 const { handler } = require("../src/index");
 
 

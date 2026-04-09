@@ -1,4 +1,4 @@
-const { TimerEvent } = require("timer-event");
+const { TimerEvent } = require("@opentelekomcloud-community/fg-timer-event");
 
 exports.initializer = function (context, callback) {
   const logger = context.getLogger();

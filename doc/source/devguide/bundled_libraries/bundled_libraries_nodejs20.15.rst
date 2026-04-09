@@ -4,9 +4,9 @@
 Bundled third-party components in the Node.js 20.15
 =================================================================
 
-Following list shows the bundled third-party components integrated in the Node.js runtime for FunctionGraph. 
+Following list shows the bundled third-party components integrated with Node.js 20.15 runtime for FunctionGraph.
 
-.. list-table:: Bundled Libraries in Node.js Runtime nodejs20.15
+.. list-table:: Bundled libraries with **Node.js 20.15**
     :header-rows: 1
 
     * - Name

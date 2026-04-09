@@ -2,8 +2,45 @@
 const { CTSBaseUserDomain } = require("./ctsbaseuserdomain");
 const { CTSSessionContext } = require("./ctssessioncontext");
 
+/**
+ * @typedef {Object} CTSBaseUserDomainJSON
+ * @property {string} [id]
+ * @property {string} [name]
+ */
+
+/**
+ * @typedef {Object} CTSSessionContextAttributesJSON
+ * @property {string} [created_at]
+ * @property {boolean | string} [mfa_authenticated]
+ */
+
+/**
+ * @typedef {Object} CTSSessionContextJSON
+ * @property {CTSSessionContextAttributesJSON} [attributes]
+ */
+
+/**
+ * @typedef {Object} CTSUserInfoJSON
+ * @property {string} [type]
+ * @property {string} [principal_id]
+ * @property {string} [principal_urn]
+ * @property {string} [account_id]
+ * @property {string} [access_key_id]
+ * @property {string} [id]
+ * @property {string} [name]
+ * @property {CTSBaseUserDomainJSON} [domain]
+ * @property {string} [user_name]
+ * @property {boolean | string} [principal_is_root_user]
+ * @property {string[]} [invoked_by]
+ * @property {CTSSessionContextJSON} [session_context]
+ * @property {string} [OriginUser]
+ */
+
 
 class CTSUserInfo {
+  /**
+   * @param {CTSUserInfoJSON} user
+   */
   constructor(user) {
     this._user = user || {};
   }
@@ -68,6 +105,9 @@ class CTSUserInfo {
   /**
    * Domain information of the user who performed the operation generating the trace.
    */
+  /**
+   * @returns {CTSBaseUserDomain}
+   */
   getDomain() {
     return new CTSBaseUserDomain(this._user.domain);
   }
@@ -101,6 +141,9 @@ class CTSUserInfo {
   /**
    * Temporary security credential attribute.
    */
+  /**
+   * @returns {CTSSessionContext}
+   */
   getSessionContext() {
     return new CTSSessionContext(this._user.session_context);
   }
@@ -112,6 +155,9 @@ class CTSUserInfo {
     return this._user.OriginUser || "";
   }
 
+  /**
+   * @returns {CTSUserInfoJSON}
+   */
   toJSON() {
     return this._user;
   }

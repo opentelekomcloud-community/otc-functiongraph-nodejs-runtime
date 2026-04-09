@@ -24,75 +24,79 @@ in the user manual.
 Function Development Overview
 ------------------------------
 
-Node.js 6.10
-^^^^^^^^^^^^
+.. tabs::
 
-.. code-block:: javascript
+   .. tab:: Node.js 8.10 and later
 
-  exports.handler = function(event, context, callback) {
-    // Your code here
-    callback(err, data);
-  };
+      Node.js 8.10 and later are compatible with the APIs of Node.js 6.10,
+      and needs to use **async** handler.
 
-* **handler**:
-  Name of the function that FunctionGraph invokes to execute your code.
+      .. code-block:: javascript
 
-  The name must be consistent with that you define when creating a function
-  in FunctionGraph.
+        exports.handler = async (event, context, callback [optional]) => {
+          // Your code her
+          return data;
+        }
 
-* **event**:
-  Event parameter defined for the function. The parameter is in **JSON** format.
+      * **handler**:
+        Name of the function that FunctionGraph invokes to execute your code.
 
-* **context**:
-  Runtime information provided for executing the function.
-  See :ref:`context` for details.
+        The name must be consistent with that you define when creating a function
+        in FunctionGraph.
 
-* **callback**:
-  Used to return the defined **err** and **data** information
-  to the frontend. The general syntax is **callback(err, data)**.
+      * **event**:
+        Event parameter defined for the function.
 
-  You can define the error or data content, for example, a character string.
+        The parameter is in **JSON** format.
 
-  If the value of **err** is **not null**, the function will fail
-  and the error message object is returned.
+      * **context**:
+        Runtime information provided for executing the function.
 
-  If the value of **err** is **null**, the function will succeed and return
-  the value of **data**.
+        See :ref:`context` for details.
 
+      Responses are output through **return**.
 
-Node.js 8.10 and later
-^^^^^^^^^^^^^^^^^^^^^^^^
+      If function throws an exception, the function execution is
+      considered failed and the error message object is returned.
 
-Node.js 8.10 and later
-^^^^^^^^^^^^^^^^^^^^^^^^
+   .. tab:: Node.js 6.10
 
-Node.js 8.10 and later are compatible with the APIs of Node.js 6.10,
-and supports an **async** handler.
+      .. code-block:: javascript
 
-.. code-block:: javascript
+        exports.handler = function(event, context, callback) {
+          // Your code here
+          callback(err, data);
+        };
 
-  exports.handler = async (event, context, callback [optional]) => {
-    // Your code her
-    return data;
-  }
+      * **handler**:
+        Name of the function that FunctionGraph invokes to execute your code.
 
-* **handler**:
-  Name of the function that FunctionGraph invokes to execute your code.
+        The name must be consistent with that you define when creating a function
+        in FunctionGraph.
 
-  The name must be consistent with that you define when creating a function
-  in FunctionGraph.
+      * **event**:
+        Event parameter defined for the function.
+        
+        The parameter is in **JSON** format.
 
-* **event**:
-  Event parameter defined for the function. The parameter is in **JSON** format.
+      * **context**:
+        Runtime information provided for executing the function.
 
-* **context**:
-  Runtime information provided for executing the function.
-  See :ref:`context` for details.
+        See :ref:`context` for details.
 
-Responses are output through **return**.
+      * **callback**:
+        Used to return the defined **err** and **data** information
+        to the frontend.
 
-If function throws an exception, the function execution is
-considered failed and the error message object is returned.
+        The general syntax is **callback(err, data)**.
+
+        You can define the error or data content, for example, a character string.
+
+        If the value of **err** is **not null**, the function will fail
+        and the error message object is returned.
+
+        If the value of **err** is **null**, the function will succeed and return
+        the value of **data**.
 
 
 .. _index_handler:
@@ -100,13 +104,116 @@ considered failed and the error message object is returned.
 Handler
 ^^^^^^^^^^^^^^^^^^^^
 
-The handler of a Node.js function is in the format of
-**[file name].[function name]**.
-You can configure the handler on the FunctionGraph console.
+The FunctionGraph handler is the method in your function code that processes events.
+When the function is invoked, FunctionGraph runs the handler method.
+The function runs until the handler returns a response, exits or times out.
 
-For example, if you set the handler to **index.handler** in your function,
+The handler method of a Node.js function is in the format of
+**[file name].[function name]**.
+
+By default it is **index.handler**. 
+
+You can configure the handler on the FunctionGraph console (Configuration -> Basic Settings -> Handler).
+
+For example, if you set the handler to **index.handler** in your function configuration,
 FunctionGraph will load the **handler** function defined in the **index.js**
 file.
+
+Defining and accessing the input event object
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+The input event object is defined in the **event** parameter of the handler function.
+The event parameter is in **JSON** format. You can define the content of the event parameter as needed.
+
+When working with the event parameter, you can directly access the content of the event parameter
+by using the dot notation or bracket notation.
+
+For example, if the event parameter is defined as follows:
+
+.. code-block:: json
+
+  {
+    "order_id": "592f8c9e-1b6a-4c3e-9d5b-1234567890ab",
+    "amount": "100.00",
+    "item": "book"
+  }   
+
+You can access the value of **order_id** by using the following code:
+
+.. code-block:: javascript
+
+  const orderId = event.order_id; // Using dot notation
+  // or
+  const orderId = event["order_id"]; // Using bracket notation
+
+You can define the expected shape of the input event using JSDoc annotations.
+
+For example:
+
+.. tabs::
+
+  .. tab:: JSDoc using inline annotations
+
+    .. code-block:: javascript
+
+        /**
+        * Handler function for processing order events.
+        * @param {Object} event - Input event containing order details
+        * @param {string} event.order_id - The unique identifier for the order
+        * @param {number} event.amount - The order amount
+        * @param {string} event.item - The item purchased            
+        * @param {Object} context - The runtime information provided by FunctionGraph.
+        * @return {string} A message indicating the result of processing the order.
+        */
+
+        exports.handler = async (event, context) => {
+          const orderId = event.order_id;
+          const amount = event.amount;
+          const item = event.item;
+
+          // Process the order event...
+
+          return "Order processed successfully";
+        };
+
+
+  .. tab:: JSDoc using typedef
+
+    .. code-block:: javascript
+
+      /**
+      * @typedef {Object} OrderEvent
+      * @property {string} order_id - The ID of the order.
+      * @property {string} amount - The amount of the order.
+      * @property {string} item - The item being ordered.
+      */
+
+      /**
+      * Handler function for processing order events.
+      * @param {OrderEvent} event - The input event containing order details.
+      * @param {Object} context - The runtime information provided by FunctionGraph.
+      * @return {string} A message indicating the result of processing the order.
+      */
+      exports.handler = async (event, context) => {
+        const orderId = event.order_id;
+        const amount = event.amount;
+        const item = event.item;
+
+        // Process the order event...
+
+        return "Order processed successfully";
+      };
+
+After you define the event parameter, FunctionGraph code completion
+will help you access the content of the event parameter.
+
+As alternative, you can also use predefined javascript objects to define the expected shape of the input event.
+
+For trigger events, the event parameter is predefined by FunctionGraph.
+
+You can refer to the following documentation for details about the predefined event parameters for different trigger events.
+See: :ref:`devguide_event_function_trigger_events_index` for details.
+
 
 Return value using "callback"
 """""""""""""""""""""""""""""

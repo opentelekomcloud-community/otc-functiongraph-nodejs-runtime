@@ -1,15 +1,28 @@
 "use strict";
+
+/**
+ * @typedef {Object} TimerEventJSON
+ * @property {string} [version]
+ * @property {string} [time]
+ * @property {string} [trigger_type]
+ * @property {string} [trigger_name]
+ * @property {string} [user_event]
+ */
+
 /**
  * Timer Event Class
  * Represents a Timer event for FunctionGraph
  */
 class TimerEvent {
+  /**
+   * @param {TimerEventJSON} event
+   */
   constructor(event) {
     this._event = event || {};
   }
 
   /**
-   * Get event version
+   * Returns the event version.
    * @returns {string} Event version
    */
   getVersion() {
@@ -17,7 +30,7 @@ class TimerEvent {
   }
 
   /**
-   * Get event time
+   * Returns the event time.
    * @returns {string} Event time
    */
   getTime() {
@@ -25,7 +38,7 @@ class TimerEvent {
   }
 
   /**
-   * Get trigger type
+   * Returns the trigger type.
    * @returns {string} Trigger type
    */
   getTriggerType() {
@@ -33,7 +46,7 @@ class TimerEvent {
   }
 
   /**
-   * Get trigger name
+   * Returns the trigger name.
    * @returns {string} Trigger name
    */
   getTriggerName() {
@@ -41,7 +54,7 @@ class TimerEvent {
   }
 
   /**
-   * Get user event
+   * Returns the user event.
    * @returns {string} User event
    */
   getUserEvent() {
@@ -49,8 +62,8 @@ class TimerEvent {
   }
 
   /**
-   * get user event parsed as JSON or undefined if parsing fails
-   * @returns 
+   * Returns the parsed user event, or undefined if parsing fails.
+   * @returns {Object | undefined}
    */
   getUserEventParsed() {
     try {
@@ -61,6 +74,9 @@ class TimerEvent {
     }
   }
 
+  /**
+   * @returns {TimerEventJSON}
+   */
   toJSON() {
     return this._event;
   }

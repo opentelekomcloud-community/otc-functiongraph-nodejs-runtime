@@ -1,4 +1,4 @@
-const { DMS4RocketMQEvent } = require("dms4rocketmq-event");
+const { DMS4RocketMQEvent } = require("@opentelekomcloud-community/fg-dms4rocketmq-event");
 
 exports.initializer = function (context, callback) {
   const logger = context.getLogger();

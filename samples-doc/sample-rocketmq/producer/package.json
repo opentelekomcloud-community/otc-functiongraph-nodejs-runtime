@@ -19,7 +19,7 @@
     "rocketmq-client-nodejs": "^1.0.3"
   },
   "devDependencies": {
-    "fg-runtime": "file:../../../fg-runtime"
+    "@opentelekomcloud-community/fg-runtime": "file:../../../fg-runtime"
   },
   "files": [
     "src/**/*",

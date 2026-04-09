@@ -1,5 +1,5 @@
-Log Trigger LTS
-===============
+LTS  Event Source
+==================
 
 You can write FunctionGraph functions to process logs subscribed to Cloud Log
 Service. When Cloud Log Service collects subscribed logs, you can call
