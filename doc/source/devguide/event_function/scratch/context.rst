@@ -99,3 +99,33 @@ Context interface
       - Obtains function alias.
 
 For context.js, see :github_repo_master:`context.js <fg-runtime/src/context.js>`.
+
+To work with the context object in development environment,
+you can import the Context class from the npm package as dev dependency and create an instance of it.
+
+ .. code-block:: bash
+
+    npm install @opentelekomcloud-community/fg-runtime --save-dev
+    # or
+    npm install @opentelekomcloud-community/fg-context -D
+
+.. note::
+  All npm packages are hosted on GitHub Packages.
+  
+  To install the packages, you need to authenticate with GitHub Packages
+  using a personal access token (PAT) with the appropriate scopes.
+
+  For further information on how to authenticate with GitHub Packages, please refer to the GitHub documentation:
+  `Working with the npm registry <https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry>`_.
+
+
+.. code-block:: javascript
+
+    const { Context } = require('@opentelekomcloud-community/fg-context');
+
+
+.. warning::  
+  All classes in the fg-runtime package are intended for use in the development environment only.
+
+  The FunctionGraph service provides the context object when your function is
+  invoked in the production environment.

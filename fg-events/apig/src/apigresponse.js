@@ -1,6 +1,20 @@
 "use strict";
 
+/**
+ * @typedef {Object} APIGResponseJSON
+ * @property {number} [statusCode]
+ * @property {string} [body]
+ * @property {Object} [headers]
+ * @property {boolean} [isBase64Encoded]
+ */
+
 class APIGResponse {
+  /**
+   * @param {number} [statusCode=200]
+   * @param {string} [body=""]
+   * @param {Object} [headers={}]
+   * @param {boolean} [isBase64Encoded=false]
+   */
   constructor(
     statusCode = 200,
     body = "",
@@ -13,6 +27,10 @@ class APIGResponse {
     this.isBase64Encoded = isBase64Encoded;
   }
 
+  /**
+   * @param {APIGResponseJSON} json
+   * @returns {APIGResponse}
+   */
   static fromJSON(json) {
     return new APIGResponse(
       json.statusCode,
@@ -22,10 +40,17 @@ class APIGResponse {
     );
   }
 
+  /**
+   * @param {number} statusCode
+   */
   setStatusCode(statusCode) {
     this.statusCode = statusCode;
   }
 
+  /**
+   * @param {string | Object} body
+   * @param {boolean} [isBase64Encoded=false]
+   */
   setBody(body, isBase64Encoded = false) {
     this.isBase64Encoded = isBase64Encoded;
 
@@ -46,10 +71,16 @@ class APIGResponse {
     }
   }
 
+  /**
+   * @returns {string}
+   */
   getRawBody() {
     return this.body;
   }
 
+  /**
+   * @returns {string}
+   */
   getBody() {
     if (this.isBase64Encoded) {
         const buff = Buffer.from(this.body, "base64");
@@ -58,6 +89,9 @@ class APIGResponse {
     return this.body;
   }
 
+  /**
+   * @returns {Object | string | null | undefined}
+   */
   getBodyParsed() {
     if (this.body === undefined || this.body === null) {
       return this.body;
@@ -65,6 +99,9 @@ class APIGResponse {
     return JSON.parse(this.getBody());
   }
 
+  /**
+   * @returns {APIGResponseJSON}
+   */
   toJSON() {
     return {
       statusCode: this.statusCode,

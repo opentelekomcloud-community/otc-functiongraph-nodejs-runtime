@@ -1,4 +1,4 @@
-const { DDSEvent } = require("fg-dds-event");
+const { DDSEvent } = require("@opentelekomcloud-community/fg-dds-event");
 
 exports.initializer = function (context, callback) {
   const logger = context.getLogger();

@@ -1,4 +1,4 @@
-const { OBSS3Event } = require("fg-obss3-event");
+const { OBSS3Event } = require("@opentelekomcloud-community/fg-obss3-event");
 
 exports.initializer = function (context, callback) {
   const logger = context.getLogger();

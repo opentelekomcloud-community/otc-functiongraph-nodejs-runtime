@@ -13,7 +13,11 @@ class RocketMQMessageDataEvent {
   }
 }
 
-
+/**
+ * 
+ * @param {RocketMQMessageDataEvent} event 
+ * @returns {Promise<Object>}
+ */
 exports.handler = async (event, context) => {
   const logger = context.getLogger();
 

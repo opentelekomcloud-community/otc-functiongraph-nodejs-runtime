@@ -1,4 +1,4 @@
-const { DMS4KafkaEvent } = require("fg-dms4kafka-event");
+const { DMS4KafkaEvent } = require("@opentelekomcloud-community/fg-dms4kafka-event");
 
 exports.handler = async (event, context) => {
   let log = context.getLogger();

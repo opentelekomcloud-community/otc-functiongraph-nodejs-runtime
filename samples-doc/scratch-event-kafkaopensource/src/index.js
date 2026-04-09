@@ -1,4 +1,4 @@
-const { KafkaOpenSourceEvent } = require("fg-kafkaopensource-event");
+const { KafkaOpenSourceEvent } = require("@opentelekomcloud-community/fg-kafkaopensource-event");
 
 exports.initializer = function (context, callback) {
   const logger = context.getLogger();

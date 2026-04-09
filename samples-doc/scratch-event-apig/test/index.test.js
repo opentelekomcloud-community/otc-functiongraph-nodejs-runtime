@@ -1,8 +1,8 @@
 "use strict";
 const { assert } = require("console");
 const { randomUUID } = require("crypto");
-const { APIGResponse } = require("fg-apig-event");
-const { Context } = require("fg-runtime");
+const { APIGResponse } = require("@opentelekomcloud-community/fg-apig-event");
+const { Context } = require("@opentelekomcloud-community/fg-runtime");
 
 const { handler } = require("../src/index");
 

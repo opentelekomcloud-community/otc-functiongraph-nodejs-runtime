@@ -1,6 +1,17 @@
 "use strict";
 
+/**
+ * @typedef {Object} DDSJSON
+ * @property {number} [size_bytes] Size of payload in bytes
+ * @property {string} [token] Raw token JSON string
+ * @property {string | Object} [full_document] Raw full document JSON value
+ * @property {string | Object} [ns] Raw namespace JSON value
+ */
+
 class DDS {
+  /**
+   * @param {DDSJSON} dds
+   */
   constructor(dds) {
     this._dds = dds || {};
   }
@@ -44,8 +55,8 @@ class DDS {
   }
 
   /**
-   * Convert the event back to JSON
-   * @returns {Object} Event as JSON object
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {DDSJSON} Payload as JSON object
    */
   toJSON() {
     return this._dds;

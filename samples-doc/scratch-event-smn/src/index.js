@@ -1,4 +1,4 @@
-const { SMNEvent } = require("fg-smn-event");
+const { SMNEvent } = require("@opentelekomcloud-community/fg-smn-event");
 
 exports.initializer = function (context, callback) {
   const logger = context.getLogger();

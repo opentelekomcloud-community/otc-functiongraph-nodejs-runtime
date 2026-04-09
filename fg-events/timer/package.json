@@ -1,5 +1,5 @@
 {
-  "name": "@opentelekomcloud-community/timer-event",
+  "name": "@opentelekomcloud-community/fg-timer-event",
   "description": "Timer event class for FunctionGraph timer trigger",
   "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
   "bugs": {
@@ -20,14 +20,11 @@
   "main": "./src/index.js",
   "scripts": {
     "test": "jest --config ./jest.config.js --coverage --silent",
-    "test:ts": "tsc && node dist/test/timerevent.test.js",
-    "build": "tsc",
-    "clean": "rm -rf dist",
-    "postpack": "name=$(bash -c 'echo \"${npm_package_name////-}-${npm_package_version}\" | sed \"s/@/ /g\"') && rm -f ${name}.zip && tarball=\"${name}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${name}.zip"
+    "postpack": "name=$(bash -c 'echo \"${npm_package_name////-}-${npm_package_version}\" | sed \"s/@/ /g\"') && rm -f ${name}.zip && tarball=\"${name}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${name}.zip",
+    "publish:github": "npm pack && npm publish --registry https://npm.pkg.github.com"
   },
+  "dependencies": {},
   "devDependencies": {
-    "@types/node": "^20.11.0",
-    "typescript": "^5.3.3",
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^30.2.0"
   },

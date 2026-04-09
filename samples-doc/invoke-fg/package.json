@@ -29,7 +29,7 @@
 
   },
   "dependencies": {
-    "fg-testutils": "file:../../fg-testutils",
+    "@opentelekomcloud-community/fg-testutils": "file:../../fg-testutils",
     "otc-api-sign-sdk-nodejs": "github:opentelekomcloud-community/otc-api-sign-sdk-nodejs#main"
   }
 

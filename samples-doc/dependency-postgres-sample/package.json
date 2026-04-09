@@ -17,8 +17,8 @@
     "test_index_usepool": "node ./test/index_usepool.test.js"
   },
   "devDependencies": {
-    "fg-runtime": "file:../../fg-runtime",
-    "fg-testutils": "file:../../fg-testutils",
+    "@opentelekomcloud-community/fg-runtime": "file:../../fg-runtime",
+    "@opentelekomcloud-community/fg-testutils": "file:../../fg-testutils",
     "pg": "^8.20.0"
   }
   

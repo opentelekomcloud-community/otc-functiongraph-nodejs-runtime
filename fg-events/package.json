@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git",
+    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git",
     "directory": "fg-events"
   },
   "scripts": {
@@ -27,18 +27,6 @@
     "publish:github": "npm pack && npm publish --registry https://npm.pkg.github.com",
     "test": ""
   },
-  "workspaces": [
-    "fg-apig-event",
-    "fg-cts-event",
-    "fg-dds-event",
-    "fg-dms4kafka-event",
-    "fg-dms4rocketmq-event",
-    "fg-kafkaopensource-event",
-    "fg-lts-event",
-    "fg-obss3-event",
-    "fg-smn-event",
-    "fg-timer-event"
-  ],
   "dependencies": {
     "fg-apig-event": "file:./apig",
     "fg-cts-event": "file:./cts",

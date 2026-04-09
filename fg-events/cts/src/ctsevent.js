@@ -2,10 +2,89 @@
 const { CTSUserInfo } = require("./ctsuserinfo");
 
 /**
+ * @typedef {Object} CTSBaseUserDomainJSON
+ * @property {string} [id]
+ * @property {string} [name]
+ */
+
+/**
+ * @typedef {Object} CTSSessionContextAttributesJSON
+ * @property {string} [created_at]
+ * @property {boolean | string} [mfa_authenticated]
+ */
+
+/**
+ * @typedef {Object} CTSSessionContextJSON
+ * @property {CTSSessionContextAttributesJSON} [attributes]
+ */
+
+/**
+ * @typedef {Object} CTSUserInfoJSON
+ * @property {string} [type]
+ * @property {string} [principal_id]
+ * @property {string} [principal_urn]
+ * @property {string} [account_id]
+ * @property {string} [access_key_id]
+ * @property {string} [id]
+ * @property {string} [name]
+ * @property {CTSBaseUserDomainJSON} [domain]
+ * @property {string} [user_name]
+ * @property {boolean | string} [principal_is_root_user]
+ * @property {string[]} [invoked_by]
+ * @property {CTSSessionContextJSON} [session_context]
+ * @property {string} [OriginUser]
+ */
+
+/**
+ * @typedef {Object} CTSEventDataJSON
+ * @property {number} [time]
+ * @property {CTSUserInfoJSON} [user]
+ * @property {Object} [request]
+ * @property {Object} [response]
+ * @property {string} [service_type]
+ * @property {string} [event_type]
+ * @property {string} [project_id]
+ * @property {string} [resource_type]
+ * @property {string} [resource_account_id]
+ * @property {boolean} [read_only]
+ * @property {string} [tracker_name]
+ * @property {string} [operation_id]
+ * @property {string} [resource_name]
+ * @property {string} [resource_id]
+ * @property {string} [source_ip]
+ * @property {string} [domain_id]
+ * @property {string} [trace_name]
+ * @property {string} [trace_status]
+ * @property {string} [trace_rating]
+ * @property {string} [trace_type]
+ * @property {string} [api_version]
+ * @property {string} [message]
+ * @property {string} [record_time]
+ * @property {string} [trace_id]
+ * @property {string} [code]
+ * @property {string} [request_id]
+ * @property {Object} [location_info]
+ * @property {string} [endpoint]
+ * @property {string} [resource_url]
+ * @property {string} [enterprise_project_id]
+ * @property {string} [user_agent]
+ * @property {number} [content_length]
+ * @property {number} [total_time]
+ */
+
+/**
+ * @typedef {Object} CTSEventJSON
+ * @property {CTSEventDataJSON} [cts]
+ */
+
+/**
  * CTSEvent Class
  * Represents a CTS event for FunctionGraph
  */
 class CTSEvent {
+  /**
+   * @param {CTSEventJSON} event
+   */
   constructor(event) {
     this._event = (event && event.cts) || {};
   }
@@ -26,6 +105,7 @@ class CTSEvent {
    * Information of the user who performed the operation that triggered the trace.
    * 
    * Mandatory: yes
+   * @returns {CTSUserInfo}
    */
   getUser() {
     return new CTSUserInfo(this._event.user);
@@ -302,6 +382,9 @@ class CTSEvent {
     return this._event.total_time || 0;
   }
 
+  /**
+   * @returns {CTSEventDataJSON}
+   */
   toJSON() {
     return this._event;
   }

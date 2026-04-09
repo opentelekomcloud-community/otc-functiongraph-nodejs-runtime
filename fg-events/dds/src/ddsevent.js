@@ -3,12 +3,36 @@
 const {DDSRecord} = require("./ddsrecord");
 
 /**
+ * @typedef {Object} DDSJSON
+ * @property {number} [size_bytes] Size of payload in bytes
+ * @property {string} [token] Raw token JSON string
+ * @property {string | Object} [full_document] Raw full document JSON value
+ * @property {string | Object} [ns] Raw namespace JSON value
+ */
+
+/**
+ * @typedef {Object} DDSRecordJSON
+ * @property {string} [event_source]
+ * @property {string} [event_version]
+ * @property {string} [event_name]
+ * @property {string} [event_source_ip]
+ * @property {string} [region]
+ * @property {DDSJSON} [dds]
+ */
+
+/**
+ * @typedef {Object} DDSEventJSON
+ * @property {DDSRecordJSON[]} [records] Event records
+ */
+
+/**
  * DDSEvent Class
  * Represents a DDS event for FunctionGraph
  */
 class DDSEvent {
-  
-
+  /**
+   * @param {DDSEventJSON} event
+   */
   constructor(event) {
     this._event = event || {};
 
@@ -18,16 +42,24 @@ class DDSEvent {
     }
   }
 
+  /**
+   * @returns {DDSRecord[]}
+   */
   getRecords() {
     return this._records;
   }
+
+  /**
+   * @param {number} index
+   * @returns {DDSRecord | null}
+   */
   getRecord(index) {
     return this._records[index] || null;
   }
 
   /**
-   * Convert the event back to JSON
-   * @returns {Object} Event as JSON object
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {DDSEventJSON} Payload as JSON object
    */
   toJSON() {
     return this._event;

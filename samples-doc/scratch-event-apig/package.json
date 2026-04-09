@@ -26,18 +26,18 @@
     "postpack": "name=$(bash -c 'echo \"${npm_package_name////-}-${npm_package_version}\" | sed \"s/@/ /g\"') && rm -f ${name}.zip && tarball=\"${name}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${name}.zip; rm $tarball"
   },
   "devDependencies": {
-    "fg-runtime": "file:../../fg-runtime",
+    "@opentelekomcloud-community/fg-runtime": "file:../../fg-runtime",
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^30.2.0"
   },
   "dependencies": {
-    "fg-apig-event": "file:../../fg-events/apig"
+    "@opentelekomcloud-community/fg-apig-event": "file:../../fg-events/apig"
   },
   "files": [
     "src/**/*",
     "lib/**/*"
   ],
   "bundleDependencies": [
-    "fg-apig-event"
+    "@opentelekomcloud-community/fg-apig-event"
   ]
 }

@@ -1,9 +1,65 @@
 "use strict";
+
+/**
+ * @typedef {Object} OBSS3UserIdentityJSON
+ * @property {string} [principalId]
+ */
+
+/**
+ * @typedef {Object} OBSS3OwnerIdentityJSON
+ * @property {string} [PrincipalId]
+ */
+
+/**
+ * @typedef {Object} OBSS3BucketJSON
+ * @property {string} [arn]
+ * @property {string} [name]
+ * @property {OBSS3OwnerIdentityJSON} [ownerIdentity]
+ */
+
+/**
+ * @typedef {Object} OBSS3ObjectJSON
+ * @property {string} [eTag]
+ * @property {string} [sequencer]
+ * @property {string} [key]
+ * @property {number} [size]
+ */
+
+/**
+ * @typedef {Object} OBSS3DetailsJSON
+ * @property {string} [configurationId]
+ * @property {OBSS3ObjectJSON} [object]
+ * @property {OBSS3BucketJSON} [bucket]
+ */
+
+/**
+ * @typedef {Object} OBSS3RequestParametersJSON
+ * @property {string} [sourceIPAddress]
+ */
+
+/**
+ * @typedef {Object} OBSS3RecordJSON
+ * @property {string} [eventVersion]
+ * @property {string} [eventTime]
+ * @property {OBSS3RequestParametersJSON} [requestParameters]
+ * @property {OBSS3DetailsJSON} [s3]
+ * @property {string} [awsRegion]
+ * @property {string} [eventName]
+ * @property {OBSS3UserIdentityJSON} [userIdentity]
+ */
+
+/**
+ * @typedef {Object} OBSS3EventJSON
+ * @property {OBSS3RecordJSON[]} [Records]
+ */
 /**
  * OBS S3 Event Class
  * Represents an Object Storage Service (OBS) S3 event for FunctionGraph
  */
 class OBSS3Event {
+  /**
+   * @param {OBSS3EventJSON} event
+   */
   constructor(event) {
     this._event = event || {};
 
@@ -14,16 +70,16 @@ class OBSS3Event {
   }
 
   /**
-   * Get the record array
-   * @returns {Array} Array of event records
+   * Returns the event records.
+   * @returns {OBSS3Record[]} Array of event records
    */
   getRecords() {
     return this._records;
   }
 
   /**
-   * Convert the event back to JSON
-   * @returns {Object} Event as JSON object
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {OBSS3EventJSON} Payload as JSON object
    */
   toJSON() {
     return this._event;
@@ -32,12 +88,15 @@ class OBSS3Event {
 }
 
 class OBSS3Record {
+  /**
+   * @param {OBSS3RecordJSON} record
+   */
   constructor(record) {
     this._record = record || {};
   }
 
   /**
-   * Get event version
+   * Returns the event version.
    * @returns {string} Event version
    */
   getEventVersion() {
@@ -45,7 +104,7 @@ class OBSS3Record {
   }
 
   /**
-   * Get event time
+   * Returns the event time.
    * @returns {string} Event time (ISO 8601 format)
    */
   getEventTime() {
@@ -53,23 +112,23 @@ class OBSS3Record {
   }
 
   /**
-   * Get request parameters
-   * @returns {Object} Request parameters object
+   * Returns the request parameters.
+   * @returns {RequestParameters} Request parameters object
    */
   getRequestParameters() {
     return new RequestParameters(this._record.requestParameters);
   }
 
   /**
-   * Get S3 details
-   * @returns {Object} S3 details object
+   * Returns the S3 details.
+   * @returns {S3Details} S3 details object
    */
   getS3() {
     return new S3Details(this._record.s3);
   }
 
   /**
-   * Get AWS region
+   * Returns the AWS region.
    * @returns {string} AWS region
    */
   getAwsRegion() {
@@ -77,7 +136,7 @@ class OBSS3Record {
   }
 
   /**
-   * Get event name
+   * Returns the event name.
    * @returns {string} Event name (e.g., "ObjectCreated:Post")
    */
   getEventName() {
@@ -85,16 +144,16 @@ class OBSS3Record {
   }
 
   /**
-   * Get user identity
-   * @returns {Object} User identity object
+   * Returns the user identity.
+   * @returns {UserIdentity} User identity object
    */
   getUserIdentity() {
     return new UserIdentity(this._record.userIdentity);
   }
 
   /**
-   * Convert the record back to JSON
-   * @returns {Object} Record as JSON object
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {OBSS3RecordJSON} Payload as JSON object
    */
   toJSON() {
     return this._record;
@@ -102,12 +161,15 @@ class OBSS3Record {
 }
 
 class RequestParameters {
+  /**
+   * @param {OBSS3RequestParametersJSON} params
+   */
   constructor(params) {
     this._params = params || {};
   }
 
   /**
-   * Get source IP address
+   * Returns the source IP address.
    * @returns {string} Source IP address
    */
   getSourceIPAddress() {
@@ -115,8 +177,8 @@ class RequestParameters {
   }
 
   /**
-   * Convert to JSON
-   * @returns {Object} Request parameters as JSON object
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {OBSS3RequestParametersJSON} Payload as JSON object
    */
   toJSON() {
     return this._params;
@@ -124,12 +186,15 @@ class RequestParameters {
 }
 
 class S3Details {
+  /**
+   * @param {OBSS3DetailsJSON} s3
+   */
   constructor(s3) {
     this._s3 = s3 || {};
   }
 
   /**
-   * Get configuration ID
+   * Returns the configuration ID.
    * @returns {string} Configuration ID
    */
   getConfigurationId() {
@@ -137,24 +202,24 @@ class S3Details {
   }
 
   /**
-   * Get object details
-   * @returns {Object} Object details
+   * Returns the object details.
+   * @returns {S3Object} Object details
    */
   getObject() {
     return new S3Object(this._s3.object);
   }
 
   /**
-   * Get bucket details
-   * @returns {Object} Bucket details
+   * Returns the bucket details.
+   * @returns {S3Bucket} Bucket details
    */
   getBucket() {
     return new S3Bucket(this._s3.bucket);
   }
 
   /**
-   * Convert to JSON
-   * @returns {Object} S3 details as JSON object
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {OBSS3DetailsJSON} Payload as JSON object
    */
   toJSON() {
     return this._s3;
@@ -162,12 +227,15 @@ class S3Details {
 }
 
 class S3Object {
+  /**
+   * @param {OBSS3ObjectJSON} obj
+   */
   constructor(obj) {
     this._obj = obj || {};
   }
 
   /**
-   * Get object ETag
+   * Returns the object ETag.
    * @returns {string} ETag
    */
   getETag() {
@@ -175,7 +243,7 @@ class S3Object {
   }
 
   /**
-   * Get sequencer
+   * Returns the sequencer.
    * @returns {string} Sequencer
    */
   getSequencer() {
@@ -183,7 +251,7 @@ class S3Object {
   }
 
   /**
-   * Get object key (filename)
+   * Returns the object key.
    * @returns {string} Object key
    */
   getKey() {
@@ -191,7 +259,7 @@ class S3Object {
   }
 
   /**
-   * Get object size in bytes
+   * Returns the object size.
    * @returns {number} Object size
    */
   getSize() {
@@ -199,8 +267,8 @@ class S3Object {
   }
 
   /**
-   * Convert to JSON
-   * @returns {Object} Object details as JSON object
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {OBSS3ObjectJSON} Payload as JSON object
    */
   toJSON() {
     return this._obj;
@@ -208,12 +276,15 @@ class S3Object {
 }
 
 class S3Bucket {
+  /**
+   * @param {OBSS3BucketJSON} bucket
+   */
   constructor(bucket) {
     this._bucket = bucket || {};
   }
 
   /**
-   * Get bucket ARN
+   * Returns the bucket ARN.
    * @returns {string} Bucket ARN
    */
   getArn() {
@@ -221,7 +292,7 @@ class S3Bucket {
   }
 
   /**
-   * Get bucket name
+   * Returns the bucket name.
    * @returns {string} Bucket name
    */
   getName() {
@@ -229,16 +300,16 @@ class S3Bucket {
   }
 
   /**
-   * Get owner identity
-   * @returns {Object} Owner identity
+   * Returns the owner identity.
+   * @returns {OwnerIdentity} Owner identity
    */
   getOwnerIdentity() {
     return new OwnerIdentity(this._bucket.ownerIdentity);
   }
 
   /**
-   * Convert to JSON
-   * @returns {Object} Bucket details as JSON object
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {OBSS3BucketJSON} Payload as JSON object
    */
   toJSON() {
     return this._bucket;
@@ -246,12 +317,15 @@ class S3Bucket {
 }
 
 class OwnerIdentity {
+  /**
+   * @param {OBSS3OwnerIdentityJSON} identity
+   */
   constructor(identity) {
     this._identity = identity || {};
   }
 
   /**
-   * Get principal ID
+   * Returns the principal ID.
    * @returns {string} Principal ID
    */
   getPrincipalId() {
@@ -259,8 +333,8 @@ class OwnerIdentity {
   }
 
   /**
-   * Convert to JSON
-   * @returns {Object} Owner identity as JSON object
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {OBSS3OwnerIdentityJSON} Payload as JSON object
    */
   toJSON() {
     return this._identity;
@@ -268,12 +342,15 @@ class OwnerIdentity {
 }
 
 class UserIdentity {
+  /**
+   * @param {OBSS3UserIdentityJSON} identity
+   */
   constructor(identity) {
     this._identity = identity || {};
   }
 
   /**
-   * Get principal ID
+   * Returns the principal ID.
    * @returns {string} Principal ID
    */
   getPrincipalId() {
@@ -281,8 +358,8 @@ class UserIdentity {
   }
 
   /**
-   * Convert to JSON
-   * @returns {Object} User identity as JSON object
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {OBSS3UserIdentityJSON} Payload as JSON object
    */
   toJSON() {
     return this._identity;

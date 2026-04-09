@@ -25,16 +25,16 @@
     "postpack": "rm -f ${npm_package_name}.zip && tarball=\"${npm_package_name}-${npm_package_version}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${npm_package_name}.zip; rm $tarball"
   },
   "devDependencies": {
-    "fg-runtime": "file:../../../fg-runtime"
+    "@opentelekomcloud-community/fg-runtime": "file:../../../fg-runtime"
   },
   "dependencies": {
-    "fg-dms4rocketmq-event": "file:../../../fg-events/dms4rocketmq"
+    "@opentelekomcloud-community/fg-dms4rocketmq-event": "file:../../../fg-events/dms4rocketmq"
   },
   "files": [
     "src/**/*",
     "lib/**/*"
   ],
   "bundleDependencies": [
-    "fg-dms4rocketmq-event"
+    "@opentelekomcloud-community/fg-dms4rocketmq-event"
   ]
 }

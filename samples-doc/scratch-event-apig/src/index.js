@@ -1,11 +1,25 @@
-const { APIGEvent, APIGResponse } = require("fg-apig-event");
+// @ts-check
 
+const { APIGEvent, APIGResponse } = require("@opentelekomcloud-community/fg-apig-event");
+/** @typedef {import("@opentelekomcloud-community/fg-apig-event").APIGEventJSON} APIGEventJSON */
+/** @typedef {import("@opentelekomcloud-community/fg-apig-event").APIGResponseJSON} APIGResponseJSON */
+
+/**
+ * 
+ * @param {*} context 
+ * @param {*} callback 
+ */
 exports.initializer = function (context, callback) {
   const logger = context.getLogger();
   logger.info("Function initialized");
   callback(null, "");
 };
 
+/**
+ * @param {APIGEventJSON} event
+ * @param {*} context
+ * @returns {Promise<APIGResponseJSON>}
+ */
 exports.handler = async function (event, context) {
   const logger = context.getLogger();
 
@@ -18,15 +32,9 @@ exports.handler = async function (event, context) {
   const body = apigEvent.getBody();
   logger.info("APIG Event body:", body);
 
-  let responseType = "default";
-  if (
-    apigEvent.getQueryStringParameters() &&
-    apigEvent.getQueryStringParameters().responseType
-  ) {
-    responseType = apigEvent.getQueryStringParameters().responseType;
-  }
+  let responseType = apigEvent.getQueryStringParameter("responseType");
 
-  let output = "";
+  let output;
 
   if (responseType === "html") {
     output = new APIGResponse(

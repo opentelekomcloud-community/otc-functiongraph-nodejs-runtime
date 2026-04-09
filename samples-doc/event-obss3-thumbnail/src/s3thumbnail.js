@@ -3,7 +3,7 @@ const { Readable } = require("stream");
 const util = require("util");
 const sharp = require("sharp");
 const ObsClient = require("esdk-obs-nodejs");
-const { OBSS3Event } = require("fg-obss3-event");
+const { OBSS3Event } = require("@opentelekomcloud-community/fg-obss3-event");
 
 // Initializer
 exports.initializer = function (context, callback) {

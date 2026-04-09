@@ -2,7 +2,25 @@
 
 const { KafkaOpenSourceRecordMessage } = require("./kafkaopensourcerecordmessage");
 
+/**
+ * @typedef {Object} KafkaOpenSourceRecordMessageObject
+ * @property {string} [message] Raw message payload
+ */
+
+/**
+ * @typedef {string | KafkaOpenSourceRecordMessageObject} KafkaOpenSourceRecordMessageJSON
+ */
+
+/**
+ * @typedef {Object} KafkaOpenSourceRecordJSON
+ * @property {string} [topic_id] Topic identifier
+ * @property {KafkaOpenSourceRecordMessageJSON[]} [messages] Messages received for the topic
+ */
+
 class KafkaOpenSourceRecord {
+  /**
+   * @param {KafkaOpenSourceRecordJSON} record
+   */
   constructor(record) {
     this._record = record || {};
 
@@ -12,17 +30,23 @@ class KafkaOpenSourceRecord {
     }
   }
 
+  /**
+   * @returns {string}
+   */
   getTopicId() {
     return this._record.topic_id || "";
   }
 
+  /**
+   * @returns {KafkaOpenSourceRecordMessage[]}
+   */
   getMessages() {
     return this._messages;
   }
 
   /**
-   * Convert the event back to JSON
-   * @returns {Object} Event as JSON object
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {KafkaOpenSourceRecordJSON} Payload as JSON object
    */
   toJSON() {
     return this._record;

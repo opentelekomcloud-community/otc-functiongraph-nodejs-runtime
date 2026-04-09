@@ -26,16 +26,16 @@
     "postpack": "name=$(bash -c 'echo \"${npm_package_name////-}-${npm_package_version}\" | sed \"s/@/ /g\"') && rm -f ${name}.zip && tarball=\"${name}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${name}.zip; rm $tarball"
   },
   "devDependencies": {
-    "fg-runtime": "file:../../fg-runtime"
+    "@opentelekomcloud-community/fg-runtime": "file:../../fg-runtime"
   },
   "dependencies": {
-    "fg-timer-event": "file:../../fg-events/timer"
+    "@opentelekomcloud-community/fg-timer-event": "file:../../fg-events/timer"
   },
   "files": [
     "src/**/*",
     "lib/**/*"
   ],
   "bundleDependencies": [
-    "fg-timer-event"
+    "@opentelekomcloud-community/fg-timer-event"
   ]
 }

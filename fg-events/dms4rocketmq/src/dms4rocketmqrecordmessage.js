@@ -1,9 +1,25 @@
 "use strict";
+
+/**
+ * @typedef {Object} DMS4RocketMQRecordMessageObject
+ * @property {string} [message] Raw message payload
+ */
+
+/**
+ * @typedef {string | DMS4RocketMQRecordMessageObject} DMS4RocketMQRecordMessageJSON
+ */
+
 class DMS4RocketMQRecordMessage {
+  /**
+   * @param {DMS4RocketMQRecordMessageJSON} record
+   */
   constructor(record) {
     this._record = record || {};
   }
 
+  /**
+   * @returns {string}
+   */
   getMessage() {
     if (typeof this._record === "string") {
       return this._record;
@@ -12,8 +28,8 @@ class DMS4RocketMQRecordMessage {
   }
 
   /**
-   * Convert the event back to JSON
-   * @returns {Object} Event as JSON object
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {DMS4RocketMQRecordMessageJSON} Payload as JSON object
    */
   toJSON() {
     return this._record;
