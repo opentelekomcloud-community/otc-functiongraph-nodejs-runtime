@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { APIGEvent } = require("fg-apig-event");
+const { APIGEvent } = require("../src/index");
 
 
 test("APIGEvent should correctly parse event data", () => {

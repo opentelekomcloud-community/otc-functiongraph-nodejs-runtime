@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { LTSEvent } = require("fg-lts-event");
+const { LTSEvent } = require("../src/index");
 
 test("LTS event should correctly parse event data", () => {
   const ltsEventData = require("../resources/lts_event.json");

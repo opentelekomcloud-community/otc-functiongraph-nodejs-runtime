@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { DDSEvent } = require("fg-dds-event");
+const { DDSEvent } = require("../src/index");
 
 test("DDSEvent should correctly parse event data", () => {
   const eventData = require("../resources/dds_event.json");

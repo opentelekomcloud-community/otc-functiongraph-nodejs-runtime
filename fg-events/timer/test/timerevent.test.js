@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { TimerEvent } = require("fg-timer-event");
+const { TimerEvent } = require("../src/index");
 
 test("TimerEvent should correctly parse event data", () => {
   const timerEventData = require("../resources/timer_event.json");

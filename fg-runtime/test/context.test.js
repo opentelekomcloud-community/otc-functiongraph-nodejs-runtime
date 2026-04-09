@@ -1,4 +1,4 @@
-const { Context } = require('fg-runtime');
+const { Context } = require('../src/context');
 
 function createContext() {
     const requestID = '123';

@@ -24,7 +24,8 @@
   "scripts": {
     "prepack": "npm i",
     "postpack": "name=$(bash -c 'echo \"${npm_package_name////-}-${npm_package_version}\" | sed \"s/@/ /g\"') && rm -f ${name}.zip && tarball=\"${name}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${name}.zip",
-    "publish:github": "npm pack && npm publish --registry https://npm.pkg.github.com"
+    "publish:github": "npm pack && npm publish --registry https://npm.pkg.github.com",
+    "test": ""
   },
   "workspaces": [
     "fg-apig-event",

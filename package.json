@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
   },
-  "version": "1.0.1",
+  "version": "1.0.0",
   "author": "T Cloud Public",
   "license": "Apache-2.0",
   "workspaces": [
@@ -23,6 +23,7 @@
   ],
   "scripts": {
     "version": "npm version $npm_package_version --no-git-tag-version --workspaces",
-    "version1": "npm version $npm_package_version --no-git-tag-version --workspaces && git add  **/package*.json"
+    "version1": "npm version $npm_package_version --no-git-tag-version --workspaces && git add  **/package*.json",
+    "test": ""
   }
 }
