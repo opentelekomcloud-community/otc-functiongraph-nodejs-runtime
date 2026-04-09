@@ -4,9 +4,9 @@
 Bundled third-party components in the Node.js 14.18
 =================================================================
 
-Following list shows the bundled third-party components integrated in the Node.js runtime for FunctionGraph. 
+Following list shows the bundled third-party components integrated with Node.js 14.18 runtime for FunctionGraph.
 
-.. list-table:: Bundled Libraries in Node.js Runtime nodejs14.18
+.. list-table:: Bundled libraries with **Node.js 14.18**
     :header-rows: 1
 
     * - Name

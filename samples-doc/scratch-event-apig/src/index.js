@@ -13,7 +13,7 @@ exports.handler = async function (event, context) {
 
   const apigEvent = new APIGEvent(event);
 
-  const isBase64Encoded = event.isBase64Encoded || false;
+  const isBase64Encoded = apigEvent.isBase64Encoded() || false;
 
   const body = apigEvent.getBody();
   logger.info("APIG Event body:", body);

@@ -4,9 +4,9 @@
 Bundled third-party components in the Node.js 16.17
 =================================================================
 
-Following list shows the bundled third-party components integrated in the Node.js runtime for FunctionGraph. 
+Following list shows the bundled third-party components integrated with Node.js 16.17 runtime for FunctionGraph.
 
-.. list-table:: Bundled Libraries in Node.js Runtime nodejs16.17
+.. list-table:: Bundled libraries with **Node.js 16.17**
     :header-rows: 1
 
     * - Name
