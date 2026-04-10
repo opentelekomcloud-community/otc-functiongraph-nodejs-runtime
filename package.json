@@ -33,6 +33,8 @@
     "pack:fg-events:dms4rocketmq": "cd fg-events/dms4rocketmq && npm pack",
     "pack:fg-events:kafkaopensource": "cd fg-events/kafkaopensource && npm pack",
     "pack:fg-events:lts": "cd fg-events/lts && npm pack",
+    "pack:fg-events:obss3": "cd fg-events/obss3 && npm pack",
+    "pack:fg-events:smn": "cd fg-events/smn && npm pack",
     "pack:fg-events:timer": "cd fg-events/timer && npm pack",
     "pack:fg-runtime": "cd fg-runtime && npm pack",
     "pack:fg-testutils": "cd fg-testutils && npm pack",
