@@ -13,7 +13,7 @@
     "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git",
     "directory": "fg-events/dms4kafka"
   },
-  "version": "1.0.0",  
+  "version": "1.0.1",
   "license": "Apache-2.0",
   "author": "T Cloud Public",
   "type": "commonjs",

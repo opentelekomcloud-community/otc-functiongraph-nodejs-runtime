@@ -1,6 +1,6 @@
 {
   "name": "@opentelekomcloud-community/fg-events",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "FunctionGraph trigger events",
   "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
   "bugs": {

@@ -13,7 +13,7 @@
     "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git",
     "directory": "fg-events/lts"
   },
-  "version": "1.0.0",  
+  "version": "1.0.1",
   "license": "Apache-2.0",
   "author": "T Cloud Public",
   "type": "commonjs",
@@ -22,7 +22,6 @@
     "test": "jest --config ./jest.config.js --coverage --silent",
     "postpack": "name=$(bash -c 'echo \"${npm_package_name////-}-${npm_package_version}\" | sed \"s/@/ /g\"') && rm -f ${name}.zip && tarball=\"${name}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${name}.zip",
     "publish:github": "npm pack && npm publish --registry https://npm.pkg.github.com"
-
   },
   "dependencies": {},
   "devDependencies": {

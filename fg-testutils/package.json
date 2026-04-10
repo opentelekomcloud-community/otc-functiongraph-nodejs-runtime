@@ -12,7 +12,7 @@
     "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git",
     "directory": "fg-testutils"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "IAM Test Utilities for FunctionGraph",
   "license": "Apache-2.0",
   "author": "T Cloud Public",

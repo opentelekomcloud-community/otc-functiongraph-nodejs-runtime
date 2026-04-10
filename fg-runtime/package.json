@@ -12,7 +12,7 @@
     "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git",
     "directory": "fg-runtime"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "FunctionGraph Runtime",
   "main": "./src/index.js",
   "type": "commonjs",
