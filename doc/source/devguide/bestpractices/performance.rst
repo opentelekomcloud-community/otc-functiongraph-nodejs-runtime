@@ -1,6 +1,9 @@
 FunctionGraph Performance Optimization Practices
 ===============================================================
 
+.. toctree::
+   :hidden:
+   
 With the increasing popularity of serverless technology, performance optimization has become
 crucial for improving application efficiency and user experience.
 

@@ -144,6 +144,7 @@ in the `bundleDependencies` field of **package.json**.
 FunctionGraph requires the package to be in zip format, so you need to convert the tarball package to zip format.
 The **package.json** includes a `postpack` command to handle this conversion.
 
+.. note:: See also :ref:`Packaging Node.js Functions <devguide_bestpractices_packaging_node>`
 
 Step 5: Deploy to FunctionGraph
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

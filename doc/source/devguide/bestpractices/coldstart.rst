@@ -1,6 +1,9 @@
 Cold start Optimization Practices
 ===============================================================
 
+.. toctree::
+   :hidden:
+
 Serverless architecture, with its pay-as-you-go pricing, automatic elastic scaling, and abstraction
 of complexity, is gradually becoming the next-generation paradigm for cloud computing.
 However, while serverless architecture brings great convenience, cold start becomes a real challenge

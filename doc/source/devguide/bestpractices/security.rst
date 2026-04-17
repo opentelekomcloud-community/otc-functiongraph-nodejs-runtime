@@ -1,6 +1,9 @@
 Security best practices
 ===============================
 
+.. toctree::
+   :hidden:
+   
 Security is a shared responsibility between the cloud provider and you.
 The cloud provider is responsible for the security of its cloud services
 and provides a secure cloud environment.
