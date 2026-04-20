@@ -7,7 +7,6 @@ Set up development environment
 To build and run the Node.js runtime for FunctionGraph, you need to set up your
 development environment by installing the Node.js programming language.
 
-
 Operating system
 ---------------------------------
 
@@ -101,6 +100,30 @@ In case you are behind a proxy, set proxy as follows:
     # set proxy for npm
     npm config set proxy http://PROXY-HOST:PROXY-PORT
 
+Setup GitHub package registry for opentelekomcloud-community packages
+---------------------------------------------------------------------------------------------------
+
+
+1. To access the GitHub package registry for opentelekomcloud-community packages, you need
+   to create a personal access token (PAT) with the appropriate permissions and configure
+   npm to use this token for authentication.
+
+   For details on how to create a personal access token and configure npm,
+   see `GitHub documentation <https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry>`_.
+
+3. After setting up the GitHub package registry access, you can install the dependencies of the Node.js runtime
+   using npm, which will pull the packages from the GitHub package registry.
+
+   To use the GitHub package registry, you need to add the following configuration to your .npmrc file
+   (located in the same folder as your package.json or in your user home directory):
+
+    .. code-block:: bash
+  
+        @opentelekomcloud-community:registry=https://npm.pkg.github.com
+        //npm.pkg.github.com/:_authToken=YOUR_PERSONAL_ACCESS_TOKEN
+
+.. tip::
+     For creating deployment packages and bundle dependencies, see :ref:`devguide_bestpractices_packaging_node`.
 
 Install an IDE
 ---------------------------------
