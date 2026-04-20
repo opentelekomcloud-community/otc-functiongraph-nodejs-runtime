@@ -115,7 +115,7 @@ Setup GitHub package registry for opentelekomcloud-community packages
    using npm, which will pull the packages from the GitHub package registry.
 
    To use the GitHub package registry, you need to add the following configuration to your .npmrc file
-   (located in the same folder as your package.json or in your user home directory):
+   (located in the same (or any parent) folder as your package.json, or in your user home directory):
 
     .. code-block:: bash
   
