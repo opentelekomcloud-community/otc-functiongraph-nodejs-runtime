@@ -9,7 +9,7 @@ const { Signer, HttpRequest } = require("@opentelekomcloud-community/otc-api-sig
  * @param {Context} context 
  * @returns 
  */
-module.exports.handler = async function (event, context) {
+exports.handler = async function (event, context) {
 
   // get temporary ak/sk/token from context
   // to use, an agency with permission to invoke FunctionGraph is needed:
@@ -20,13 +20,13 @@ module.exports.handler = async function (event, context) {
   // get the URN of the function to be called from user data
   const CALL_FG_URN = context.getUserData("CALL_FG_URN");
 
-  // get region from backend_fg_urn
+  // get region from function URN
   const region = CALL_FG_URN.split(":")[2] || "eu-de";
 
   // FunctionGraph endpoint
   const fgEndpoint = `https://functiongraph.${region}.otc.t-systems.com`;
 
-  // get projectId from environment variable
+  // get projectId from Runtime environment variable (set in FG backend)
   const projectId = process.env.RUNTIME_PROJECT_ID || "";
 
   // Endpoint for asynchronous invocation

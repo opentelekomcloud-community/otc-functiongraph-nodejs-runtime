@@ -14,8 +14,29 @@ Prerequisites
 -----------------
 
 1. URN of Function to be called.
-2. An agency with permission to invoke FunctionGraph and its access key/secret key,
-   the permission policy should contain following permissions:
+   In this example the code of the function to be called is:
+
+   .. code-block:: javascript
+
+      exports.handler = async (event, context) => {
+        const output =
+        {
+            'statusCode': 200,
+            'headers':
+            {
+                'Content-Type': 'application/json'
+            },
+            'isBase64Encoded': false,
+            'body': JSON.stringify(event),
+        }
+        return output;
+      }
+   
+
+2. An agency of `Agency Type` **Cloud Service** for `Cloud Service` **FunctionGraph Service**
+   with permission to invoke FunctionGraph.
+
+   The permission policy should contain following policy statement:
 
    .. code-block:: json
 
@@ -24,16 +45,15 @@ Prerequisites
         "Statement": [
           {
             "Action": [
-              "functiongraph:*:get*",
-              "functiongraph:*:list*",
-              "functiongraph:function:invoke*",
+              "functiongraph:function:invokeAsync*",
+              "functiongraph:function:invoke",
               ],
             "Effect": "Allow"
           }
         ]
       }
 
-   or use an agency with default permission `FunctionGraph CommonOperations`.
+   or use an agency with default permission **FunctionGraph CommonOperations**.
 
 
 Coding
