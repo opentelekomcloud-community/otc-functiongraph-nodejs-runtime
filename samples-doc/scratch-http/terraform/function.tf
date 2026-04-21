@@ -32,6 +32,7 @@ resource "opentelekomcloud_fgs_function_v2" "MyFunction" {
   # set some environment variables
   user_data = jsonencode({
     "RUNTIME_LOG_LEVEL" : "DEBUG",
+    "REGION" : split("_", var.OTC_SDK_PROJECTNAME)[0]
   })
 
   tags = {
