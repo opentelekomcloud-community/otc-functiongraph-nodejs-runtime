@@ -71,32 +71,50 @@ by functions by default.
 
    * - Header Name
      - Description
-   * - X-CFF-Request-Id
+   * - x-cff-request-id
      - ID of the current request.
-   * - X-CFF-Memory
+   * - x-cff-memory
      - Memory allocated to the function.
-   * - X-CFF-Timeout
+   * - x-cff-timeout
      - Function timeout.
-   * - X-CFF-Func-Version
+   * - x-cff-func-version
      - Function version.
-   * - X-CFF-Func-Name
+   * - x-cff-func-name
      - Function name.
-   * - X-CFF-Project-Id
+   * - x-cff-project-id
      - Project ID of the function.
-   * - X-CFF-Package
+
+       .. note:: **x-cff-project-id in the header currently returns always "sn".** 
+
+          To get correct Project ID use instead:
+
+          .. code-block:: javascript
+
+              const region = process.env.RUNTIME_PROJECT_ID;
+
+   * - x-cff-package
      - App to which the function belongs.
-   * - X-CFF-Region
+   * - x-cff-region
      - Region where the function is located.
 
+       .. note:: **x-cff-region in the header currently returns always "cn".** 
+
+          To get correct region define a environment variable REGION 
+          with correct region value and use e.g.:
+            
+          .. code-block:: javascript
+
+              const region = process.env.REGION || "eu-de";
+  
 
 .. note::
 
-  The key information of HTTP functions:
+  The security information of HTTP functions:
 
-     - X-CFF-Auth-Token
-     - X-CFF-Security-Access-Key
-     - X-CFF-Security-Secret-Key
-     - X-CFF-Security-Token
+     - x-cff-auth-token
+     - x-cff-security-access-key
+     - x-cff-security-secret-key
+     - x-cff-security-token
 
    can be transferred only through request headers.
    For details about how to obtain the AK, SK, and token of HTTP functions,

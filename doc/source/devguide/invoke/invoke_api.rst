@@ -1,3 +1,5 @@
+.. _invoke_functiongraph_function_api:
+
 Invoking FunctionGraph Event Function using API Calls
 ======================================================
 

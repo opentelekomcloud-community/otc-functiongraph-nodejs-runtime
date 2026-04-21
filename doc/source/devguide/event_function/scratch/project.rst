@@ -206,6 +206,8 @@ Following are the commands executed in the "postpack" script explained:
     # remove the tarball file
     rm $tarball
 
+.. note:: See also :ref:`Packaging Node.js Functions <devguide_bestpractices_packaging_node>`
+
 Create FunctionGraph function in console
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

@@ -10,6 +10,7 @@ Node.js:
 
    API calls <invoke_api>
    curl <invoke_curl>
+   From FunctionGraph <invoke_fg>
 
 
 For details on function invocation, see 

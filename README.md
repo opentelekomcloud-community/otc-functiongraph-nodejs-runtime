@@ -1,8 +1,6 @@
 # otc-functiongraph-nodejs-runtime
 
-Node.js libraries for FunctionGraph on OpenTelekomCloud.
-
-
+Node.js libraries for FunctionGraph on T Cloud Public.
 
 > [!Note]
 > <pre>

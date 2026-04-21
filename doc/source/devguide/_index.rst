@@ -6,6 +6,7 @@ Building with Node.js
    :hidden:
    :maxdepth: 1
 
+   Setup Development Environment <dev_environment/_index>
    Event Function<event_function/_index>
    HTTP Function<http_function/_index>
    Invoke FunctionGraph <invoke/_index>
@@ -21,7 +22,7 @@ FunctionGraph provides 2 types of functions:
   Event functions can be configured with event triggers and integrate
   a variety of products
   (such as object storage service OBS, distributed messaging service
-  RabbitMQ version, cloud log service LTS, etc.).
+  DMS, cloud log service LTS, etc.).
 
   See :doc:`Event Function <event_function/_index>`
 
@@ -105,50 +106,3 @@ For building functions using container images, you can use any
 Node.js version that meets the requirements of your custom container image.
 
 
-Set up development environment
----------------------------------
-To build and run the Node.js runtime for FunctionGraph, you need to set up your
-development environment by installing the Node.js programming language.
-
-
-Operating system
-^^^^^^^^^^^^^^^^^^^^
-
-This guide assumes that you are using a Unix-like operating system such as
-
-- Windows Subsystem for Linux (WSL)
-  see `How to install Linux on Windows with WSL <https://learn.microsoft.com/en-us/windows/wsl/install>`_,
-- Linux,
-- macOS.
-
-Install Node.js
-^^^^^^^^^^^^^^^^^^^^
-1. Download the Node.js installation package for your operating system
-   from the official `Node.js website <https://nodejs.org/en/download/>`_.
-2. Follow the installation instructions provided on the website to
-   install Node.js on your system.
-
-.. note::
-  This guide assumes that you have installed Node.js and npm (Node Package Manager)
-  using nvm (Node Version Manager) to manage your Node.js versions.
-
-
-Install an IDE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-You can use any text editor or IDE to write Node.js code.
-
-.. note::
-   Examples in this documentation were created using:
-
-   - WSL and
-   - Visual Studio Code.
-
-
-Using container images
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To build functions using container images, you need to have
-Docker installed on your system.
-
-See `Get Docker <https://docs.docker.com/get-docker/>`_ for instructions
-on how to install Docker on your system.
