@@ -1,16 +1,12 @@
 "use strict";
 const https = require("https");
-const {Context } = require("@opentelekomcloud-community/fg-runtime");
-const { Signer, HttpRequest } = require("@opentelekomcloud-community/otc-api-sign-sdk-nodejs");
 
-/**
- * 
- * @param {*} event 
- * @param {Context} context 
- * @returns 
- */
+const {
+  Signer,
+  HttpRequest,
+} = require("@opentelekomcloud-community/otc-api-sign-sdk-nodejs");
+
 exports.handler = async function (event, context) {
-
   // get temporary ak/sk/token from context
   // to use, an agency with permission to invoke FunctionGraph is needed:
   const ak = context.getSecurityAccessKey();

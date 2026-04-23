@@ -15,9 +15,6 @@
   "dependencies": {
     "@opentelekomcloud-community/otc-api-sign-sdk-nodejs": "^1.0.0"
   },
-  "devDependencies": {
-    "@opentelekomcloud-community/fg-runtime": "^1.0.0"
-  },
   "bundleDependencies": [
     "@opentelekomcloud-community/otc-api-sign-sdk-nodejs"
   ],
