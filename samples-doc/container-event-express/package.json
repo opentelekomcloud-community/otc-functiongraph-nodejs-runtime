@@ -20,9 +20,6 @@
   "cpu": [
     "x64"
   ],
-  "os": [
-    "linux"
-  ],
   "dependencies": {
     "express": "^4.17.1",
     "moment": "^2.30.1"

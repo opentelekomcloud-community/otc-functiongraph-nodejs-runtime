@@ -1,5 +1,7 @@
 # MySQL dependency library for FunctionGraph
 
+Sample on how to create a FunctionGraph dependency for [mysql](https://github.com/mysqljs/mysql).
+
 Create dependency zip file using:
 
 ## Step 1: Install package

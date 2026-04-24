@@ -1,7 +1,10 @@
-Scratch Event Function called asynchronously
-============================================
+.. _scratch-event-async:
 
 .. toctree::
+   :maxdepth: 1
    :hidden:
 
-See :github_repo_master:`scratch-event-async <samples-doc/scratch-event-async>` for details.
+Source code: :github_repo_master:`scratch-event-async <samples-doc/scratch-event-async>`
+
+.. include:: ../../../../samples-doc/scratch-event-async/README.md
+   :parser: myst_parser.sphinx_

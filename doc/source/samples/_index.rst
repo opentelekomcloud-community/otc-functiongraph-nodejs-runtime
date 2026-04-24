@@ -12,6 +12,7 @@ FunctionGraph with Node.js:
    Container-http <container-http/_index>
    Event-obs-s3-thumbnail <event-obss3-thumbnail/_index>
    Event-sdk-obs <event-sdk-obs/_index>
+   Event-sdk-ecs <event-sdk-ecs/_index>
    Scratch-event-async <scratch-event-async/_index>
    Scratch-event-sync <scratch-event-sync/_index>
    Scratch-event-timer <scratch-event-timer/_index>
@@ -66,9 +67,11 @@ Created from scratch
 
    * - :doc:`scratch-event-async<scratch-event-async/_index>`
      - A sample event function that demonstrates how to use async/await in Node.js functions.
+       (Node.js 8.10 and later)
 
    * - :doc:`scratch-event-sync<scratch-event-sync/_index>`
      - A sample event function that demonstrates how to write synchronous code in Node.js functions.
+       (Node.js 6.10 runtime only)
 
    * - :doc:`scratch-event-timer<scratch-event-timer/_index>`
      - A sample event function that demonstrates how to use timer trigger in Node.js functions.
@@ -78,6 +81,10 @@ Created from scratch
 
    * - :doc:`event-sdk-obs<event-sdk-obs/_index>`
      - A sample event function that demonstrates how to use FunctionGraph SDK for OBS in Node.js functions.
+
+   * - :doc:`event-sdk-ecs<event-sdk-ecs/_index>`
+     - A sample event function that demonstrates how to use FunctionGraph SDK for ECS in Node.js functions
+       together with an Timer Trigger to start/stop the ECS instances on schedule.
 
 Using container image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,7 +1,9 @@
-Container HTTP Koa sample
-==============================
+.. _container-http-koa-sample:
 
 .. toctree::
    :hidden:
 
-See :github_repo_master:`container-http-koa<samples-doc/container-http-koa>` for details.
+Source code: :github_repo_master:`container-http-koa <samples-doc/container-http-koa>`
+
+.. include:: ../../../../../samples-doc/container-http-koa/README.md
+   :parser: myst_parser.sphinx_

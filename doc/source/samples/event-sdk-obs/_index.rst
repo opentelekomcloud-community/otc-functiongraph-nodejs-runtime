@@ -1,10 +1,10 @@
 .. _event-sdk-obs:
 
-Scratch Event Function using OBS SDK
-============================================
-
 .. toctree::
+   :maxdepth: 1
    :hidden:
 
+Source code: :github_repo_master:`event-sdk-obs <samples-doc/event-sdk-obs>`
 
-See :github_repo_master:`event-sdk-obs <samples-doc/event-sdk-obs>` for details.
+.. include:: ../../../../samples-doc/event-sdk-obs/README.md
+   :parser: myst_parser.sphinx_

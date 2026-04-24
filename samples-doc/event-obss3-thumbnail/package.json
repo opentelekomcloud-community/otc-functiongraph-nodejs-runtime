@@ -18,9 +18,6 @@
   "cpu": [
     "x64"
   ],
-  "os": [
-    "linux"
-  ],
   "scripts": {
     "test": "node test/s3thumbnail.test.js",
     "uploadfile": "node test/upload.js ./terraform INPUT_BUCKET ./resources/otc.jpg",

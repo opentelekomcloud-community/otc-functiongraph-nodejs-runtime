@@ -16,9 +16,6 @@
   "cpu": [
     "x64"
   ],
-  "os": [
-    "linux"
-  ],
   "dependencies": {
     "@koa/router": "^15.3.0",
     "koa": "^3.1.1",

@@ -1,7 +1,10 @@
-Scratch Event Function using Timer event
-========================================
+.. _scratch-event-timer-sample:
 
 .. toctree::
+   :maxdepth: 1
    :hidden:
 
-See :github_repo_master:`scratch-event-timer <samples-doc/scratch-event-timer>` for details.
+Source code: :github_repo_master:`scratch-event-timer <samples-doc/scratch-event-timer>`
+
+.. include:: ../../../../samples-doc/scratch-event-timer/README.md
+   :parser: myst_parser.sphinx_

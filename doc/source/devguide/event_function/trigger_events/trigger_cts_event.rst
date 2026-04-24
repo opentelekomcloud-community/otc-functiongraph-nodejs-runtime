@@ -1,3 +1,5 @@
+.. _devguide_event_function_trigger_events_cts:
+
 CTS Event Source
 ===============================
 

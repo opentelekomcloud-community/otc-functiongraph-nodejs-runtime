@@ -1,7 +1,9 @@
-Container event Koa sample
-==============================
+.. _container-event-koa-sample:
 
 .. toctree::
    :hidden:
 
-see :github_repo_master:`container-event-koa <samples-doc/container-event-koa>` for details.
+Source code: :github_repo_master:`container-event-koa <samples-doc/container-event-koa>`
+
+.. include:: ../../../../../samples-doc/container-event-koa/README.md
+   :parser: myst_parser.sphinx_

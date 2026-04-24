@@ -2,5 +2,9 @@
   "restructuredtext.linter.doc8.extraArgs": [
     "--config ${workspaceFolder}/doc/doc8.ini"
   ],
-  "editor.pasteAs.enabled": false
+  "editor.pasteAs.enabled": false,
+  "files.associations": {
+    "MakefileTF": "makefile",
+    "*.rst": "restructuredtext"    
+  }
 }

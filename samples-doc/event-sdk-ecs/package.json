@@ -1,0 +1,28 @@
+{
+  "name": "event-sdk-ecs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sample on how to use FunctionGraph function to start an ECS instance",
+  "main": "index.js",
+  "type": "commonjs",
+  "engines": {
+    "node": "20.15.1"
+  },
+  "scripts": {
+    "postpack": "name=$(bash -c 'echo \"${npm_package_name////-}-${npm_package_version}\" | sed \"s/@/ /g\"') && rm -f ${name}.zip && tarball=\"${name}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${name}.zip; rm $tarball"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@opentelekomcloud-community/otc-api-sign-sdk-nodejs": "^1.0.0",
+    "@opentelekomcloud-community/fg-timer-event": "^1.0.0"    
+  },
+  "bundleDependencies": [
+    "@opentelekomcloud-community/otc-api-sign-sdk-nodejs",
+    "@opentelekomcloud-community/fg-timer-event"
+  ],
+  "files": [
+    "*.js",
+    "src/**/*",
+    "lib/**/*"
+  ]
+}

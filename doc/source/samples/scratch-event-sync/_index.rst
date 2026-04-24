@@ -1,10 +1,10 @@
 .. _scratch-event-sync-sample:
 
-Scratch Event Function called synchronously
-===========================================
-
 .. toctree::
+   :maxdepth: 1
    :hidden:
 
-See :github_repo_master:`scratch-event-sync <samples-doc/scratch-event-sync>` for details.
+Source code: :github_repo_master:`scratch-event-sync <samples-doc/scratch-event-sync>`
 
+.. include:: ../../../../samples-doc/scratch-event-sync/README.md
+   :parser: myst_parser.sphinx_
