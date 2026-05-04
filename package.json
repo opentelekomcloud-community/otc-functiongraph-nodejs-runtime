@@ -16,10 +16,7 @@
   "author": "T Cloud Public",
   "license": "Apache-2.0",
   "workspaces": [
-    "fg-events/*",
-    "fg-events",
-    "fg-runtime",
-    "fg-testutils"
+    
   ],
   "scripts": {
     "version": "npm version $npm_package_version --no-git-tag-version --workspaces",
@@ -31,6 +28,7 @@
     "pack:fg-events:dds": "cd fg-events/dds && npm pack",
     "pack:fg-events:dms4kafka": "cd fg-events/dms4kafka && npm pack",
     "pack:fg-events:dms4rocketmq": "cd fg-events/dms4rocketmq && npm pack",
+    "pack:fg-events:dms4rabbitmq": "cd fg-events/dms4rabbitmq && npm pack",
     "pack:fg-events:kafkaopensource": "cd fg-events/kafkaopensource && npm pack",
     "pack:fg-events:lts": "cd fg-events/lts && npm pack",
     "pack:fg-events:obss3": "cd fg-events/obss3 && npm pack",
@@ -44,4 +42,5 @@
   "devDependencies": {
     "npm-run-all": "^4.1.5"
   }
+
 }

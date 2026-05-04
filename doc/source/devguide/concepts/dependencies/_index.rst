@@ -49,4 +49,8 @@ Notes and Constraints
 
 * Dependencies in use cannot be deleted.
  
-  
+* Dependencies are merged with the function code.
+  If a dependency contains a file with the same name as a file in the function code,
+  the file in the dependency takes precedence over the file in the function code.
+  Therefore, do not use dependencies to package files that have the same names
+  as files in the function code.
