@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { DMS4RocketMQEvent } = require("../src/index");
+const { DMS4RocketMQEvent } = require("../src/dms4rocketmqevent");
 
 const eventData = require("../resources/rocketmq_event.json");
 const event = new DMS4RocketMQEvent(eventData);

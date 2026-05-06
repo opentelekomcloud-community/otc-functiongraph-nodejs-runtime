@@ -1,5 +1,14 @@
 "use strict";
-const { DMS4RocketMQRecord } = require("./dms4rocketmqrecord");
+
+/**
+ * @typedef {Object} DMS4RocketMQEventJSON
+ * @property {string} [event_version] Event schema version
+ * @property {string} [event_time] Event creation time
+ * @property {string} [region] Region where the event was emitted
+ * @property {string} [trigger_type] Trigger type for this invocation
+ * @property {string} [instance_id] DMS instance ID
+ * @property {DMS4RocketMQRecordJSON[]} [records] Event records
+ */
 
 /**
  * @typedef {Object} DMS4RocketMQRecordMessageObject
@@ -14,16 +23,6 @@ const { DMS4RocketMQRecord } = require("./dms4rocketmqrecord");
  * @typedef {Object} DMS4RocketMQRecordJSON
  * @property {string} [topic_id] Topic identifier
  * @property {DMS4RocketMQRecordMessageJSON[]} [messages] Messages received for the topic
- */
-
-/**
- * @typedef {Object} DMS4RocketMQEventJSON
- * @property {string} [event_version] Event schema version
- * @property {string} [event_time] Event creation time
- * @property {string} [region] Region where the event was emitted
- * @property {string} [trigger_type] Trigger type for this invocation
- * @property {string} [instance_id] DMS instance ID
- * @property {DMS4RocketMQRecordJSON[]} [records] Event records
  */
 
 /**
@@ -93,6 +92,75 @@ class DMS4RocketMQEvent {
   }
 }
 
+
+class DMS4RocketMQRecord {
+  /**
+   * @param {DMS4RocketMQRecordJSON} record
+   */
+  constructor(record) {
+    this._record = record || {};
+
+    this._messages = [];
+    for (const message of this._record.messages || []) {
+      this._messages.push(new DMS4RocketMQRecordMessage(message));
+    }
+  }
+
+  /**
+   * @returns {string}
+   */
+  getTopicId() {
+    return this._record.topic_id || "";
+  }
+
+  /**
+   * @returns {DMS4RocketMQRecordMessage[]}
+   */
+  getMessages() {
+    return this._messages;
+  }
+
+  /**
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {DMS4RocketMQRecordJSON} Payload as JSON object
+   */
+  toJSON() {
+    return this._record;
+  }
+}
+
+
+
+class DMS4RocketMQRecordMessage {
+  /**
+   * @param {DMS4RocketMQRecordMessageJSON} record
+   */
+  constructor(record) {
+    this._record = record || {};
+  }
+
+  /**
+   * @returns {string}
+   */
+  getMessage() {
+    if (typeof this._record === "string") {
+      return this._record;
+    }
+    return this._record.message || "";
+  }
+
+  /**
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {DMS4RocketMQRecordMessageJSON} Payload as JSON object
+   */
+  toJSON() {
+    return this._record;
+  }
+}
+
+
 module.exports = {
   DMS4RocketMQEvent,
+  DMS4RocketMQRecord,
+  DMS4RocketMQRecordMessage,
 };

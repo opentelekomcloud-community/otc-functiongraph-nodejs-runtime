@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { APIGResponse } = require("../src/index");
+const { APIGResponse } = require("../src/apigevent");
 
 test("APIGResponse should keep constructor values", () => {
   const response = new APIGResponse(200, "ok", { "content-type": "text/plain" }, false);

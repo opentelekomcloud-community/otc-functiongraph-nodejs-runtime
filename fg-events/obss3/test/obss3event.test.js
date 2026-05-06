@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { OBSS3Event } = require("../src/index");
+const { OBSS3Event } = require("../src/obss3event");
 
 test("OBSS3Event should correctly parse event data", () => {
   const obss3EventData = require("../resources/obss3_event.json");

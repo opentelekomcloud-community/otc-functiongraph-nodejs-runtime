@@ -1,9 +1,8 @@
 const assert = require("assert");
-const { DDSEvent } = require("../src/index");
+const { DDSEvent } = require("../src/ddsevent");
 
 test("DDSEvent should correctly parse event data", () => {
   const eventData = require("../resources/dds_event.json");
-  const { testEnvironment } = require("../../cts/jest.config");
   const event = new DDSEvent(eventData);
   const records = event.getRecords();
 

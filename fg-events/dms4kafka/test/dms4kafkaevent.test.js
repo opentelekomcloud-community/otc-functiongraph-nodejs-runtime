@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { DMS4KafkaEvent } = require("../src/index");
+const { DMS4KafkaEvent } = require("../src/dms4kafkaevent");
 
 test("DMS4KafkaEvent should correctly parse event data", () => {
   const eventData = require("../resources/dms4kafka_event.json");

@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { CTSEvent } = require("../src/index");
+const { CTSEvent } = require("../src/ctsevent");
 
 test("CTSEvent should correctly parse event data cts_event.json", () => {
   const ctsEventData = require("../resources/cts_event.json");

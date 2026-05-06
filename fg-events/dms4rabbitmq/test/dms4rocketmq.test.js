@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { DMS4RabbitMQEvent } = require("../src/index");
+const { DMS4RabbitMQEvent } = require("../src/dms4rabbitmqevent");
 
 const eventData = require("../resources/rabbitmq_event.json");
 const event = new DMS4RabbitMQEvent(eventData);

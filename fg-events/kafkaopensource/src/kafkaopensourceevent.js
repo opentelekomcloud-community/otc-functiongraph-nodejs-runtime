@@ -1,20 +1,4 @@
 "use strict";
-const { KafkaOpenSourceRecord } = require("./kafkaopensourcerecord");
-
-/**
- * @typedef {Object} KafkaOpenSourceRecordMessageObject
- * @property {string} [message] Raw message payload
- */
-
-/**
- * @typedef {string | KafkaOpenSourceRecordMessageObject} KafkaOpenSourceRecordMessageJSON
- */
-
-/**
- * @typedef {Object} KafkaOpenSourceRecordJSON
- * @property {string} [topic_id] Topic identifier
- * @property {KafkaOpenSourceRecordMessageJSON[]} [messages] Messages received for the topic
- */
 
 /**
  * @typedef {Object} KafkaOpenSourceEventJSON
@@ -27,11 +11,24 @@ const { KafkaOpenSourceRecord } = require("./kafkaopensourcerecord");
  */
 
 /**
+ * @typedef {Object} KafkaOpenSourceRecordJSON
+ * @property {string} [topic_id] Topic identifier
+ * @property {KafkaOpenSourceRecordMessageJSON[]} [messages] Messages received for the topic
+ */
+/**
+ * @typedef {Object} KafkaOpenSourceRecordMessageObject
+ * @property {string} [message] Raw message payload
+ */
+
+/**
+ * @typedef {string | KafkaOpenSourceRecordMessageObject} KafkaOpenSourceRecordMessageJSON
+ */
+
+/**
  * KafkaOpenSourceEvent Class
  * Represents a Kafka Open Source event for FunctionGraph
  */
 class KafkaOpenSourceEvent {
-
   /**
    * @param {KafkaOpenSourceEventJSON} event
    */
@@ -95,4 +92,71 @@ class KafkaOpenSourceEvent {
   }
 }
 
-module.exports = { KafkaOpenSourceEvent };
+class KafkaOpenSourceRecord {
+  /**
+   * @param {KafkaOpenSourceRecordJSON} record
+   */
+  constructor(record) {
+    this._record = record || {};
+
+    this._messages = [];
+    for (const message of this._record.messages || []) {
+      this._messages.push(new KafkaOpenSourceRecordMessage(message));
+    }
+  }
+
+  /**
+   * @returns {string}
+   */
+  getTopicId() {
+    return this._record.topic_id || "";
+  }
+
+  /**
+   * @returns {KafkaOpenSourceRecordMessage[]}
+   */
+  getMessages() {
+    return this._messages;
+  }
+
+  /**
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {KafkaOpenSourceRecordJSON} Payload as JSON object
+   */
+  toJSON() {
+    return this._record;
+  }
+}
+
+class KafkaOpenSourceRecordMessage {
+  /**
+   * @param {KafkaOpenSourceRecordMessageJSON} record
+   */
+  constructor(record) {
+    this._record = record || {};
+  }
+
+  /**
+   * @returns {string}
+   */
+  getMessage() {
+    if (typeof this._record === "string") {
+      return this._record;
+    }
+    return this._record.message || "";
+  }
+
+  /**
+   * Converts the wrapped payload back to a plain JSON object.
+   * @returns {KafkaOpenSourceRecordMessageJSON} Payload as JSON object
+   */
+  toJSON() {
+    return this._record;
+  }
+}
+
+module.exports = {
+  KafkaOpenSourceEvent,
+  KafkaOpenSourceRecord,
+  KafkaOpenSourceRecordMessage,
+};
