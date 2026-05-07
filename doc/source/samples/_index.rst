@@ -8,15 +8,16 @@ FunctionGraph with Node.js:
    :maxdepth: 2
    :hidden:
 
-   Container-event <container-event/_index>
-   Container-http <container-http/_index>
-   Event-obs-s3-thumbnail <event-obss3-thumbnail/_index>
-   Event-sdk-obs <event-sdk-obs/_index>
-   Event-sdk-ecs <event-sdk-ecs/_index>
-   Scratch-event-async <scratch-event-async/_index>
-   Scratch-event-sync <scratch-event-sync/_index>
-   Scratch-event-timer <scratch-event-timer/_index>
-   Scratch-http <scratch-http/_index>
+   container-event-express <container-event-express/_index>
+   container-event-koa <container-event-koa/_index>
+   container-http-koa <container-http-koa/_index>
+   event-obs-s3-thumbnail <event-obss3-thumbnail/_index.md>
+   event-sdk-ecs <event-sdk-ecs/_index.md>
+   event-sdk-obs <event-sdk-obs/_index.md>   
+   scratch-event-async <scratch-event-async/_index.md>
+   scratch-event-sync <scratch-event-sync/_index.md>
+   scratch-event-timer <scratch-event-timer/_index.md>
+   scratch-http <scratch-http/_index.md>
 
 
 General notes
@@ -39,7 +40,7 @@ General notes
       :caption: package.json
 
       "dependencies": {
-        "@opentelekomcloud-community/fg-apig-event": "file:../../fg-events/apig"
+        "@opentelekomcloud-community/fg-apig-event": "file:../../fg-events/fg-apig-event"
       },
 
   to 
@@ -65,24 +66,24 @@ Created from scratch
    * - Sample
      - Description
 
-   * - :doc:`scratch-event-async<scratch-event-async/_index>`
+   * - :ref:`scratch-event-async<scratch-event-async>`
      - A sample event function that demonstrates how to use async/await in Node.js functions.
        (Node.js 8.10 and later)
 
-   * - :doc:`scratch-event-sync<scratch-event-sync/_index>`
+   * - :ref:`scratch-event-sync<scratch-event-sync>`
      - A sample event function that demonstrates how to write synchronous code in Node.js functions.
        (Node.js 6.10 runtime only)
 
-   * - :doc:`scratch-event-timer<scratch-event-timer/_index>`
+   * - :ref:`scratch-event-timer<scratch-event-timer>`
      - A sample event function that demonstrates how to use timer trigger in Node.js functions.
 
-   * - :doc:`event-obss3-thumbnail<event-obss3-thumbnail/_index>`
-     - A sample event function that listens for OBS S3 events and generates thumbnail images for the uploaded objects.
+   * - :ref:`event-obss3-thumbnail<event-obss3-thumbnail>`
+     - A sample event function that listens for OBS S3 events and generates thumbnail images for the uploaded objects.       
 
-   * - :doc:`event-sdk-obs<event-sdk-obs/_index>`
+   * - :ref:`event-sdk-obs<event-sdk-obs>`
      - A sample event function that demonstrates how to use FunctionGraph SDK for OBS in Node.js functions.
 
-   * - :doc:`event-sdk-ecs<event-sdk-ecs/_index>`
+   * - :ref:`event-sdk-ecs<event-sdk-ecs>`
      - A sample event function that demonstrates how to use FunctionGraph SDK for ECS in Node.js functions
        together with an Timer Trigger to start/stop the ECS instances on schedule.
 
@@ -95,10 +96,10 @@ Using container image
    * - Sample
      - Description
 
-   * - :doc:`container-event-express<container-event/container-event-express/_index>`
+   * - :ref:`container-event-express<container-event-express>`
      - A sample event function that uses Node.js and express framework deployed as container image.
      
-   * - :doc:`container-event-koa<container-event/container-event-koa/_index>`
+   * - :ref:`container-event-koa<container-event-koa>`
      - A sample event function that uses Node.js and Koa framework deployed as container image.
 
 
@@ -114,7 +115,7 @@ Created from scratch
    * - Sample
      - Description
 
-   * - :doc:`scratch-http<scratch-http/_index>`
+   * - :ref:`scratch-http<scratch-http>`
      - A sample HTTP function using Koa framework in Node.js functions deployed from scratch.
 
 Using container image
@@ -126,5 +127,5 @@ Using container image
    * - Sample
      - Description
 
-   * - :doc:`container-http-koa<container-http/container-http-koa/_index>`
+   * - :ref:`container-http-koa<container-http-koa>`
      - A sample HTTP function using Koa framework in Node.js functions deployed as container image.

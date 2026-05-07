@@ -26,7 +26,7 @@
     "@opentelekomcloud-community/fg-runtime": "file:../../fg-runtime"
   },
   "dependencies": {
-    "@opentelekomcloud-community/fg-timer-event": "file:../../fg-events/timer"
+    "@opentelekomcloud-community/fg-timer-event": "file:../../fg-events/fg-timer-event"
   },
   "files": [
     "src/**/*",

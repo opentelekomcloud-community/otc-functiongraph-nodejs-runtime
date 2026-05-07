@@ -1,3 +1,5 @@
+"use strict";
+
 const { Readable } = require("stream");
 
 const util = require("util");
@@ -97,10 +99,11 @@ async function shrink(
       logger.info("Object retrieved successfully.");
 
       const stream = getResult.InterfaceResult.Content;
+      var contentBuffer;
 
       if (stream instanceof Readable) {
         logger.info("Content is a readable stream.");
-        const contentBuffer = Buffer.concat(await stream.toArray());
+        contentBuffer = Buffer.concat(await stream.toArray());
       } else {
         logger.info("Content is not a readable stream.");
         return;

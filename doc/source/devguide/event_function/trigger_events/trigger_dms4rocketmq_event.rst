@@ -14,9 +14,9 @@ For the use of RocketMQ triggers, please refer to
 RocketMQ example event
 ----------------------
 
-.. literalinclude:: /../../fg-events/dms4rocketmq/resources/rocketmq_event.json
+.. literalinclude:: /../../fg-events/fg-dms4rocketmq-event/resources/rocketmq_event.json
     :language: json
-    :caption: :github_repo_master:`rocketmq_event.json <fg-events/dms4rocketmq/resources/rocketmq_event.json>`
+    :caption: :github_repo_master:`rocketmq_event.json <fg-events/fg-dms4rocketmq-event/resources/rocketmq_event.json>`
 
 
 Parameter description

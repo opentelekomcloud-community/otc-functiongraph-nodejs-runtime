@@ -9,9 +9,9 @@ For the use of CTS triggers, please refer to
 CTS example event
 -----------------
 
-.. literalinclude:: /../../fg-events/cts/resources/cts_event.json
+.. literalinclude:: /../../fg-events/fg-cts-event/resources/cts_event.json
     :language: json
-    :caption: :github_repo_master:`cts_event.json <fg-events/cts/resources/cts_event.json>`
+    :caption: :github_repo_master:`cts_event.json <fg-events/fg-cts-event/resources/cts_event.json>`
 
 
 Parameter description

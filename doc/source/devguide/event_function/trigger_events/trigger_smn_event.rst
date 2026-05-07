@@ -15,9 +15,9 @@ For the use of SMN triggers, please refer to
 SMN example event
 -----------------
 
-.. literalinclude:: /../../fg-events/smn/resources/smn_event.json
+.. literalinclude:: /../../fg-events/fg-smn-event/resources/smn_event.json
     :language: json
-    :caption: :github_repo_master:`smn_event.json <fg-events/smn/resources/smn_event.json>`
+    :caption: :github_repo_master:`smn_event.json <fg-events/fg-smn-event/resources/smn_event.json>`
 
 
 Parameter description

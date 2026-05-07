@@ -14,9 +14,9 @@ For the use of Kafka triggers, please refer to
 Kafka example event
 -------------------
 
-.. literalinclude:: /../../fg-events/dms4kafka/resources/dms4kafka_event.json
+.. literalinclude:: /../../fg-events/fg-dms4kafka-event/resources/dms4kafka_event.json
     :language: json
-    :caption: :github_repo_master:`dms4kafka_event.json <fg-events/dms4kafka/resources/dms4kafka_event.json>`
+    :caption: :github_repo_master:`dms4kafka_event.json <fg-events/fg-dms4kafka-event/resources/dms4kafka_event.json>`
 
 
 Parameter description

@@ -26,7 +26,7 @@
     "@opentelekomcloud-community/fg-runtime": "file:../../fg-runtime"
   },
   "dependencies": {
-    "@opentelekomcloud-community/fg-dms4kafka-event": "file:../../fg-events/dms4kafka"
+    "@opentelekomcloud-community/fg-dms4kafka-event": "file:../../fg-events/fg-dms4kafka-event"
   },
   "files": [
     "src/**/*",

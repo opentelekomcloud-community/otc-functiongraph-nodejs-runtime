@@ -17,9 +17,9 @@ For the use of RabbitMQ triggers, please refer to
 RabbitMQ example event
 ----------------------
 
-.. literalinclude:: /../../fg-events/dms4rabbitmq/resources/rabbitmq_event.json
+.. literalinclude:: /../../fg-events/fg-dms4rabbitmq-event/resources/rabbitmq_event.json
     :language: json
-    :caption: :github_repo_master:`rabbitmq_event.json <fg-events/dms4rabbitmq/resources/rabbitmq_event.json>`
+    :caption: :github_repo_master:`rabbitmq_event.json <fg-events/fg-dms4rabbitmq-event/resources/rabbitmq_event.json>`
 
 
 Parameter description

@@ -256,6 +256,10 @@ extlinks = {
         f"https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/tree/{local_branch}/%s",
         "%s",
     ),
+    "github-issue": (
+        "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues/%s",
+        "%s",
+    ),
     "otc_fg_umn": ("https://docs.otc.t-systems.com/function-graph/umn/%s", "%s"),
     "api_usage": ("https://docs.otc.t-systems.com/api-usage/%s", "%s"),
     "otc_docs": ("https://docs.otc.t-systems.com/%s", "%s"),
@@ -275,3 +279,13 @@ role_name = "github_repo_master"
 
 extlinks_detect_hardcoded_links = False
 
+myst_url_schemes = {
+    "http": None,
+    "https": None,
+    "github": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/tree/"+local_branch+"/{{path}}#{{fragment}}",
+    "gh-issue": {
+        "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issue/{{path}}#{{fragment}}",
+        "title": "Issue #{{path}}",
+        "classes": ["github"],
+    },
+}

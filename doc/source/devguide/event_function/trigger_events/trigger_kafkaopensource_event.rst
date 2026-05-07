@@ -9,9 +9,9 @@ For the use of Open-Source Kafka triggers, please refer to
 Kafka example event
 -------------------
 
-.. literalinclude:: /../../fg-events/kafkaopensource/resources/kafkaopensource_event.json
+.. literalinclude:: /../../fg-events/fg-kafkaopensource-event/resources/kafkaopensource_event.json
     :language: json
-    :caption: :github_repo_master:`kafkaopensource_event.json <fg-events/kafkaopensource/resources/kafkaopensource_event.json>`
+    :caption: :github_repo_master:`kafkaopensource_event.json <fg-events/fg-kafkaopensource-event/resources/kafkaopensource_event.json>`
 
 
 Parameter description

@@ -30,17 +30,17 @@
   },
   
   "dependencies": {
-    "@opentelekomcloud-community/fg-apig-event": "file:./apig",
-    "@opentelekomcloud-community/fg-cts-event": "file:./cts",
-    "@opentelekomcloud-community/fg-dds-event": "file:./dds",
-    "@opentelekomcloud-community/fg-dms4kafka-event": "file:./dms4kafka",
-    "@opentelekomcloud-community/fg-dms4rabbitmq-event": "file:./dms4rabbitmq",
-    "@opentelekomcloud-community/fg-dms4rocketmq-event": "file:./dms4rocketmq",
-    "@opentelekomcloud-community/fg-kafkaopensource-event": "file:./kafkaopensource",
-    "@opentelekomcloud-community/fg-lts-event": "file:./lts",
-    "@opentelekomcloud-community/fg-obss3-event": "file:./obss3",
-    "@opentelekomcloud-community/fg-smn-event": "file:./smn",
-    "@opentelekomcloud-community/fg-timer-event": "file:./timer"
+    "@opentelekomcloud-community/fg-apig-event": "file:./fg-apig-event",
+    "@opentelekomcloud-community/fg-cts-event": "file:./fg-cts-event",
+    "@opentelekomcloud-community/fg-dds-event": "file:./fg-dds-event",
+    "@opentelekomcloud-community/fg-dms4kafka-event": "file:./fg-dms4kafka-event",
+    "@opentelekomcloud-community/fg-dms4rabbitmq-event": "file:./fg-dms4rabbitmq-event",
+    "@opentelekomcloud-community/fg-dms4rocketmq-event": "file:./fg-dms4rocketmq-event",
+    "@opentelekomcloud-community/fg-kafkaopensource-event": "file:./fg-kafkaopensource-event",
+    "@opentelekomcloud-community/fg-lts-event": "file:./fg-lts-event",
+    "@opentelekomcloud-community/fg-obss3-event": "file:./fg-obss3-event",
+    "@opentelekomcloud-community/fg-smn-event": "file:./fg-smn-event",
+    "@opentelekomcloud-community/fg-timer-event": "file:./fg-timer-event"
   },
   "bundleDependencies": [
     "@opentelekomcloud-community/fg-apig-event",

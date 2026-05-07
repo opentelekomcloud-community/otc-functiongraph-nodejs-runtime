@@ -13,9 +13,9 @@ For the use of OBS triggers, please refer to
 OBS example event
 -----------------
 
-.. literalinclude:: /../../fg-events/obss3/resources/obss3_event.json
+.. literalinclude:: /../../fg-events/fg-obss3-event/resources/obss3_event.json
     :language: json
-    :caption: :github_repo_master:`obss3_event.json <fg-events/obss3/resources/obss3_event.json>`
+    :caption: :github_repo_master:`obss3_event.json <fg-events/fg-obss3-event/resources/obss3_event.json>`
 
 
 Parameter description

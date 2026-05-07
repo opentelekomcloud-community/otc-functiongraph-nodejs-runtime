@@ -28,7 +28,7 @@
     "jest-environment-jsdom": "^30.2.0"
   },
   "dependencies": {
-    "@opentelekomcloud-community/fg-apig-event": "file:../../fg-events/apig"
+    "@opentelekomcloud-community/fg-apig-event": "file:../../fg-events/fg-apig-event"
   },
   "files": [
     "src/**/*",
