@@ -1,3 +1,5 @@
+.. _devguide_event_function_trigger_events_timer:
+
 Timer Event Source
 ==================
 
@@ -10,9 +12,9 @@ For the use of Timer triggers, please refer to
 Timer example event
 -------------------
 
-.. literalinclude:: /../../fg-events/timer/resources/timer_event.json
+.. literalinclude:: /../../fg-events/fg-timer-event/resources/timer_event.json
     :language: json
-    :caption: :github_repo_master:`timer_event.json <fg-events/timer/resources/timer_event.json>`
+    :caption: :github_repo_master:`timer_event.json <fg-events/fg-timer-event/resources/timer_event.json>`
 
 Parameter description
 ---------------------

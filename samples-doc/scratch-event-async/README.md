@@ -1,6 +1,6 @@
-## scratch-event-async
+# scratch-event-async
 
-The following code is the code for async handler (for runtime 8.10 or later).
+The following code is the code for async handler (for Node.js 8.10 or later).
 
 ```js
 exports.handler = async (event, context) => {
@@ -23,7 +23,7 @@ If your **Node.js** function contains an asynchronous task, use **Promise** to e
 The asynchronous task can be executed only before the function responds to requests.
 
 ```js
-exports.handler =  async(event, context ) => {
+exports.handler = async(event, context ) => {
     const output =
     {
         'statusCode': 200,

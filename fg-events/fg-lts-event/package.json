@@ -1,0 +1,46 @@
+{
+  "name": "@opentelekomcloud-community/fg-lts-event",
+  "description": "LTS event class for FunctionGraph LTS trigger",
+  "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
+  "bugs": {
+    "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git",
+    "directory": "fg-events/fg-lts-event"
+  },
+  "version": "1.0.2",
+  "license": "Apache-2.0",
+  "author": "T Cloud Public",
+  "type": "commonjs",
+  "main": "./src/ltsevent.js",
+  "scripts": {
+    "prepack": "npm i --workspaces false",
+    "test": "jest --config ./jest.config.js --coverage --silent",
+    "postpack": "name=$(bash -c 'echo \"${npm_package_name////-}-${npm_package_version}\" | sed \"s/@/ /g\"') && rm -f ${name}.zip && tarball=\"${name}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${name}.zip",
+    "publish:github": "npm pack && npm publish --registry https://npm.pkg.github.com"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/ltsevent.js",
+      "require": "./src/ltsevent.js",
+      "default": "./src/ltsevent.js"
+    },
+    "./package.json": {
+      "default": "./package.json"
+    }
+  },
+  "files": [
+    "src/**/*",
+    "lib/**/*"
+  ]
+}

@@ -10,14 +10,6 @@ resource "opentelekomcloud_identity_role_v3" "role" {
   statement {
     effect = "Allow"
     action = [
-      "functiongraph:*:*",
-      "lts:*:*",
-    ]
-  }
-
-  statement {
-    effect = "Allow"
-    action = [
       "obs:*:*",
     ]
     resource = [

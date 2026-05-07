@@ -1,6 +1,6 @@
 {
   "name": "@opentelekomcloud-community/fg-events",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "FunctionGraph trigger events",
   "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
   "bugs": {
@@ -10,9 +10,10 @@
   "author": "T Cloud Public",
   "files": [
     "lib/**/*",
-    "src/**/*"
+    "src/**/*",
+    "fg-events.js"
   ],
-  "main": "",
+  "main": "./fg-events.js",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
@@ -22,34 +23,36 @@
     "directory": "fg-events"
   },
   "scripts": {
-    "prepack": "npm i",
+    "prepack": "npm i --workspaces false",
     "postpack": "name=$(bash -c 'echo \"${npm_package_name////-}-${npm_package_version}\" | sed \"s/@/ /g\"') && rm -f ${name}.zip && tarball=\"${name}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${name}.zip",
     "publish:github": "npm pack && npm publish --registry https://npm.pkg.github.com",
     "test": ""
   },
   "dependencies": {
-    "fg-apig-event": "file:./apig",
-    "fg-cts-event": "file:./cts",
-    "fg-dds-event": "file:./dds",
-    "fg-dms4kafka-event": "file:./dms4kafka",
-    "fg-dms4rocketmq-event": "file:./dms4rocketmq",
-    "fg-kafkaopensource-event": "file:./kafkaopensource",
-    "fg-lts-event": "file:./lts",
-    "fg-obss3-event": "file:./obss3",
-    "fg-smn-event": "file:./smn",
-    "fg-timer-event": "file:./timer"
+    "@opentelekomcloud-community/fg-apig-event": "file:./fg-apig-event",
+    "@opentelekomcloud-community/fg-cts-event": "file:./fg-cts-event",
+    "@opentelekomcloud-community/fg-dds-event": "file:./fg-dds-event",
+    "@opentelekomcloud-community/fg-dms4kafka-event": "file:./fg-dms4kafka-event",
+    "@opentelekomcloud-community/fg-dms4rabbitmq-event": "file:./fg-dms4rabbitmq-event",
+    "@opentelekomcloud-community/fg-dms4rocketmq-event": "file:./fg-dms4rocketmq-event",
+    "@opentelekomcloud-community/fg-kafkaopensource-event": "file:./fg-kafkaopensource-event",
+    "@opentelekomcloud-community/fg-lts-event": "file:./fg-lts-event",
+    "@opentelekomcloud-community/fg-obss3-event": "file:./fg-obss3-event",
+    "@opentelekomcloud-community/fg-smn-event": "file:./fg-smn-event",
+    "@opentelekomcloud-community/fg-timer-event": "file:./fg-timer-event"
   },
   "bundleDependencies": [
-    "fg-apig-event",
-    "fg-cts-event",
-    "fg-dds-event",
-    "fg-dms4kafka-event",
-    "fg-dms4rocketmq-event",
-    "fg-kafkaopensource-event",
-    "fg-lts-event",
-    "fg-obss3-event",
-    "fg-smn-event",
-    "fg-timer-event"
+    "@opentelekomcloud-community/fg-apig-event",
+    "@opentelekomcloud-community/fg-cts-event",
+    "@opentelekomcloud-community/fg-dds-event",
+    "@opentelekomcloud-community/fg-dms4kafka-event",
+    "@opentelekomcloud-community/fg-dms4rabbitmq-event",
+    "@opentelekomcloud-community/fg-dms4rocketmq-event",
+    "@opentelekomcloud-community/fg-kafkaopensource-event",
+    "@opentelekomcloud-community/fg-lts-event",
+    "@opentelekomcloud-community/fg-obss3-event",
+    "@opentelekomcloud-community/fg-smn-event",
+    "@opentelekomcloud-community/fg-timer-event"
   ],
   "type": "commonjs"
 }

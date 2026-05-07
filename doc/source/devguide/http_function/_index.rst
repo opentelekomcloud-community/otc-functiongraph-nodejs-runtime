@@ -85,6 +85,7 @@ by functions by default.
      - Project ID of the function.
 
        .. note:: **x-cff-project-id in the header currently returns always "sn".** 
+          (see :github-issue:`Issue #6 <6>`)
 
           To get correct Project ID use instead:
 
@@ -98,6 +99,7 @@ by functions by default.
      - Region where the function is located.
 
        .. note:: **x-cff-region in the header currently returns always "cn".** 
+          (see :github-issue:`Issue #6 <6>`)
 
           To get correct region define a environment variable REGION 
           with correct region value and use e.g.:

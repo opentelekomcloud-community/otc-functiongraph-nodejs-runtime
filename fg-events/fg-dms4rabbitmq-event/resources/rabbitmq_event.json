@@ -1,0 +1,19 @@
+{
+  "event_version": "v1.0",
+  "event_time": 1576737962,
+  "trigger_type": "RABBITMQ",
+  "region": "region",
+  "records": [
+    {
+      "messages": [
+        "rabbitmq message1",
+        "rabbitmq message2",
+        "rabbitmq message3",
+        "rabbitmq message4",
+        "rabbitmq message5"
+      ],
+      "instance_id": "81335d56-b9fe-4679-ba95-7030949cc76b",
+      "exchange": "topic"
+    }
+  ]
+}

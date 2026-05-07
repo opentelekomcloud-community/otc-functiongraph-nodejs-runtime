@@ -11,7 +11,7 @@ resource "opentelekomcloud_fgs_function_v2" "MyFunction" {
   initializer_handler = var.initializer_name
   initializer_timeout = 30
 
-  runtime   = "Node.js20.15"
+  runtime   = "Node.js6.10"
 
   code_type = "zip"
   func_code     = filebase64(format("${path.module}/../%s", var.zip_file_name))

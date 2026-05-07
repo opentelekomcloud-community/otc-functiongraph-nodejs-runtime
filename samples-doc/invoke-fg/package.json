@@ -18,9 +18,6 @@
   "cpu": [
     "x64"
   ],
-  "os": [
-    "linux"
-  ],
   "scripts": {
     "invokeSyncAKSK": "node src/invokeSync_AKSK.js",
     "invokeSyncFetchAKSK": "node src/invokeSyncFetch_AKSK.js",

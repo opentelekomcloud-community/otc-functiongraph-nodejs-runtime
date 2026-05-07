@@ -18,9 +18,6 @@
   "cpu": [
     "x64"
   ],
-  "os": [
-    "linux"
-  ],
   "scripts": {
     "test": "node ./test/index.test.js",
     "postpack": "rm -f ${npm_package_name}.zip && tarball=\"${npm_package_name}-${npm_package_version}.tgz\"; tar -tf $tarball | sed 's/^package\\///' | zip -@r ${npm_package_name}.zip; rm $tarball"
@@ -29,7 +26,7 @@
     "@opentelekomcloud-community/fg-runtime": "file:../../fg-runtime"
   },
   "dependencies": {
-    "@opentelekomcloud-community/fg-smn-event": "file:../../fg-events/smn"
+    "@opentelekomcloud-community/fg-smn-event": "file:../../fg-events/fg-smn-event"
   },
   "files": [
     "src/**/*",

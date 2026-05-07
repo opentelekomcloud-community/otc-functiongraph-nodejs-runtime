@@ -1,3 +1,5 @@
+.. _devguide_event_function_trigger_events_dds:
+
 DDS Event Source (offline soon)
 ===============================
 
@@ -7,9 +9,9 @@ For the use of DDS triggers, please refer to
 DDS example event
 -----------------
 
-.. literalinclude:: /../../fg-events/dds/resources/dds_event.json
+.. literalinclude:: /../../fg-events/fg-dds-event/resources/dds_event.json
     :language: json
-    :caption: :github_repo_master:`dds_event.json <fg-events/dds/resources/dds_event.json>`
+    :caption: :github_repo_master:`dds_event.json <fg-events/fg-dds-event/resources/dds_event.json>`
 
 
 Parameter description

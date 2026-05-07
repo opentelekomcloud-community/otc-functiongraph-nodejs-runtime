@@ -1,5 +1,7 @@
 # Postgres dependency library for FunctionGraph
 
+Sample on how to create a FunctionGraph dependency for postgres [pg](https://github.com/brianc/node-postgres).
+
 Create dependency zip file using:
 
 ## Step 1: Install package

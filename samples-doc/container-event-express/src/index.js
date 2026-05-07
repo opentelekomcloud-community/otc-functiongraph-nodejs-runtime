@@ -26,6 +26,12 @@ app.post("/invoke", (req, res) => {
 
   logger.info("Processing event with request ID:", req.cffRequestId);
 
+  // If enable_auth_in_header is set to true, you can access the security credentials from the request headers
+  const ak = req.header("x-cff-security-access-key") || "No Access Key provided -> enable_auth_in_header";
+  const sk = req.header("x-cff-security-secret-key");
+  const st = req.header("x-cff-security-token");
+  logger.info("Security Access Key:", ak);
+
   // Process the event and generate a response
   const response = {
     message: "Event processed successfully",
