@@ -12,14 +12,14 @@
     "type": "git",
     "url": "https://github.com/opentelekomcloud-community/otc-functiongraph-nodejs-runtime.git"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "T Cloud Public",
   "license": "Apache-2.0",
   "workspaces": [
     "fg-events",
     "fg-events/fg-*",
     "fg-runtime",
-    "fg-testutils"    
+    "fg-testutils"
   ],
   "scripts": {
     "version": "npm version $npm_package_version --no-git-tag-version --workspaces",
@@ -42,10 +42,8 @@
     "pack:fg-testutils": "cd fg-testutils && npm pack",
     "pack:all": "npm-run-all --parallel pack:fg-events pack:fg-events:* pack:fg-runtime pack:fg-testutils",
     "publish:all": "npm run pack:all && npm publish --registry https://npm.pkg.github.com --workspaces true --include-workspace-root false"
-    
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5"
   }
-
 }
