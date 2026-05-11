@@ -1,3 +1,5 @@
+.. _ref_terraform_deployment:
+
 Deploying a function using Terraform
 ====================================
 
