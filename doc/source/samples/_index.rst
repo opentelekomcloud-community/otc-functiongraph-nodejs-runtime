@@ -16,7 +16,6 @@ FunctionGraph with Node.js:
    event-sdk-obs <event-sdk-obs/_index.md>   
    scratch-event-async <scratch-event-async/_index.md>
    scratch-event-sync <scratch-event-sync/_index.md>
-   scratch-event-timer <scratch-event-timer/_index.md>
    scratch-http <scratch-http/_index.md>
 
 
@@ -73,9 +72,6 @@ Created from scratch
    * - :ref:`scratch-event-sync<scratch-event-sync>`
      - A sample event function that demonstrates how to write synchronous code in Node.js functions.
        (Node.js 6.10 runtime only)
-
-   * - :ref:`scratch-event-timer<scratch-event-timer>`
-     - A sample event function that demonstrates how to use timer trigger in Node.js functions.
 
    * - :ref:`event-obss3-thumbnail<event-obss3-thumbnail>`
      - A sample event function that listens for OBS S3 events and generates thumbnail images for the uploaded objects.       

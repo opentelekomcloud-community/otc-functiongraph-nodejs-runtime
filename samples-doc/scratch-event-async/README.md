@@ -51,4 +51,4 @@ exports.handler = async(event, context ) => {
 
 To execute the function asynchronously (respond immediately upon invocation while continuing task execution), you can call the API for Executing a Function Asynchronously through SDKs or APIs.
 
-For an APIG trigger, click its name to go to the APIG console, and select Asynchronous for the Invocation Mode. For details, see Asynchronous Invocation.
+For an APIG trigger, click its name to go to the APIG console, and select "Asynchronous" for the invocation mode. For details, see [Configuring Backend Settings](https://docs.otc.t-systems.com/api-gateway/umn/api_management/creating_an_api.html#configuring-backend-settings) in API gateway user manual.
