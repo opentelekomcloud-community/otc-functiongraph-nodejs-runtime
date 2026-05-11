@@ -88,6 +88,8 @@ For variables used in provider.tf, see :ref:`terraform_setup<ref_terraform_setup
   to update the function code using an API request to update FunctionGraph.
   To use curl and the terracurl provider, the variable OTC_USER_NAME and OTC_PASSWORD
   with your OTC credentials must be defined as environment variables.
+
+  See : `Feature request #3360 for opentelekomcloud provider <https://github.com/opentelekomcloud/terraform-provider-opentelekomcloud/issues/3360>`_.
   
 
 variables.tf
@@ -126,7 +128,7 @@ The file  ``function.tf`` defines the function resource for this sample:
 The relevant part for deploying function code from zip file is:
 
 .. code-block:: hcl
-    
+
   depends_on = [opentelekomcloud_obs_bucket_object.code_object]
 
   ###### relevant part for deploy function code from obs file ######
