@@ -75,9 +75,20 @@ Notes
        "body": "..."
      }
 
+.. note::
+   For asynchronous invocation, of FunctionGraph, select the APIG trigger and click its 
+   name to go to the APIG console, and select Asynchronous for the Invocation Mode.
+   For details, see
+
+   - :otc_fg_umn:`Asynchronous Invocation <invoking_the_function/asynchronous_invocation.html>` in user manual and
+   - `Configuring Backend Settings <https://docs.otc.t-systems.com/api-gateway/umn/api_management/creating_an_api.html#configuring-backend-settings>`_ in API gateway user manual
+
 Example
 -------
 
 .. literalinclude:: /../../samples-doc/scratch-event-apig/src/index.js
     :language: javascript
     :caption: :github_repo_master:`index.js <samples-doc/scratch-event-apig/src/index.js>`
+
+
+Full sample code is available in the :github_repo_master:`samples-doc/scratch-event-apig`.

@@ -14,19 +14,20 @@ FunctionGraph.
    Samples <samples/_index>
    Best Practices <devguide/bestpractices/_index>
 
-
-
-.. warning:: Work in progress. Subject to change without notice.
-
 Source Code
 -----------
 
-For source code, see :github_repo_master:`otc-functiongraph-nodejs-runtime<>` on Github.
+For source code, see :github_repo_master:`otc-functiongraph-nodejs-runtime<>` on GitHub.
 
 FunctionGraph User Guide
 ------------------------
 
 For FunctionGraph usage, see :otc_fg_umn:`FunctionGraph User Guide <>`.
+
+FunctionGraph Notes and Constraints
+------------------------------------
+
+See :otc_fg_umn:`Notes and Constraints <service_overview/notes_and_constraints.html>`.
 
 
 Documentation from source
@@ -45,14 +46,10 @@ and `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredte
 
      tox -e docs-auto
 
+Warranty Disclaimer
+---------------------
 
-FunctionGraph Notes and Constraints
------------------------------------
-
-See :otc_fg_umn:`Notes and Constraints <service_overview/notes_and_constraints.html>`.
-
-
-.. note:: **Warranty Disclaimer**
+.. note:: 
 
     THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT
     WILL BE USEFUL,BUT WITHOUT ANY WARRANTY; WITHOUT EVEN THE IMPLIED WARRANTY

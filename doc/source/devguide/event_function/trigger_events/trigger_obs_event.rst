@@ -162,6 +162,7 @@ Example
     :language: javascript
     :caption: :github_repo_master:`index.js <samples-doc/scratch-event-obs/src/index.js>`
 
+Full sample code is available in the :github_repo_master:`samples-doc/scratch-event-obs`.
 
 Further reading
 ----------------

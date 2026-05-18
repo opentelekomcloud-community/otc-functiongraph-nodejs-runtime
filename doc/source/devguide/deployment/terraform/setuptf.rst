@@ -1,20 +1,26 @@
 .. _ref_terraform_setup:
 
-Prepare the Terraform environment
----------------------------------
+Prepare the Terraform/OpenTofu environment
+-------------------------------------------
 
 .. toctree::
    :maxdepth: 2
    :hidden:
 
-Installing Terraform
-^^^^^^^^^^^^^^^^^^^^
-Terraform provides installation packages for different environments.
+Installing Terraform/OpenTofu
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For details, see `Install Terraform <https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli>`_ on Terraform site.
+Terraform/OpenTofu provides installation packages for different environments.
 
-For details on how to use Terraform, see
-`Open Telekom Cloud Provider <https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs>`_.
+For details, see 
+
+- `Install Terraform <https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli>`_ on Terraform site.
+- `Install OpenTofu <https://opentofu.org/docs/intro/install/>`_ on OpenTofu site.
+
+For details on how to use the OpenTelekomCloud Terraform provider, see
+
+- `Open Telekom Cloud Provider on Terraform <https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs>`_.
+- `Open Telekom Cloud Provider on OpenTofu <https://search.opentofu.org/provider/hashicorp/opentelekomcloud/latest>`_
 
 Setting Environment Variables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
