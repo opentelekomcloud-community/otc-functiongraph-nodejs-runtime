@@ -80,9 +80,9 @@ for building functions from scratch:
      - Node.js16.17
      - /opt/function/runtime/nodejs16.17/rtsp/nodejs/bin/node
 
-   * - NodeJS 18.20
-     - Node.js18.20
-     - /opt/function/runtime/nodejs18.20/rtsp/nodejs/bin/node
+   * - NodeJS 18.15
+     - Node.js18.15
+     - /opt/function/runtime/nodejs18.15/rtsp/nodejs/bin/node
 
    * - NodeJS 20.15
      - Node.js20.15
