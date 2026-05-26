@@ -1,7 +1,11 @@
 .. _creating_an_event_function_using_a_container_image_built:
 
-Creating an Event Function Using a Container Image Built with Node.js
+Creating an Event Function using a container image built with Node.js
 ======================================================================
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
 
 For general details about how to use a container image
 to create and execute an event function,
@@ -31,6 +35,8 @@ Step 1: Create the Project
 
 In this example we use the `express` framework to create an HTTP server.
 
+For full example, see: :github_repo_master:`container-event-express <samples-doc/container-event-express/>` sample in the GitHub repository.
+
 For details about express, see `Express - Node.js web application framework <https://expressjs.com/>`_.
 
 Initialize the project with npm:
@@ -39,6 +45,10 @@ Initialize the project with npm:
 First, create a project directory and initialize it with npm:
 
 .. code-block:: bash
+
+   # this sample uses Node.js 25.7.0, you can use nvm to
+   # switch to this version using:
+   nvm use 25.7.0
 
    mkdir -p my-event-function/src
    cd my-event-function
@@ -62,21 +72,53 @@ For example:
 
 .. literalinclude:: ../../../../../samples-doc/container-event-express/package.json
    :language: json
+   :caption: :github_repo_master:`package.json <samples-doc/container-event-express/package.json>`
 
-Implement the function
+Implementing the function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Next, create the entry file for the function, for example, ``src/index.js``:
+Next, create two files:
+
+- src/index.js for the function entry and
+- src/loggingmiddleware.js for the logging middleware.
+
+File: src/index.js
+""""""""""""""""""""""""""""""""""""""""
+This is the main  entry file for the function:
 
 .. literalinclude:: ../../../../../samples-doc/container-event-express/src/index.js
    :language: javascript
+   :caption: :github_repo_master:`src/index.js <samples-doc/container-event-express/src/index.js>`
 
 
 In this code, we create an express application that listens on port 8000.
 
 We define two POST endpoints:
-*  **/invoke** for function execution and
-*  **/init** for function initialization.
+
+- **/invoke** for function execution and
+- **/init** for function initialization.
+
+File: src/loggingmiddleware.js
+""""""""""""""""""""""""""""""""""""""""
+The default logger implementation does not include request id and timestamp in the logs,
+which makes it difficult to correlate logs with specific requests.
+
+To add request id and timestamp to the logs, we use a middleware that runs for every request.
+
+.. literalinclude:: ../../../../../samples-doc/container-event-express/src/loggingmiddleware.js
+   :language: javascript
+   :caption: :github_repo_master:`src/loggingmiddleware.js <samples-doc/container-event-express/src/loggingmiddleware.js>`
+
+This middleware is activated in the index.js file with following lines of code:
+
+.. code-block:: javascript
+
+   const { loggingMiddleware } = require("./loggingmiddleware");
+
+   ...
+   app.use(loggingMiddleware);
+   ...
+
 
 Run and Test server from code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -114,7 +156,7 @@ create a **Makefile** in the project root folder:
 
 .. literalinclude:: ../../../../../samples-doc/container-event-express/Makefile
    :language: make
-   :caption: Makefile
+   :caption: :github_repo_master:`Makefile <samples-doc/container-event-express/Makefile>`
    :tab-width: 2
 
 Create a Dockerfile
@@ -146,11 +188,13 @@ Following example uses an Alpine base image with Node.js installed.
 
 .. literalinclude:: ../../../../../samples-doc/container-event-express/Dockerfile
    :language: docker
+   :caption: :github_repo_master:`Dockerfile <samples-doc/container-event-express/Dockerfile>`
 
 Create following entrypoint script to start the server in the container:
 
 .. literalinclude:: ../../../../../samples-doc/container-event-express/entrypoint.sh
    :language: shell
+   :caption: :github_repo_master:`entrypoint.sh <samples-doc/container-event-express/entrypoint.sh>`
 
 Build and verify the image locally
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -312,17 +356,17 @@ Upload the image to SWR either using **shell commands** or the Makefile target *
         .. code-block:: shell
           :caption: **1. Login to SWR**
 
-            docker login -u $(OTC_SDK_PROJECTNAME)@$(OTC_SDK_AK) -p $(OTC_SWR_LOGIN_KEY) ${OTC_SWR_ENDPOINT}
+            docker login -u ${OTC_SDK_PROJECTNAME}@${OTC_SDK_AK} -p ${OTC_SWR_LOGIN_KEY} ${OTC_SWR_ENDPOINT}
 
         .. code-block:: shell
           :caption: **2. Tag the image**
 
-            docker tag $(IMAGE_NAME):latest ${OTC_SWR_ENDPOINT}/$(OTC_SWR_ORGANIZATION)/$(IMAGE_NAME):latest
+            docker tag ${IMAGE_NAME}:latest ${OTC_SWR_ENDPOINT}/${OTC_SWR_ORGANIZATION}/${IMAGE_NAME}:latest
 
         .. code-block:: shell
           :caption: **3. Push the image to SWR**
 
-            docker push ${OTC_SWR_ENDPOINT}/$(OTC_SWR_ORGANIZATION)/$(IMAGE_NAME):latest
+            docker push ${OTC_SWR_ENDPOINT}/${OTC_SWR_ORGANIZATION}/${IMAGE_NAME}:latest
 
 
    .. tab:: using Makefile target "docker_push"

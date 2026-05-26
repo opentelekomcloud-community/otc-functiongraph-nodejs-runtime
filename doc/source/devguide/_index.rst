@@ -88,6 +88,8 @@ for building functions from scratch:
      - Node.js20.15
      - /opt/function/runtime/nodejs20.15/rtsp/nodejs/bin/node
 
+For supported runtimes see also: :otc_fg_umn:`Runtimes <service_overview/product_features.html>` in User Guide.
+
 Bundled third-party components integrated in the Node.js runtime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
