@@ -38,7 +38,7 @@ test_local:
 	-H "X-Cff-Func-Timeout: 30" \
 	-H 'Content-Type: application/json' \
 	-d '{"key":"Hello World of FunctionGraph"}' \
-	localhost:8000/invoke
+	localhost:8000/index
 	@echo ""
 
 clean:
