@@ -105,9 +105,7 @@ you can import the Context class from the npm package as dev dependency and crea
 
  .. code-block:: bash
 
-    npm install @opentelekomcloud-community/fg-runtime --save-dev
-    # or
-    npm install @opentelekomcloud-community/fg-context -D
+    npm install @opentelekomcloud-community/fg-runtime --save-dev    
 
 .. note::
   All npm packages are hosted on GitHub Packages.
