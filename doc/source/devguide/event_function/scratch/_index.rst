@@ -34,7 +34,7 @@ Function Development Overview
       .. code-block:: javascript
 
         exports.handler = async (event, context, callback [optional]) => {
-          // Your code her
+          // Your code here
           return data;
         }
 

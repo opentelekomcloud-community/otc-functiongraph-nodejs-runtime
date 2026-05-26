@@ -458,7 +458,7 @@ In the displayed dialog box, create a test event:
 
 -  and click **Create**.
 
-See also: :otc_fg_umn:`Step 5: Testing the Function <getting_started/creating_an_event_function_using_a_container_image_and_executing_the_function.html#step-5-testing-the-function>`
+See also: :otc_fg_umn:`Step 5: Testing the Function <getting_started/creating_an_event_function_using_a_container_image_and_executing_the_function.html#step-5-test-the-function>`
 in the user manual.
 
 Step 6: View the Execution Result

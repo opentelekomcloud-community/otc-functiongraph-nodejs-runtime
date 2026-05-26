@@ -62,17 +62,21 @@ Features of the Initializer
 The initializer of each runtime has the following features:
 
 * No custom parameters
+
   The initializer does not support custom parameters and only uses the
   variables in context for logic processing.
 
 * No return values
+
   No values will be returned for initializer invocation.
 
 * Initialization timeout
+
   You can set an initialization timeout (≤ 300s) different from the timeout
   for invoking the handler.
 
 * Execution duration
+
   Function instances are processes that execute function logic in a
   container and automatically scale if the number of requests changes.
   When a new function instance is generated, the system invokes the
@@ -80,6 +84,7 @@ The initializer of each runtime has the following features:
   successful.
 
 * One-time execution
+
   After each function instance starts, the initializer can only be executed
   once. If an instance fails to execute the initializer, the instance is
   abandoned and another instance starts to execute the initializer.
@@ -89,10 +94,12 @@ The initializer of each runtime has the following features:
   again within its lifecycle.
 
 * Naming rule
+
   For all runtimes except Java, the initializer can be named in the format
   of **[File name].[Initializer name]**, which is similar with the format of a
   handler name.
 
 * Billing
+
   The initializer execution duration will be billed at the same rate as
   the function execution duration.
