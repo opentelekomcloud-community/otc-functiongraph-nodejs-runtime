@@ -59,7 +59,7 @@ Deployed FunctionGraph Event Function
 
 Use following settings to create the FunctionGraph event function using the FunctionGraph console:
 
-* **Project** : as specified in the environment variable ``OTC_SDK_PROJECT_ID``
+* **Project** : as specified in the environment variable ``OTC_SDK_PROJECTID``
 * **Region**: as specified in the environment variable ``OTC_SDK_REGION``
 * **Name**: ``nodejs-sample-invoke-function``
 * **Runtime**: ``Node.js 20.15``

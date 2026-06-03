@@ -60,7 +60,7 @@ token=$(curl -i -s \
 -d "${payload}" \
 -o /dev/null \
 --dump-header /dev/stdout \
-${OTC_IAM_ENDPOINT}/auth/tokens?nocatalog=true \
+"${OTC_IAM_ENDPOINT}/auth/tokens?nocatalog=true" \
 | grep -i ^X-Subject-Token: | cut -d' ' -f2)
 
 if [ "$DEBUG" -eq 1 ]; then

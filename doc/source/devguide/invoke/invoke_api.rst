@@ -29,7 +29,7 @@ The SDK provides a method to sign the request with AK/SK or SecurityAccessKey/Se
 
 Additional to the environment variables mentioned in the prerequisites,
 you also need to set the following environment variables
-for AK/SK authentication :
+for AK/SK authentication:
 
   - OTC_SDK_AK (Access Key with permission to invoke FunctionGraph)
   - OTC_SDK_SK (Secret Key corresponding to the Access Key)
@@ -59,7 +59,7 @@ in FunctionGraph API reference for more details about synchronous invocation.
         node src/invokeSync_AKSK.js
 
         # or use npm script:
-        npm run invokeSync_AKSK
+        npm run invokeSyncAKSK
 
 
     .. tab:: Code using Node.js "fetch"
@@ -77,7 +77,7 @@ in FunctionGraph API reference for more details about synchronous invocation.
         node src/invokeSyncFetch_AKSK.js
 
         # or use npm script:
-        npm run invokeSyncFetch_AKSK
+        npm run invokeSyncFetchAKSK
 
 
 In both cases, you should see an output similar to the following in the terminal:
@@ -118,7 +118,7 @@ in FunctionGraph API reference for more details about asynchronous invocation.
         node src/invokeASync_AKSK.js
 
         # or use npm script:
-        npm run invokeASync_AKSK
+        npm run invokeASyncAKSK
 
     .. tab:: Code using Node.js "fetch"
 
@@ -135,7 +135,7 @@ in FunctionGraph API reference for more details about asynchronous invocation.
         node src/invokeASyncFetch_AKSK.js
 
         # or use npm script:
-        npm run invokeASyncFetch_AKSK
+        npm run invokeASyncFetchAKSK
 
 In both cases, you should see an output similar to the following in the terminal:
 

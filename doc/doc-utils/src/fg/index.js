@@ -5,7 +5,7 @@
  *  - Function type: event-function from scratch
  *  - Name: getNodeJSRuntimeInfo
  *  - Runtime: nodejs20.15
- *  - Project: OTC_SDK_PROJECT_ID
+ *  - Project: OTC_SDK_PROJECTID
  *  - Region: OTC_SDK_REGION
  *************************************************************************/
 const fs = require("fs");
