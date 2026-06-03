@@ -28,7 +28,7 @@ see following:
 - :ref:`Deploy FunctionGraph Event Function from ZIP<ref_deploy_from_zip>`
 - :ref:`Deploy FunctionGraph Event Function from OBS<ref_deploy_from_obs>`
 
-For more complex deployment scenarios,see the "terraform" folder
+For more complex deployment scenarios, see the "terraform" folder
 in the other sample files, e.g.:
 
 - Deploy FunctionGraph as container in: :github_repo_master:`container-event-express <samples-doc/container-event-express>`

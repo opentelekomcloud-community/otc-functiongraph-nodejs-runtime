@@ -78,4 +78,4 @@ two methods:
 
 * Use reserved instances to avoid cold starts. For detailed usage instructions, please refer to
   the :docs_otc:`Reserved Instance Management <function-graph/umn/configuring_reserved_instances.html>`
-  section .
+  section.

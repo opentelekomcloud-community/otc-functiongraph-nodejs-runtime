@@ -72,7 +72,7 @@ Configure a VPC for the function to prevent external attacks
 
 When a user function needs to access resources within a Virtual Private
 Cloud (VPC), such as RDS, it is recommended to
-:docs_otc:`configure a VPC </function-graph/umn/configuring_functions/configuring_networks.html>`
+:docs_otc:`configure a VPC <function-graph/umn/configuring_functions/configuring_networks.html>`
 for the function to ensure that communication between the function and other cloud services takes
 place in an isolated network environment.
 

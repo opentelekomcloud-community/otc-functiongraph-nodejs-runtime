@@ -48,7 +48,7 @@ General notes
       :caption: package.json
 
       "devDependencies": {
-          "@opentelekomcloud-community/fg-context": "^1.0.0"
+          "@opentelekomcloud-community/fg-apig-event": "^1.0.0"
       },
 
 
