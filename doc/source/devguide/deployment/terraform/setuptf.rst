@@ -143,5 +143,7 @@ See: `Terraform State <https://developer.hashicorp.com/terraform/language/state>
           s3cmd \
             --access_key=${OTC_SDK_AK} \
             --secret_key=${OTC_SDK_SK} \
+            --host=https://obs.eu-de.otc.t-systems.com \
+            --host-bucket="%(bucket)s.obs.eu-de.otc.t-systems.com" \
             --no-ssl \
             mb s3://<bucket_name>

@@ -20,7 +20,7 @@ Prerequisites
 - running on Linux / Windows Subsystem for Linux (WSL)
 - make installed
 - curl installed
-- Terraform/OpenTofu installed and  Terraform/OpenTofu configured, see :ref:`terraform_setup<ref_terraform_setup>`.
+- Terraform/OpenTofu installed and  Terraform/OpenTofu configured, see :ref:`Terraform Setup<ref_terraform_setup>`.
 
 What will be deployed
 ----------------------------------
@@ -76,7 +76,7 @@ The file  ``provider.tf`` defines the provider configuration for this sample:
 You might need to adapt the provider configuration to your needs,
 especially the provider version and backend configuration for terraform state.
 
-For variables used in provider.tf, see :ref:`terraform_setup<ref_terraform_setup>`.
+For variables used in provider.tf, see :ref:`Terraform Setup<ref_terraform_setup>`.
 
 
 variables.tf
@@ -240,6 +240,7 @@ Testing the deployed function
 Synchronous invocation
 """""""""""""""""""""""""""""
 After the deployment is done, you can test the deployed function with the following command:
+
 .. code-block:: bash
 
    make test_deployed_sync
