@@ -102,6 +102,8 @@ Prerequisites
       For example, **FunctionGraph:*:*:function:default/*** indicates
       any function in the **default** group.
 
+      For more details, see :docs_otc:`Policy Syntax<identity-access-management/umn/user_guide/permissions/policy_syntax.html>` in Identity and Access Management User Guide.
+
       (Remark: changing the permission policy may take some time to take effect.)
 
 
@@ -116,6 +118,7 @@ FunctionGraph function that will call another FunctionGraph function.
 
 .. literalinclude:: ../../../../samples-doc/invoke-fg2fg/package.json
    :language: json
+   :caption: :github_repo_master:`samples-doc/invoke-fg2fg/package.json <samples-doc/invoke-fg2fg/package.json>`
 
 
 index.js
@@ -125,6 +128,7 @@ Create a function with following content to call another FunctionGraph function:
 
 .. literalinclude:: ../../../../samples-doc/invoke-fg2fg/index.js
    :language: javascript
+   :caption: :github_repo_master:`samples-doc/invoke-fg2fg/index.js <samples-doc/invoke-fg2fg/index.js>`
 
 Deployment
 ---------------------

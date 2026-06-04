@@ -66,7 +66,7 @@ Sourcing the script to get token into environment variable
    # Output example:
    MIIGBQYJKoZIhvcNAQcCoIIF9jCCBfICAQExDTALBglghkgBZQMEAgEwggOKBgkqhkiG.....
 
-Calling Functiongraph
+Calling FunctionGraph
 ----------------------------------------------------------------
 
 Synchronously
