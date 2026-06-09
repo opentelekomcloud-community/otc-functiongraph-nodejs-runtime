@@ -11,7 +11,7 @@ FunctionGraph Event Functions
 
 Event functions can be configured with event triggers and integrate
 a variety of products (such as object storage service OBS,
-distributed messaging service RabbitMQ version, cloud log service LTS, etc.).
+distributed messaging service DMS, cloud log service LTS, etc.).
 
 Types of Event Functions
 ------------------------------------

@@ -12,7 +12,6 @@ Function-supported trigger events
    DDS Event <trigger_dds_event>
    DMS Kafka Event <trigger_dms4kafka_event>
    DMS RocketMQ Event <trigger_dms4rocketmq_event>
-   DMS RabbitMQ Event <trigger_dms4rabbitmq_event>
    Kafka (Open-Source) Event <trigger_kafkaopensource_event>
    LTS Event <trigger_lts_event>
    OBS Event <trigger_obs_event>
@@ -79,16 +78,8 @@ invoked whenever the corresponding event is detected.
         For instructions on triggering and using the distributed messaging Kafka, please refer to:
 
         - Use :ref:`Kafka triggers <devguide_event_function_trigger_events_dms4kafka>`.
-        - Using :ref:`open-source Kafka triggers <devguide_event_function_trigger_events_kafkaopensource>`        
-
-    * - Distributed messaging service RabbitMQ (DMS for RabbitMQ)
-      - FunctionGraph can periodically poll the queues bound to a specified Exchange in a RabbitMQ
-        instance for new messages.
-        FunctionGraph then passes the polled messages as parameters to call the function.
-
-        For instructions on triggering and using RabbitMQ distributed messaging, please refer to
-        :ref:`Using RabbitMQ Triggers <devguide_event_function_trigger_events_dms4rabbitmq>`.
-
+        - Using :ref:`open-source Kafka triggers <devguide_event_function_trigger_events_kafkaopensource>`       
+        
     * - Log Tank Service (LTS)
       - Write FunctionGraph functions to process logs subscribed to from the Cloud Log Service.
         Once the Cloud Log Service collects the subscribed logs, it can call the FunctionGraph

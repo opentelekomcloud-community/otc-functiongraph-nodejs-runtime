@@ -5,7 +5,6 @@ module.exports = {
   ...require("@opentelekomcloud-community/fg-cts-event"),
   ...require("@opentelekomcloud-community/fg-dds-event"),
   ...require("@opentelekomcloud-community/fg-dms4kafka-event"),
-  ...require("@opentelekomcloud-community/fg-dms4rabbitmq-event"),
   ...require("@opentelekomcloud-community/fg-dms4rocketmq-event"),
   ...require("@opentelekomcloud-community/fg-kafkaopensource-event"),
   ...require("@opentelekomcloud-community/fg-lts-event"),
