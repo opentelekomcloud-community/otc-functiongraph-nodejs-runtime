@@ -1,13 +1,13 @@
 "use strict";
-const moment = require("moment");
 
 function loggingMiddleware(req, res, next) {
   // Header names are case-insensitive; Express normalizes them.
   const requestId = req.get("X-Cff-Request-Id") || "no-request-id";
 
-  // Function to format timestamp as yyyymmddThh:mm:ss.SSSZ
+  // Function to format timestamp as yyyy-mm-ddThh:mm:ss.SSSZ
   const getTimestamp = () => {
-    return moment().utc().format("YYYYMMDDTHH:mm:ss.SSS[Z]");
+    // "YYYY-MM-DDTHH:mm:ss.SSS[Z]
+    return new Date().toISOString();
   };
 
   // Save on request for later use
