@@ -2,15 +2,6 @@
 
 Node.js libraries for FunctionGraph on T Cloud Public.
 
-> [!Note]
-> <pre>
-> ###############################################
->             Work in progress....
->     !! SUBJECT TO CHANGE WITHOUT NOTICE !!
-> ###############################################
-> </pre>
->  
-
 ## Documentation
 
 For documentation see: [otc-functiongraph-nodejs-runtime](https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime/)

@@ -90,6 +90,16 @@ for building functions from scratch:
 
 For supported runtimes see also: :otc_fg_umn:`Runtimes <service_overview/product_features.html>` in User Guide.
 
+.. note:: 
+
+   If you need newer Node.js runtimes, use custom container images
+   to build your functions.
+   
+   For more information, see 
+
+   - :ref:`devguide_event_function_container_index`
+   - :ref:`devguide_http_function_container_index`
+
 Bundled third-party components integrated in the Node.js runtime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
