@@ -5,8 +5,7 @@ Following samples are provided to demonstrate how to use
 FunctionGraph with Node.js:
 
 .. toctree::
-   :maxdepth: 2
-   :hidden:
+   :maxdepth: 1
 
    container-event-express <container-event-express/_index>
    container-event-koa <container-event-koa/_index>
@@ -18,6 +17,8 @@ FunctionGraph with Node.js:
    scratch-event-sync <scratch-event-sync/_index.md>
    scratch-http <scratch-http/_index.md>
 
+Some samples are not documented yet.
+You will find them in folder :github_repo_master:`samples-doc` in the GitHub repository.
 
 General notes
 ------------------------------
