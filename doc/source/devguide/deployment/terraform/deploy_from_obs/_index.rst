@@ -79,17 +79,6 @@ You might need to adapt the provider configuration to your needs,
 especially the provider version and backend configuration for terraform state.
 
 For variables used in provider.tf, see :ref:`Terraform Setup<ref_terraform_setup>`.
-
-.. note::
-  Currently the opentelekomcloud provider does not update FunctionGraph
-  function code after the code is uploaded to OBS,
-  so in this sample we also use the  
-  `devops-rob/terracurl provider <https://registry.terraform.io/providers/devops-rob/terracurl/latest>`_
-  to update the function code using an API request to update FunctionGraph.
-  To use curl and the terracurl provider, the variable OTC_USER_NAME and OTC_PASSWORD
-  with your OTC credentials must be defined as environment variables.
-
-  See : `Feature request #3360 for opentelekomcloud provider <https://github.com/opentelekomcloud/terraform-provider-opentelekomcloud/issues/3360>`_.
   
 
 variables.tf
@@ -112,9 +101,6 @@ The file  ``code_from_obs_bucket.tf`` defines the obs bucket and obs bucket obje
   :caption: code_from_obs_bucket.tf
   :tab-width: 2
 
-Additional to uploading the function code to OBS, 
-this will also call FunctionGraph API to update the function code after code changes.
-
 
 function.tf
 ^^^^^^^^^^^^
@@ -129,8 +115,6 @@ The relevant part for deploying function code from zip file is:
 
 .. code-block:: hcl
 
-  depends_on = [opentelekomcloud_obs_bucket_object.code_object]
-
   ###### relevant part for deploy function code from obs file ######
   code_type = "obs"
   code_url = format("https://%s/%s/%s",
@@ -138,6 +122,9 @@ The relevant part for deploying function code from zip file is:
     "code",
     basename(var.zip_file_name)
   )
+
+  # on change of the code object etag (hash) new code  version will be deployed.
+  source_code_hash = opentelekomcloud_obs_bucket_object.code_object.etag
   ###### ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ######
 
 
@@ -217,7 +204,7 @@ Adapt the **BACKEND_CONFIG_*** variables in the Makefile
     - endpoints={s3=\"https://obs.eu-de.otc.t-systems.com\"}
     
 
-Adaptions in variables.tfv
+Adaptions in variables.tf
 """"""""""""""""""""""""""""""  
 Adapt the variables in the ``variables.tf`` 
 
@@ -268,6 +255,21 @@ FunctionGraph:
 
 Testing the deployed function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For testing the deployed function, you will need to set the following
+environment variables. These are used in "tokenFromUsername.sh" script to get Token
+for Token-based authentication when calling FunctionGraph API.
+
+.. list-table:: Environment Variables
+   :widths: 25 25
+   :header-rows: 1
+
+   * - Name
+     - Description
+   * - OTC_USER_NAME
+     - User name
+   * - OTC_USER_PASSWORD
+     - User password
 
 Synchronous invocation
 """""""""""""""""""""""""""""
