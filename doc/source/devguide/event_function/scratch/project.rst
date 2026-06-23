@@ -137,7 +137,9 @@ project. The following is a sample **package.json** file:
     "version": "1.0.0",
     "main": "src/index.js",
     "type": "commonjs",
-    "engines":{ "node": "20.15.1" },
+    "engines": {
+      "node": "20.15.1"
+    },
     "cpu": ["x64"],
     "os": ["linux"],
     "scripts": {

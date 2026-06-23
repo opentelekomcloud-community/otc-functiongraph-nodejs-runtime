@@ -23,6 +23,7 @@ The following uses **Node.js 20.15** as an example to describe how to create a *
 
     .. literalinclude:: ../../../../../samples-doc/dependency-mysql/package.json
        :language: json
+       :caption: :github_repo_master:`package.json <samples-doc/dependency-mysql/package.json>`
        :tab-width: 2
 
 
@@ -105,7 +106,7 @@ Setting Up the EulerOS Environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **EulerOS** is an enterprise-grade Linux OS based on open-source technology.
-It features high security, scalability, and performance, meeting customers' requirements
+It features high security, scalability and performance, meeting customers' requirements
 for IT infrastructure and cloud computing services.
 
 1. Buy a **EulerOS** ECS on `T Cloud Public` by referring to
@@ -116,7 +117,7 @@ for IT infrastructure and cloud computing services.
 2. Download the **EulerOS** image, and use virtualization software to set up the **EulerOS** VM on a local PC.
    `EulerOS images <https://otc-image-files.obs-website.eu-de.otc.t-systems.com/?os=euleros>`_
 
-3. Use **openEuler** Docker images to set up a Docker environment on your local PC.
+3. Use **openEuler** `Docker images <https://hub.docker.com/r/openeuler/openeuler>`_ to set up a Docker environment on your local PC.
 
 
 
