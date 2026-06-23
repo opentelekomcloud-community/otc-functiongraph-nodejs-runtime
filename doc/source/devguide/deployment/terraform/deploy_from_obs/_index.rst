@@ -38,7 +38,7 @@ The deployment package for this sample is created with ``npm pack``.
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/package.json
   :language: json
-  :caption: package.json
+  :caption: :github_repo_master:`package.json <samples-doc/deploy-from-obs/package.json>`
   :tab-width: 2
 
 The package.json file defines the following:
@@ -72,7 +72,7 @@ The file  ``provider.tf`` defines the provider configuration for this sample:
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/terraform/provider.tf
   :language: hcl
-  :caption: provider.tf
+  :caption: :github_repo_master:`provider.tf <samples-doc/deploy-from-obs/terraform/provider.tf>`
   :tab-width: 2
 
 You might need to adapt the provider configuration to your needs,
@@ -87,7 +87,7 @@ The file  ``variables.tf`` defines the variables for this sample:
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/terraform/variables.tf
   :language: hcl
-  :caption: variables.tf
+  :caption: :github_repo_master:`variables.tf <samples-doc/deploy-from-obs/terraform/variables.tf>`
   :tab-width: 2
 
 
@@ -98,7 +98,7 @@ The file  ``code_from_obs_bucket.tf`` defines the obs bucket and obs bucket obje
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/terraform/code_from_obs_bucket.tf
   :language: hcl
-  :caption: code_from_obs_bucket.tf
+  :caption: :github_repo_master:`code_from_obs_bucket.tf <samples-doc/deploy-from-obs/terraform/code_from_obs_bucket.tf>`
   :tab-width: 2
 
 
@@ -108,7 +108,7 @@ The file  ``function.tf`` defines the function resource for this sample:
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/terraform/function.tf
   :language: hcl
-  :caption: function.tf
+  :caption: :github_repo_master:`function.tf <samples-doc/deploy-from-obs/terraform/function.tf>`
   :tab-width: 2
 
 The relevant part for deploying function code from zip file is:
@@ -134,7 +134,7 @@ The file  ``loggroup.tf`` defines the log group and log stream for this sample:
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/terraform/loggroup.tf
   :language: hcl
-  :caption: loggroup.tf
+  :caption: :github_repo_master:`loggroup.tf <samples-doc/deploy-from-obs/terraform/loggroup.tf>`
   :tab-width: 2
 
 testevent.tf
@@ -144,14 +144,14 @@ FunctionGraph console for testing the deployed function.
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/terraform/testevent.tf
   :language: hcl
-  :caption: testevent.tf
+  :caption: :github_repo_master:`testevent.tf <samples-doc/deploy-from-obs/terraform/testevent.tf>`
   :tab-width: 2
 
 The test event will have the following content:
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/resources/test_event.json
   :language: json
-  :caption: resources/test_event.json
+  :caption: :github_repo_master:`resources/test_event.json <samples-doc/deploy-from-obs/resources/test_event.json>`
   :tab-width: 2
 
 Deploying using Terraform and make
@@ -161,7 +161,7 @@ Following makefile can be used to deploy the function to FunctionGraph using Ter
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/Makefile
   :language: make
-  :caption: Makefile
+  :caption: :github_repo_master:`Makefile <samples-doc/deploy-from-obs/Makefile>`
   :tab-width: 2
 
 Makefile targets:
@@ -210,7 +210,7 @@ Adapt the variables in the ``variables.tf``
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/terraform/variables.tf
   :language: hcl
-  :caption: variables.tf
+  :caption: :github_repo_master:`variables.tf <samples-doc/deploy-from-obs/terraform/variables.tf>`
   :tab-width: 2
 
 .. list-table:: Backend config variables

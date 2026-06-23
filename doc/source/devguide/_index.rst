@@ -24,7 +24,7 @@ FunctionGraph provides 2 types of functions:
   (such as object storage service OBS, distributed messaging service
   DMS, cloud log service LTS, etc.).
 
-  See :doc:`Event Function <event_function/_index>`
+  See :doc:`Event Functions <event_function/_index>`
 
 * **HTTP Functions**
 

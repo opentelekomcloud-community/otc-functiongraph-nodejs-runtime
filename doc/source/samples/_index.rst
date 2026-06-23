@@ -82,7 +82,7 @@ Created from scratch
 
    * - :ref:`event-sdk-ecs<event-sdk-ecs>`
      - A sample event function that demonstrates how to use FunctionGraph SDK for ECS in Node.js functions
-       together with an Timer Trigger to start/stop the ECS instances on schedule.
+       together with a Timer Trigger to start/stop the ECS instances on schedule.
 
 Using container image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -94,7 +94,7 @@ Using container image
      - Description
 
    * - :ref:`container-event-express<container-event-express>`
-     - A sample event function that uses Node.js and express framework deployed as container image.
+     - A sample event function that uses Node.js and Express framework deployed as container image.
      
    * - :ref:`container-event-koa<container-event-koa>`
      - A sample event function that uses Node.js and Koa framework deployed as container image.
