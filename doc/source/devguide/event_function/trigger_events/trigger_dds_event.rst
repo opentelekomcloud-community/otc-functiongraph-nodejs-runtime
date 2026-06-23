@@ -28,43 +28,40 @@ Parameter description
 
    * - event_source
      - String
-     - 
+     - Event source
 
    * - event_name
      - String
-     - 
+     - Event name
      
    * - region
      - String
-     - 
+     - Region where the DDS instance is located
 
    * - event_version
      - String
-     - 
+     - Event version
 
    * - size_bytes
      - String
-     - 
+     - Message bytes
 
    * - token
      - JSON String
-     - 
+     - Base64-encoded data
 
    * - full_document
      - JSON String
-     - 
+     - Complete file information
 
    * - ns
      - JSON String
-     - 
+     - Column name
 
    * - event_source_id
      - String
-     - 
+     - Event source ID
    
-
-For full description of all parameters see
-:docs_otc:`DDS Event Reference <cloud-trace-service/umn/trace_references/trace_structure.html#id1>`.
 
 Example
 -------
