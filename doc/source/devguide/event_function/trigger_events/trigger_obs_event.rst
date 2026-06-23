@@ -31,9 +31,6 @@ Parameter description
    * - eventVersion
      - String
      - Event version
-   * - eventSource
-     - String
-     - Event source
    * - awsRegion
      - String
      - AWS region
@@ -44,10 +41,10 @@ Parameter description
      - String
      - See below
    * - userIdentity
-     - String
+     - Object
      - User identity information
    * - requestParameters
-     - String
+     - Object
      - Request parameters
    * - responseElements
      - String
@@ -89,6 +86,20 @@ Possible values for eventName
        alert you for automatic deletes from lifecycle configurations or from
        failed operations.
 
+Parameter requestParameters
+------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 15 30
+
+   * - Parameter
+     - Type
+     - Description
+   * - sourceIPAddress
+     - String
+     - Source IP address
+
 Parameter s3
 ------------
 
@@ -99,9 +110,9 @@ Parameter s3
    * - Parameter
      - Type
      - Description
-   * - s3SchemaVersion
-     - String
-     - S3 schema version
+   * - object
+     - Object
+     - See below
    * - configurationId
      - String
      - Configuration ID
@@ -123,7 +134,7 @@ Parameter bucket
      - String
      - Name of the bucket
    * - ownerIdentity
-     - String
+     - Object
      - Owner identity information
    * - arn
      - String
@@ -148,9 +159,6 @@ Parameter object
    * - size
      - Long
      - Size in bytes of the object
-   * - versionId
-     - String
-     - Version ID
    * - sequencer
      - String
      - Sequencer
