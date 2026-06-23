@@ -257,10 +257,7 @@ Prerequisites
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * SWR instance created.
-  For more information, see :otc_fg_umn:`Creating a Software Repository for Container <getting_started/creating_a_software_repository_for_container.html#functiongraph-04-0201>`.
-
 * Credentials for SWR created.
-  For more information, see :otc_fg_umn:`Creating Access Credentials <getting_started/creating_access_credentials.html#functiongraph-04-0202>`.
 
 Upload the image to SWR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
