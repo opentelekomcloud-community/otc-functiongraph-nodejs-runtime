@@ -7,7 +7,7 @@
   },
   "queryStringParameters": {
       "responseType": "application/json",
-      "name": "John"
+      "user": "John"
   },
   "httpMethod": "GET",
   "pathParameters": {

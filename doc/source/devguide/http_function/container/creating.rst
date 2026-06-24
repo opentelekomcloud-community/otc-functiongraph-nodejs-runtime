@@ -411,13 +411,12 @@ Step 5: Test the HTTP Function
 On the function details page, click **Test**.
 In the displayed dialog box, create following test events.
 
-See also: :otc_fg_umn:`Step 5: Testing the Function <getting_started/creating_an_http_function_using_a_container_image_and_executing_the_function.html#step-5-testing-the-function>`
+See also: :otc_fg_umn:`Step 5: Testing the Function <getting_started/creating_an_http_function_using_a_container_image_and_executing_the_function.html#step-5-test-the-function>`
 in the user manual.
 
 Test event for GET /index
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Select **blank-template**,
 - set **Event Name** to **get_index**,
 -  modify the test event as follows,
 
@@ -430,7 +429,6 @@ Test event for GET /index
 Test event for POST /index
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Select **blank-template**,
 - set **Event Name** to **post_index**,
 -  modify the test event as follows,
 
@@ -443,4 +441,48 @@ Test event for POST /index
 Step 6: View the Execution Result
 ---------------------------------
 
-Click **Test** and view the execution result on the right.
+Click **Test** to execute the function and you should see the following output in the ``Execution Result`` section on the right for **post_index** test event:
+
+.. code-block:: json
+
+  {
+    "body": "SGVsbG8gV29ybGQsIHVzZXIh",
+    "headers": {
+      "Content-Length": [
+        "18"
+      ],
+      "Content-Type": [
+        "application/json; charset=utf-8"
+      ],
+      "Date": [
+        "Thu, 19 Mar 2026 11:03:46 GMT"
+      ]
+    },
+    "statusCode": 200,
+    "isBase64Encoded": true
+  }
+
+The response body is Base64-encoded. After decoding, you will get the string "Hello World, user!".
+
+For **get_index** test event the output should be:
+
+.. code-block:: json
+
+  {
+    "body": "SGVsbG8gd29ybGQsIEpvaG4h",
+    "headers": {
+      "Content-Length": [
+        "18"
+      ],
+      "Content-Type": [
+        "application/json; charset=utf-8"
+      ],
+      "Date": [
+        "Thu, 19 Mar 2026 11:03:46 GMT"
+      ]
+    },
+    "statusCode": 200,
+    "isBase64Encoded": true
+  }
+
+After decoding, you will get the string "Hello World, John!".
