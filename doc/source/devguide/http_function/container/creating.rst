@@ -80,7 +80,7 @@ In this code, we create a koa application that listens on port 8000.
 We define following endpoints:
 
 - POST **/init** for function initialization,
-- GET **/index** for calling `/index` endpoint  with an GET request, and
+- GET **/index** for calling `/index` endpoint  with a GET request, and
 - POST **/index** for calling `/index` endpoint  with a POST request.
 
 The default logger implementation does not include request id and timestamp in the logs,
@@ -100,18 +100,18 @@ You can run the server directly from the code to verify that it works as expecte
 
 Then, you can send test requests to the server using curl or any API testing tool.
 
-For example, to test the function execution entry, you can send a POST request to the **/invoke** endpoint:
+For example, to test the function execution entry, you can send a GET request to the **/index** endpoint:
 
 .. code-block:: bash
 
-   curl -X POST http://localhost:8000/index?user=John
+   curl -X GET http://localhost:8000/index?user=John
 
 
 You should see the response from the server indicating that the event was processed successfully.
 
 .. code-block:: text
 
-   Hello World, user!
+   Hello World, John!
 
 Step 2: Build the Container Image
 --------------------------------------------

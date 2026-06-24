@@ -49,8 +49,10 @@ router.post("/init", async (ctx) => {
 router.get("/index", async (ctx) => {
   ctx.logger.log("Received GET request with query:", ctx.request.query);
 
+  const name = ctx.request.query.user || "user";
+
   ctx.response.type = "application/json";
-  ctx.response.body = "Hello World, user!";
+  ctx.response.body = `Hello world, ${name}!`;
   ctx.response.status = 200;
 });
 
