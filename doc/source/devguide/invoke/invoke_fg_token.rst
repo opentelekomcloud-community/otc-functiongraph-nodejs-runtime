@@ -144,3 +144,10 @@ Configure the function:
 - specify an agency with permission to **invoke** FunctionGraph
 - and set the URN of the function to be called as Environment variable
   with key **CALL_FG_URN**.
+
+Testing
+----------
+
+Create a test event based on Blank Template and click **Test**. 
+
+Execution Result on the right should show a successful execution and the function set in the **CALL_FG_URN** environment variable should have a new invoke request in its Monitoring.

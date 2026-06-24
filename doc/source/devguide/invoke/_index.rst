@@ -10,7 +10,7 @@ Node.js:
 
    API calls <invoke_api>
    curl <invoke_curl>
-   From FunctionGraph with temp. Credentials <invoke_fg>
+   From FunctionGraph with Temporary Credentials <invoke_fg>
    From FunctionGraph with Token <invoke_fg_token>
 
 

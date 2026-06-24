@@ -87,7 +87,7 @@ Possible values for eventName
        failed operations.
 
 Parameter requestParameters
-------------
+---------------------------
 
 .. list-table::
    :header-rows: 1
