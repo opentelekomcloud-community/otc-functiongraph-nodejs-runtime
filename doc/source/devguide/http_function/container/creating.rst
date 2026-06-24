@@ -80,8 +80,8 @@ In this code, we create a koa application that listens on port 8000.
 We define following endpoints:
 
 - POST **/init** for function initialization,
-- GET **/index** for function execution and
-- POST **/index** for function initialization.
+- GET **/index** for calling `/index` endpoint  with an GET request, and
+- POST **/index** for calling `/index` endpoint  with a POST request.
 
 The default logger implementation does not include request id and timestamp in the logs,
 which makes it difficult to correlate logs with specific requests.
