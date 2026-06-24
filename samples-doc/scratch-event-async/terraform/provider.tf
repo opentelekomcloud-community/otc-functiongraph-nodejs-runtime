@@ -52,7 +52,7 @@ terraform {
 
     opentelekomcloud = {
       source  = "opentelekomcloud/opentelekomcloud"
-      version = ">= 1.36.68"
+      version = ">= 1.36.69"
     }
   }
   backend "s3" {
