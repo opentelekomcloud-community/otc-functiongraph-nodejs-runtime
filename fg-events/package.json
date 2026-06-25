@@ -1,6 +1,6 @@
 {
   "name": "@opentelekomcloud-community/fg-events",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "FunctionGraph trigger events",
   "homepage": "https://opentelekomcloud-community.github.io/otc-functiongraph-nodejs-runtime",
   "bugs": {
@@ -32,7 +32,7 @@
     "@opentelekomcloud-community/fg-apig-event": "file:./fg-apig-event",
     "@opentelekomcloud-community/fg-cts-event": "file:./fg-cts-event",
     "@opentelekomcloud-community/fg-dds-event": "file:./fg-dds-event",
-    "@opentelekomcloud-community/fg-dms4kafka-event": "file:./fg-dms4kafka-event",    
+    "@opentelekomcloud-community/fg-dms4kafka-event": "file:./fg-dms4kafka-event",
     "@opentelekomcloud-community/fg-dms4rocketmq-event": "file:./fg-dms4rocketmq-event",
     "@opentelekomcloud-community/fg-kafkaopensource-event": "file:./fg-kafkaopensource-event",
     "@opentelekomcloud-community/fg-lts-event": "file:./fg-lts-event",
