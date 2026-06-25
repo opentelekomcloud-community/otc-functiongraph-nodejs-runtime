@@ -24,7 +24,7 @@ FunctionGraph provides 2 types of functions:
   (such as object storage service OBS, distributed messaging service
   DMS, cloud log service LTS, etc.).
 
-  See :doc:`Event Function <event_function/_index>`
+  See :doc:`Event Functions <event_function/_index>`
 
 * **HTTP Functions**
 
@@ -80,13 +80,25 @@ for building functions from scratch:
      - Node.js16.17
      - /opt/function/runtime/nodejs16.17/rtsp/nodejs/bin/node
 
-   * - NodeJS 18.20
-     - Node.js18.20
-     - /opt/function/runtime/nodejs18.20/rtsp/nodejs/bin/node
+   * - NodeJS 18.15
+     - Node.js18.15
+     - /opt/function/runtime/nodejs18.15/rtsp/nodejs/bin/node
 
    * - NodeJS 20.15
      - Node.js20.15
      - /opt/function/runtime/nodejs20.15/rtsp/nodejs/bin/node
+
+For supported runtimes see also: :otc_fg_umn:`Runtimes <service_overview/product_features.html>` in User Guide.
+
+.. note:: 
+
+   If you need newer Node.js runtimes, use custom container images
+   to build your functions.
+   
+   For more information, see 
+
+   - :ref:`devguide_event_function_container_index`
+   - :ref:`devguide_http_function_container_index`
 
 Bundled third-party components integrated in the Node.js runtime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

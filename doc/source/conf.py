@@ -289,3 +289,9 @@ myst_url_schemes = {
         "classes": ["github"],
     },
 }
+
+linkcheck_ignore = [
+    r"^(?!https://docs\.otc\.t-systems\.com/|https://opentelekomcloud-community\.github\.io/otc-functiongraph-nodejs-runtime/)",
+]
+
+linkcheck_anchors = False

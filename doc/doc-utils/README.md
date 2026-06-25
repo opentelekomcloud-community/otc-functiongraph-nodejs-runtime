@@ -14,12 +14,12 @@ Requires src-fg/index.js installed as FunctionGraph with:
 - Function type: event-function from scratch
 - Name: ``getNodeJSRuntimeInfo``
 - Runtime: nodejs20.15
-- Project: OTC_SDK_PROJECT_ID
+- Project: OTC_SDK_PROJECTID
 - Region: OTC_SDK_REGION
 
 To run, following environment variables must be set on client side:
 
-- Project: OTC_SDK_PROJECT_ID
+- Project: OTC_SDK_PROJECTID
 - Region: OTC_SDK_REGION
 - Access Key: OTC_SDK_AK
 - Secret key: OTC_SDK_SK

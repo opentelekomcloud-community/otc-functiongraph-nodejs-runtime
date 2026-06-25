@@ -1,9 +1,9 @@
 "use strict";
 const util = require("util");
-const moment = require("moment");
 
 function getTime() {
-  return moment().utc().format("YYYY-MM-DDTHH:mm:ss.SSS[Z]");
+  // "YYYY-MM-DDTHH:mm:ss.SSS[Z]"
+  return new Date().toISOString();
 }
 
 const MAX_SINGLE_LOG_SIZE = 90 * 1024;

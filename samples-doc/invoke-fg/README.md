@@ -6,7 +6,7 @@
 
 | Environment variable   | Value                    |
 | --------------------   | ------------------------ |
-| ``OTC_SDK_PROJECT_ID`` | Project ID
+| ``OTC_SDK_PROJECTID`` | Project ID
 | ``OTC_SDK_REGION``     | Region, defualt: "eu-de"
 | ``OTC_SDK_AK``         | Access Key (*)
 | ``OTC_SDK_SK``         | Secret Key
@@ -17,7 +17,7 @@
 
 Deploy following FunctionGraph function using console:
 
-* **Project** : ``OTC_SDK_PROJECT_ID`` (see above)
+* **Project** : ``OTC_SDK_PROJECTID`` (see above)
 * **Region**: ``OTC_SDK_REGION`` (see above)
 * **Name**: ``nodejs-sample-invoke-function``
 * **Runtime**: ``Node.js 20.15``

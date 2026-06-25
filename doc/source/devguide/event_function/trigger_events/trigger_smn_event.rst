@@ -56,7 +56,7 @@ Parameter description
      - Subject of message
    * - event_subscription_urn
      - String
-     - Subscription ID
+     - Function URN
    * - event_source
      - String
      - Event source: **smn**

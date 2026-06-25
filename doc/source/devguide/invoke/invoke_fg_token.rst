@@ -1,5 +1,5 @@
-Invoke FunctionGraph Function from FunctionGraph using Temporary Credentials
-=============================================================================
+Invoke FunctionGraph Function from FunctionGraph using token
+===================================================================
 
 .. toctree::
    :maxdepth: 1
@@ -8,13 +8,9 @@ Invoke FunctionGraph Function from FunctionGraph using Temporary Credentials
 
 This page demonstrates how to call a FunctionGraph implemented
 in Node.js from another FunctionGraph function using API calls and
-**temporary security credentials** (SecurityAccessKey/SecurityKey/SecurityToken)
-provided by an agency of `Agency Type` **Cloud Service** 
+**token** provided by an agency of `Agency Type` **Cloud Service** 
 for `Cloud Service` **FunctionGraph Service** with permission to invoke FunctionGraph.
 for authentication.
-
-Using temporary credentials the request has to be signed using the
-`otc-api-sign-sdk-nodejs <https://github.com/opentelekomcloud-community/otc-api-sign-sdk-nodejs>`_. 
 
 See: :ref:`invoke_functiongraph_function_api` for more details on
 how to use the REST API.
@@ -43,7 +39,7 @@ Prerequisites
       }
 
    .. note::
-      Ensure that the function and the subfunction are created in the same region.   
+      Ensure that the function and the subfunction are created in the same region.
 
 2. An agency of `Agency Type` **Cloud Service** for `Cloud Service` **FunctionGraph Service**
    with permission to invoke FunctionGraph.
@@ -121,9 +117,9 @@ package.json
 Create a package with following content for the
 FunctionGraph function that will call another FunctionGraph function.
 
-.. literalinclude:: ../../../../samples-doc/invoke-fg2fg/package.json
+.. literalinclude:: ../../../../samples-doc/invoke-fg2fg-token/package.json
    :language: json
-   :caption: :github_repo_master:`samples-doc/invoke-fg2fg/package.json <samples-doc/invoke-fg2fg/package.json>`
+   :caption: :github_repo_master:`samples-doc/invoke-fg2fg-token/package.json <samples-doc/invoke-fg2fg-token/package.json>`
 
 
 index.js
@@ -131,9 +127,9 @@ index.js
 
 Create a function with following content to call another FunctionGraph function:
 
-.. literalinclude:: ../../../../samples-doc/invoke-fg2fg/index.js
+.. literalinclude:: ../../../../samples-doc/invoke-fg2fg-token/index.js
    :language: javascript
-   :caption: :github_repo_master:`samples-doc/invoke-fg2fg/index.js <samples-doc/invoke-fg2fg/index.js>`
+   :caption: :github_repo_master:`samples-doc/invoke-fg2fg-token/index.js <samples-doc/invoke-fg2fg-token/index.js>`
 
 Deployment
 ---------------------

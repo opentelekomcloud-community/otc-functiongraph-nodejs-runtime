@@ -4,17 +4,6 @@
 # - Declared as sensitive --> Not printed in console or log if used in resources
 # ----------------------------------------------------------------------------
 
-variable "OTC_USER_NAME" {
-  description = "Username for OTC"
-  type        = string
-}
-
-variable "OTC_USER_PASSWORD" {
-  description = "Password for OTC"
-  type        = string
-  sensitive   = true
-}
-
 # set by environment variable TF_VAR_OTC_SDK_AK
 variable "OTC_SDK_AK" {
   description = "Personal access key"
@@ -67,15 +56,9 @@ terraform {
 
     opentelekomcloud = {
       source  = "opentelekomcloud/opentelekomcloud"
-      version = ">= 1.36.65"
+      version = ">= 1.36.69"
     }
 
-    # terracurl provider to perform HTTP requests
-    # see https://registry.terraform.io/providers/devops-rob/terracurl/latest
-    terracurl = {
-      source  = "devops-rob/terracurl"
-      version = "2.3.0"
-    }
   }
   backend "s3" {
     # See: https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/guides/backends

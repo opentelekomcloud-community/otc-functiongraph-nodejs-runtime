@@ -40,17 +40,17 @@ Adapt your package.json file to include the necessary scripts and dependencies f
         },
 
       "dependencies": {
-         // add here dependencies of your function
+         // add dependencies of your function here
       },
       "devDependencies": {
-        // add here dev dependencies of your function
+        // add dev dependencies of your function here
       },
       "bundleDependencies": [
-         // add here bundle dependencies if needed
+         // add bundle dependencies if needed here
          // these are dependencies from "dependencies" that will be included in the zip package
       ],
       "files": [
-        // add here files to be included in the bundle, e.g.:
+        // add files to be included in the bundle here, e.g.:
         "*.js",
         "src/**/*",
         "bootstrap" // for http functions    

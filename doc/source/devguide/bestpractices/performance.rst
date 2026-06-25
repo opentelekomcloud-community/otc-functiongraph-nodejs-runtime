@@ -41,7 +41,7 @@ Performance testing of functions is a crucial step in ensuring the selection of 
 During function load testing, platform-provided metrics, logs, call chains, and other tools can be
 used to further analyze function performance data, thereby optimizing function configuration selection.
 For details on specific observable metrics, please refer to the
-:docs_otc:`Function Monitoring Overview <https://docs.otc.t-systems.com/function-graph/umn/viewing_metrics_and_configuring_alarms/index.html>`.
+:docs_otc:`Function Monitoring Overview <function-graph/umn/viewing_metrics_and_configuring_alarms/index.html>`.
 
 Streamlined code and image slimming
 ---------------------------------------------------------------
@@ -65,9 +65,9 @@ Allocating more memory to functions can improve CPU performance, thereby speedin
 startup and execution. You can evaluate the impact of different memory configurations on function
 performance by monitoring function execution time, and then choose the optimal memory size.
 
-For detailed monitoring information, please refer to the monitoring metric description.
+For detailed monitoring information, please refer to the :docs_otc:`monitoring metrics description <function-graph/umn/viewing_metrics_and_configuring_alarms/metrics/viewing_functiongraph_metrics.html#metric-description>`.
 For steps on configuring memory, please refer to the
-:docs_otc:`configuration function information <function-graph/umn/configuring_functions/index.html>`.
+:docs_otc:`function configuration information <function-graph/umn/configuring_functions/index.html>`.
 
 Use common dependency packages to speed up
 ---------------------------------------------------------------

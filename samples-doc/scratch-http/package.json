@@ -28,14 +28,12 @@
   "dependencies": {
     "@koa/router": "^15.3.0",
     "koa": "^3.1.1",
-    "koa-bodyparser": "^4.4.1",
-    "moment": "^2.30.1"
+    "koa-bodyparser": "^4.4.1"
   },
   "bundleDependencies": [
     "@koa/router",
     "koa",
-    "koa-bodyparser",
-    "moment"
+    "koa-bodyparser"
   ],
   "files": [
     "src/**/*",

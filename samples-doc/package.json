@@ -12,12 +12,11 @@
   "version": "1.0.0",
   "author": "T Cloud Public",
   "license": "Apache-2.0",
-  "workspaces": [
-    "scratch-event-apig",
-    "scratch-event-timer"
-  ],
+  
   "scripts": {
     "test": "",
-    "testall": "npm run test --workspaces"
+    "test:scratch-event-apig": "cd scratch-event-apig && npm install && npm test",
+    "test:scratch-event-timer": "cd scratch-event-timer && npm install && npm test",
+    "test:all": "npm run test:scratch-event-apig && npm run test:scratch-event-timer"
   }
 }

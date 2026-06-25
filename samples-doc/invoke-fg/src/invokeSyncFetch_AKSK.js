@@ -3,7 +3,7 @@ const { Signer, HttpRequest } = require("otc-api-sign-sdk-nodejs");
 const region = process.env.OTC_SDK_REGION || "eu-de";
 
 const fgEndpoint = `https://functiongraph.${region}.otc.t-systems.com`;
-const projectId = process.env.OTC_SDK_PROJECT_ID;
+const projectId = process.env.OTC_SDK_PROJECTID;
 const ak = process.env.OTC_SDK_AK;
 const sk = process.env.OTC_SDK_SK;
 

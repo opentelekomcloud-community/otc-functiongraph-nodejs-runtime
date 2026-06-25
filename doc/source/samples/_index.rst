@@ -5,8 +5,7 @@ Following samples are provided to demonstrate how to use
 FunctionGraph with Node.js:
 
 .. toctree::
-   :maxdepth: 2
-   :hidden:
+   :maxdepth: 1
 
    container-event-express <container-event-express/_index>
    container-event-koa <container-event-koa/_index>
@@ -18,6 +17,8 @@ FunctionGraph with Node.js:
    scratch-event-sync <scratch-event-sync/_index.md>
    scratch-http <scratch-http/_index.md>
 
+Some samples are not documented yet.
+You will find them in folder :github_repo_master:`samples-doc` in the GitHub repository.
 
 General notes
 ------------------------------
@@ -48,7 +49,7 @@ General notes
       :caption: package.json
 
       "devDependencies": {
-          "@opentelekomcloud-community/fg-context": "^1.0.0"
+          "@opentelekomcloud-community/fg-apig-event": "^1.0.0"
       },
 
 
@@ -81,7 +82,7 @@ Created from scratch
 
    * - :ref:`event-sdk-ecs<event-sdk-ecs>`
      - A sample event function that demonstrates how to use FunctionGraph SDK for ECS in Node.js functions
-       together with an Timer Trigger to start/stop the ECS instances on schedule.
+       together with a Timer Trigger to start/stop the ECS instances on schedule.
 
 Using container image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -93,7 +94,7 @@ Using container image
      - Description
 
    * - :ref:`container-event-express<container-event-express>`
-     - A sample event function that uses Node.js and express framework deployed as container image.
+     - A sample event function that uses Node.js and Express framework deployed as container image.
      
    * - :ref:`container-event-koa<container-event-koa>`
      - A sample event function that uses Node.js and Koa framework deployed as container image.

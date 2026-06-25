@@ -20,7 +20,7 @@ Prerequisites
 - running on Linux / Windows Subsystem for Linux (WSL)
 - make installed
 - curl installed
-- Terraform installed and configured, see :ref:`terraform_setup<ref_terraform_setup>`.
+- Terraform installed and configured, see :ref:`Terraform Setup<ref_terraform_setup>`.
 
 What will be deployed
 ----------------------------------
@@ -38,7 +38,7 @@ The deployment package for this sample is created with ``npm pack``.
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/package.json
   :language: json
-  :caption: package.json
+  :caption: :github_repo_master:`package.json <samples-doc/deploy-from-obs/package.json>`
   :tab-width: 2
 
 The package.json file defines the following:
@@ -72,24 +72,13 @@ The file  ``provider.tf`` defines the provider configuration for this sample:
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/terraform/provider.tf
   :language: hcl
-  :caption: provider.tf
+  :caption: :github_repo_master:`provider.tf <samples-doc/deploy-from-obs/terraform/provider.tf>`
   :tab-width: 2
 
 You might need to adapt the provider configuration to your needs,
 especially the provider version and backend configuration for terraform state.
 
-For variables used in provider.tf, see :ref:`terraform_setup<ref_terraform_setup>`.
-
-.. note::
-  Currently the opentelekomcloud provider does not update FunctionGraph
-  function code after the code is uploaded to OBS,
-  so in this sample we also use the  
-  `devops-rob/terracurl provider <https://registry.terraform.io/providers/devops-rob/terracurl/latest>`_
-  to update the function code using an API request to update FunctionGraph.
-  To use curl and the terracurl provider, the variable OTC_USER_NAME and OTC_PASSWORD
-  with your OTC credentials must be defined as environment variables.
-
-  See : `Feature request #3360 for opentelekomcloud provider <https://github.com/opentelekomcloud/terraform-provider-opentelekomcloud/issues/3360>`_.
+For variables used in provider.tf, see :ref:`Terraform Setup<ref_terraform_setup>`.
   
 
 variables.tf
@@ -98,7 +87,7 @@ The file  ``variables.tf`` defines the variables for this sample:
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/terraform/variables.tf
   :language: hcl
-  :caption: variables.tf
+  :caption: :github_repo_master:`variables.tf <samples-doc/deploy-from-obs/terraform/variables.tf>`
   :tab-width: 2
 
 
@@ -109,11 +98,8 @@ The file  ``code_from_obs_bucket.tf`` defines the obs bucket and obs bucket obje
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/terraform/code_from_obs_bucket.tf
   :language: hcl
-  :caption: code_from_obs_bucket.tf
+  :caption: :github_repo_master:`code_from_obs_bucket.tf <samples-doc/deploy-from-obs/terraform/code_from_obs_bucket.tf>`
   :tab-width: 2
-
-Additional to uploading the function code to OBS, 
-this will also call FunctionGraph API to update the function code after code changes.
 
 
 function.tf
@@ -122,14 +108,12 @@ The file  ``function.tf`` defines the function resource for this sample:
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/terraform/function.tf
   :language: hcl
-  :caption: function.tf
+  :caption: :github_repo_master:`function.tf <samples-doc/deploy-from-obs/terraform/function.tf>`
   :tab-width: 2
 
 The relevant part for deploying function code from zip file is:
 
 .. code-block:: hcl
-
-  depends_on = [opentelekomcloud_obs_bucket_object.code_object]
 
   ###### relevant part for deploy function code from obs file ######
   code_type = "obs"
@@ -138,6 +122,9 @@ The relevant part for deploying function code from zip file is:
     "code",
     basename(var.zip_file_name)
   )
+
+  # on change of the code object etag (hash) new code  version will be deployed.
+  source_code_hash = opentelekomcloud_obs_bucket_object.code_object.etag
   ###### ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ######
 
 
@@ -147,7 +134,7 @@ The file  ``loggroup.tf`` defines the log group and log stream for this sample:
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/terraform/loggroup.tf
   :language: hcl
-  :caption: loggroup.tf
+  :caption: :github_repo_master:`loggroup.tf <samples-doc/deploy-from-obs/terraform/loggroup.tf>`
   :tab-width: 2
 
 testevent.tf
@@ -157,14 +144,14 @@ FunctionGraph console for testing the deployed function.
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/terraform/testevent.tf
   :language: hcl
-  :caption: testevent.tf
+  :caption: :github_repo_master:`testevent.tf <samples-doc/deploy-from-obs/terraform/testevent.tf>`
   :tab-width: 2
 
 The test event will have the following content:
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/resources/test_event.json
   :language: json
-  :caption: resources/test_event.json
+  :caption: :github_repo_master:`resources/test_event.json <samples-doc/deploy-from-obs/resources/test_event.json>`
   :tab-width: 2
 
 Deploying using Terraform and make
@@ -174,7 +161,7 @@ Following makefile can be used to deploy the function to FunctionGraph using Ter
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/Makefile
   :language: make
-  :caption: Makefile
+  :caption: :github_repo_master:`Makefile <samples-doc/deploy-from-obs/Makefile>`
   :tab-width: 2
 
 Makefile targets:
@@ -217,13 +204,13 @@ Adapt the **BACKEND_CONFIG_*** variables in the Makefile
     - endpoints={s3=\"https://obs.eu-de.otc.t-systems.com\"}
     
 
-Adaptions in variables.tfv
+Adaptions in variables.tf
 """"""""""""""""""""""""""""""  
 Adapt the variables in the ``variables.tf`` 
 
 .. literalinclude:: /../../samples-doc/deploy-from-obs/terraform/variables.tf
   :language: hcl
-  :caption: variables.tf
+  :caption: :github_repo_master:`variables.tf <samples-doc/deploy-from-obs/terraform/variables.tf>`
   :tab-width: 2
 
 .. list-table:: Backend config variables
@@ -269,9 +256,25 @@ FunctionGraph:
 Testing the deployed function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+For testing the deployed function, you will need to set the following
+environment variables. These are used in "tokenFromUsername.sh" script to get Token
+for Token-based authentication when calling FunctionGraph API.
+
+.. list-table:: Environment Variables
+   :widths: 25 25
+   :header-rows: 1
+
+   * - Name
+     - Description
+   * - OTC_USER_NAME
+     - User name
+   * - OTC_USER_PASSWORD
+     - User password
+
 Synchronous invocation
 """""""""""""""""""""""""""""
 After the deployment is done, you can test the deployed function with the following command:
+
 .. code-block:: bash
 
    make test_deployed_sync

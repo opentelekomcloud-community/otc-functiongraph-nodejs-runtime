@@ -20,7 +20,7 @@ Prerequisites
 - running on Linux / Windows Subsystem for Linux (WSL)
 - make installed
 - curl installed
-- Terraform/OpenTofu installed and  Terraform/OpenTofu configured, see :ref:`terraform_setup<ref_terraform_setup>`.
+- Terraform/OpenTofu installed and  Terraform/OpenTofu configured, see :ref:`Terraform Setup<ref_terraform_setup>`.
 
 What will be deployed
 ----------------------------------
@@ -36,7 +36,7 @@ The deployment package for this sample is created with ``npm pack``.
 
 .. literalinclude:: /../../samples-doc/deploy-from-zip/package.json
   :language: json
-  :caption: package.json
+  :caption: :github_repo_master:`package.json <samples-doc/deploy-from-zip/package.json>`
   :tab-width: 2
 
 The package.json file defines the following:
@@ -70,13 +70,13 @@ The file  ``provider.tf`` defines the provider configuration for this sample:
 
 .. literalinclude:: /../../samples-doc/deploy-from-zip/terraform/provider.tf
   :language: hcl
-  :caption: provider.tf
+  :caption: :github_repo_master:`provider.tf <samples-doc/deploy-from-zip/terraform/provider.tf>`
   :tab-width: 2
 
 You might need to adapt the provider configuration to your needs,
 especially the provider version and backend configuration for terraform state.
 
-For variables used in provider.tf, see :ref:`terraform_setup<ref_terraform_setup>`.
+For variables used in provider.tf, see :ref:`Terraform Setup<ref_terraform_setup>`.
 
 
 variables.tf
@@ -85,7 +85,7 @@ The file  ``variables.tf`` defines the variables for this sample:
 
 .. literalinclude:: /../../samples-doc/deploy-from-zip/terraform/variables.tf
   :language: hcl
-  :caption: variables.tf
+  :caption: :github_repo_master:`variables.tf <samples-doc/deploy-from-zip/terraform/variables.tf>`
   :tab-width: 2
 
 function.tf
@@ -94,7 +94,7 @@ The file  ``function.tf`` defines the function resource for this sample:
 
 .. literalinclude:: /../../samples-doc/deploy-from-zip/terraform/function.tf
   :language: hcl
-  :caption: function.tf
+  :caption: :github_repo_master:`function.tf <samples-doc/deploy-from-zip/terraform/function.tf>`
   :tab-width: 2
 
 The relevant part for deploying function code from zip file is:
@@ -113,7 +113,7 @@ The file  ``loggroup.tf`` defines the log group and log stream for this sample:
 
 .. literalinclude:: /../../samples-doc/deploy-from-zip/terraform/loggroup.tf
   :language: hcl
-  :caption: loggroup.tf
+  :caption: :github_repo_master:`loggroup.tf <samples-doc/deploy-from-zip/terraform/loggroup.tf>`
   :tab-width: 2
 
 testevent.tf
@@ -123,14 +123,14 @@ FunctionGraph console for testing the deployed function.
 
 .. literalinclude:: /../../samples-doc/deploy-from-zip/terraform/testevent.tf
   :language: hcl
-  :caption: testevent.tf
+  :caption: :github_repo_master:`testevent.tf <samples-doc/deploy-from-zip/terraform/testevent.tf>`
   :tab-width: 2
 
 The test event will have the following content:
 
 .. literalinclude:: /../../samples-doc/deploy-from-zip/resources/test_event.json
   :language: json
-  :caption: resources/test_event.json
+  :caption: :github_repo_master:`resources/test_event.json <samples-doc/deploy-from-zip/resources/test_event.json>`
   :tab-width: 2
 
 
@@ -142,7 +142,7 @@ Following makefile can be used to deploy the function to FunctionGraph using Ter
 
 .. literalinclude:: /../../samples-doc/deploy-from-zip/Makefile
   :language: make
-  :caption: Makefile
+  :caption: :github_repo_master:`Makefile <samples-doc/deploy-from-zip/Makefile>`
   :tab-width: 2
 
 Makefile targets:
@@ -191,7 +191,7 @@ Adapt the variables in the ``variables.tf``
 
 .. literalinclude:: /../../samples-doc/deploy-from-zip/terraform/variables.tf
   :language: hcl
-  :caption: variables.tf
+  :caption: :github_repo_master:`variables.tf <samples-doc/deploy-from-zip/terraform/variables.tf>`
   :tab-width: 2
 
 .. list-table:: Backend config variables
@@ -240,6 +240,7 @@ Testing the deployed function
 Synchronous invocation
 """""""""""""""""""""""""""""
 After the deployment is done, you can test the deployed function with the following command:
+
 .. code-block:: bash
 
    make test_deployed_sync

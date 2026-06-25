@@ -4,7 +4,6 @@ const Koa = require("koa");
 
 const KoaRouter = require("@koa/router");
 const bodyParser = require("koa-bodyparser");
-const moment = require("moment");
 
 const app = new Koa();
 const router = new KoaRouter();
@@ -13,9 +12,9 @@ const router = new KoaRouter();
 app.use(async (ctx, next) => {
   const requestId = ctx.get("X-Cff-Request-Id") || "no-request-id";
 
-  // Function to format timestamp as yyyymmddThh:mm:ss.SSSZ
-  const getTimestamp = () => {
-    return moment().utc().format("YYYYMMDDTHH:mm:ss.SSS[Z]");
+  // Function to format timestamp as yyyy-mm-ddThh:mm:ss.SSSZ
+  const getTimestamp = () => {    
+    return new Date().toISOString();
   };
 
   // Create a contextual logger that includes timestamp and request ID
@@ -50,8 +49,10 @@ router.post("/init", async (ctx) => {
 router.get("/index", async (ctx) => {
   ctx.logger.log("Received GET request with query:", ctx.request.query);
 
+  const name = ctx.request.query.user || "user";
+
   ctx.response.type = "application/json";
-  ctx.response.body = "Hello World, user!";
+  ctx.response.body = `Hello world, ${name}!`;
   ctx.response.status = 200;
 });
 

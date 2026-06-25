@@ -2,7 +2,6 @@
 # Create nodejs event function
 ##########################################################
 resource "opentelekomcloud_fgs_function_v2" "MyFunction" {
-  depends_on = [opentelekomcloud_obs_bucket_object.code_object]
   
   name = format("%s_%s", var.prefix, var.function_name)
   app  = "default"
@@ -21,6 +20,8 @@ resource "opentelekomcloud_fgs_function_v2" "MyFunction" {
     "code",
     basename(var.zip_file_name)
   )
+  # on change of the code object etag (hash) new code  version will be deployed.
+  source_code_hash = opentelekomcloud_obs_bucket_object.code_object.etag
   ###### ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ######
 
   description      = var.description
