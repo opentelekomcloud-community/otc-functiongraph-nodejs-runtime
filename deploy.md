@@ -6,11 +6,15 @@ This document is for internal use only and describes the current deployment/rele
 1. Switch to main branch
 1. In root folder execute
    ```
-   npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]
+   npm version [<NEW_VERSION> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]
    ```
+   
+   where `<NEW_VERSION>` is e.g. `v1.0.3`
+
+
    see: [npm version](https://docs.npmjs.com/cli/v11/commands/npm-version)
 
-   This will change version in all package*.json with the ```NEW_VERSION``` and creates a local tag ```NEW_VERSION``
+   This will change version in all package*.json with the ```NEW_VERSION``` and creates a local git tag ```NEW_VERSION```
 1. Create a new releasenotes file ```/releasenotes/[NEW_VERSION].md``` with changes.
 1. Commit changes to main branch 
 1. Create GitHub Release using ```NEW_VERSION``` from last step using:
@@ -18,3 +22,8 @@ This document is for internal use only and describes the current deployment/rele
    git push origin [NEW_VERSION]
    ```
    (This will trigger GitHub action: ```Create Release```)
+
+1. To publish npm packages to [GitHub Packages](https://github.com/orgs/opentelekomcloud-community/packages?repo_name=otc-functiongraph-nodejs-runtime), run:
+   ```
+   npm run publish:all
+   ```
