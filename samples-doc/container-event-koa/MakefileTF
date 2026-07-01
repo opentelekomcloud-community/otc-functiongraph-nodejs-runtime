@@ -53,7 +53,7 @@ test_deployed:
 	@curl -X POST \
 	 -H "Content-Type: application/json" \
 	 -H "x-auth-token: $(OTC_X_AUTH_TOKEN)" \
-	 -d '{"key":"Hello World of FunctionGraph"}' \
+	 -d '{"name":"T Cloud Public"}' \
 	 https://functiongraph.$(OTC_SDK_REGION).otc.t-systems.com/v2/$(OTC_SDK_PROJECTID)/fgs/functions/$(MY_FUNCTION_URN):latest/invocations
 	@echo "" 
 	# finished

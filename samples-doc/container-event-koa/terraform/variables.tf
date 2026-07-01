@@ -12,16 +12,16 @@ variable "description" {
 # FunctionGraph: Function name
 variable "function_name" {
   type    = string
-  default = "function_name"
+  default = "set in variables.tfvars"
 }
 
 variable "image_url" {
   type    = string
-  default = "your_image_url_here"
+  default = "set in variables.tfvars"
 }
 
 # Resource tag:
 variable "tag_app_group" {
   type    = string
-  default = "go-doc-sample-container-event-koa"
+  default = "set in variables.tfvars"
 }

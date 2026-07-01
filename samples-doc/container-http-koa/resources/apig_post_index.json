@@ -11,6 +11,7 @@
   "httpMethod": "POST",
   "pathParameters": {},
   "headers": {
+      "content-type": "application/json; charset=utf-8",
       "accept-language": "q=0.5,en-US;q=0.3,en;q=0.2",
       "accept-encoding": "gzip, deflate, br",
       "x-forwarded-port": "443",
