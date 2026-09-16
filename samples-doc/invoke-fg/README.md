@@ -7,7 +7,7 @@
 | Environment variable   | Value                    |
 | --------------------   | ------------------------ |
 | ``OTC_SDK_PROJECTID`` | Project ID
-| ``OTC_SDK_REGION``     | Region, defualt: "eu-de"
+| ``OTC_SDK_REGION``     | Region, default: "eu-de"
 | ``OTC_SDK_AK``         | Access Key (*)
 | ``OTC_SDK_SK``         | Secret Key
 
